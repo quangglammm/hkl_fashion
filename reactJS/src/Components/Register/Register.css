@@ -1,0 +1,109 @@
+.regisForm-format {
+    width: 25%;
+    height: 65%;
+    display: block;
+    border: solid 2px black;
+    border-radius: 30px;
+
+}
+.regisForm-format h3 {
+    padding: 24px;
+    margin: 0;
+}
+.regisForm-format p{
+    margin-top: 15px;
+    color: darkblue;
+    font-weight: 600;
+}
+
+.regisForm-format form input {
+    display: block;
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 25px;
+    border: 0;
+}
+.regisForm-format form button {
+    background-color: #5A82E7;
+    color: white;
+    border-radius:25px ;
+    padding: 6px 0;
+    margin-top: 8px;
+}
+
+.regismain {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #ccc;
+    height: 100vh;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.logo {
+    width: 20vw;
+    height: 20vw;
+    border: 1px solid transparent;
+    border-radius: 10%;
+}
+
+.regismain button {
+    border: 0;
+    width: 150px;
+    height: auto;
+    justify-content: center;
+}
+@media only screen and (min-width: 46.25em) and (max-width: 64.2em) {
+    .regismain {
+        background-color: #fff;
+        display: block;
+        text-align: -webkit-center;
+        margin: 90px 0 20px 0;
+        height: auto;
+    }
+    .logomain{
+        display: none;
+    }
+    .regisForm-format{
+        background-color: #fff;
+        width: 60%;
+        height: 100%;
+    }
+    .regisForm-format form input{
+        border-bottom:1px solid #ccc ;
+    }
+    .regisForm-format p:last-child{
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+}
+
+@media only screen and (max-width: 46.1875em){
+    .regismain {
+        background-color: #fff;
+        display: block;
+        text-align: -webkit-center;
+        margin: 90px 0 20px 0;
+        height: auto;
+    }
+    .logomain{
+        display: none;
+    }
+    .regisForm-format{
+        background-color: #fff;
+        width: 70%;
+        height: 100%;
+    }
+    .regisForm-format h3{
+        font-size: 20px;
+    }
+    .regisForm-format form input{
+        border-bottom:1px solid #ccc ;
+    }
+    .regisForm-format p:last-child{
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+}

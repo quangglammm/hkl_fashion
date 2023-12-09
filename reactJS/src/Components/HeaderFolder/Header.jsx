@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import CatagoryDataService from "../../services/catagories";
 import "./Header.css";
 import shoppingIcon from "../Images/shopping-icon.png";
-import Logo from "../Images/logo-pj.jpg";
+import Logo from "../Images/logo-no-background.png";
 import { useNavigate } from "react-router-dom";
 import ListTypeProduct from "../ListTypeProduct/ListTypeProduct";
 import ListTypeProductMobile from "../ListTypeProductMobile/ListTypeProductMobile";

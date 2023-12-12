@@ -77,7 +77,7 @@ function Header(props) {
     window.localStorage.removeItem("Email");
     window.localStorage.removeItem("user");
     window.localStorage.removeItem("refreshToken");
- 
+
     navigate("/Login");
   };
   // setTimeout(Logout, 1800000)
@@ -162,13 +162,13 @@ function Header(props) {
               ))}
             </ul>
             <hr />
-            <Nav.Link href="/Outfits">Bộ phối</Nav.Link>
+            {/* <Nav.Link href="/Outfits">Bộ phối</Nav.Link> */}
             <hr />
             <Nav.Link href="/AboutUs">Giới thiệu</Nav.Link>
             <hr />
-            <Nav.Link href="/Blogs">Bài viết</Nav.Link>
+            {/* <Nav.Link href="/Blogs">Bài viết</Nav.Link> */}
             <hr />
-            <Nav.Link href={loveList}> Sản phẩm yêu thích </Nav.Link>
+            {/* <Nav.Link href={loveList}> Sản phẩm yêu thích </Nav.Link> */}
           </ul>
         </div>
         <div className="nav-mobile-search">
@@ -220,9 +220,9 @@ function Header(props) {
               ))}
             </ul>
           </div>
-          <Nav.Link href="/Outfits">Bộ phối</Nav.Link>
+          {/* <Nav.Link href="/Outfits">Bộ phối</Nav.Link> */}
           <Nav.Link href="/AboutUs">Giới thiệu</Nav.Link>
-          <Nav.Link href="/Blogs">Bài viết</Nav.Link>
+          {/* <Nav.Link href="/Blogs">Bài viết</Nav.Link> */}
         </Nav>
         <Form className="search">
           <Form.Control
@@ -240,13 +240,13 @@ function Header(props) {
             Search
           </Button>
         </Form>
-        <Nav.Link
+        {/* <Nav.Link
           className="lovelists"
           href={loveList}
         >
           {" "}
           Sản phẩm yêu thích{" "}
-        </Nav.Link>
+        </Nav.Link> */}
         <div className="cartandlogin">
           <Nav.Link href="/ShoppingCart">
             <img

@@ -108,14 +108,14 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
-      {
-        path: "FavoriteProduct",
-        element: (
-          <Suspense fallback={<p>Loading...</p>}>
-            <FavoriteProduct />
-          </Suspense>
-        ),
-      },
+    //   {
+    //     path: "FavoriteProduct",
+    //     element: (
+    //       <Suspense fallback={<p>Loading...</p>}>
+    //         <FavoriteProduct />
+    //       </Suspense>
+    //     ),
+    //   },
       {
         path: "Login",
         element: (
@@ -148,30 +148,30 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
-      {
-        path: "Outfits",
-        element: (
-          <Suspense fallback={<p>Loading...</p>}>
-            <Outfits />
-          </Suspense>
-        ),
-      },
-      {
-        path: "Blogs",
-        element: (
-          <Suspense fallback={<p>Loading...</p>}>
-            <Blogs />
-          </Suspense>
-        ),
-      },
-      {
-        path: "Blogs/:blogID",
-        element: (
-          <Suspense fallback={<p>Loading...</p>}>
-            <BlogDetail />
-          </Suspense>
-        ),
-      },
+    //   {
+    //     path: "Outfits",
+    //     element: (
+    //       <Suspense fallback={<p>Loading...</p>}>
+    //         <Outfits />
+    //       </Suspense>
+    //     ),
+    //   },
+    //   {
+    //     path: "Blogs",
+    //     element: (
+    //       <Suspense fallback={<p>Loading...</p>}>
+    //         <Blogs />
+    //       </Suspense>
+    //     ),
+    //   },
+    //   {
+    //     path: "Blogs/:blogID",
+    //     element: (
+    //       <Suspense fallback={<p>Loading...</p>}>
+    //         <BlogDetail />
+    //       </Suspense>
+    //     ),
+    //   },
       {
         path: "Account",
         element: (
@@ -204,14 +204,14 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
-      {
-        path: "Outfits/:outfitID",
-        element: (
-          <Suspense fallback={<p>Loading...</p>}>
-            <OutfitDetail />
-          </Suspense>
-        ),
-      },
+    //   {
+    //     path: "Outfits/:outfitID",
+    //     element: (
+    //       <Suspense fallback={<p>Loading...</p>}>
+    //         <OutfitDetail />
+    //       </Suspense>
+    //     ),
+    //   },
       {
         path: "OrderDetail/:orderID",
         element: (

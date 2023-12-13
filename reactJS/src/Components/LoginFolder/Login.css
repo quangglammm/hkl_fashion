@@ -1,104 +1,96 @@
-.loginForm {
-    background-color: #ccc;
-    width: 25%;
-    height: auto;
-    display: block;
-    border: solid 2px black;
+.loginmain {
+    background: url("../Images/bg-noel-2.jpg") no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    
+}
+.loginmain a {
+    color: white;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+.loginmain-content {
+    /* background: #cccccc1c; */
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.loginmain-body {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+    border: solid 1px white;
     border-radius: 30px;
 }
-.loginForm h3 {
-    padding: 24px;
-    margin: 0;
+.logomain {
+    margin: 0 12px;
 }
-.loginForm p:last-child {
-    margin: 0;
-}
-.loginForm form input {
-    display: block;
-    width: 80%;
-    margin: auto;
-    padding: 12px;
-    margin-bottom: 12px;
-    border-radius: 25px;
-    border: 0;
-}
-.loginForm form button {
-    background-color: #5A82E7;
-    color: white;
-    border-radius:25px ;
-    padding: 10px 0;
-    margin-top: 15px;
-}
-.loginForm-icon {
-display: flex;
-justify-content: space-evenly;    
-padding-left: 20px;
-padding-right: 20px;
-margin-bottom: 15px;
-}
-.loginForm-icon button {
-    display: flex;
-    align-items: center;
-
-}
-.loginForm-icon button img {
-    padding: 8px;
-    justify-content: center;
-}
-
-.loginmain {
-    display: flex;
-    justify-content: space-evenly;
-    background-color: #ccc;
-    height: 70vh;
-    align-items: center;
-    margin-top: 70px;
-}
-.logo {
-    width: 20vw;
-    height: 20vw;
+.logomain .logo {
+    width: 320px;
+    object-fit: contain;
     border: 1px solid transparent;
     border-radius: 10%;
 }
-
-.loginmain button {
-    border: 0;
-    width: 150px;
+.loginForm {
+    width: 50%;
     height: auto;
-    justify-content: center;
+    display: block;
 }
-.loginmain a {
-    color: darkblue;
-}
-.logomain p {
-    font-weight: 1000;
-    font-size: 80px;
-    margin: 0px;
-    color: darkblue;
-}
-.fb-and-gg{
-    display: inline-flex;
-    padding: 15px 20px;
-    border: 1px solid black;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: #fff;
-    margin-bottom: 15px;
-}
-.fb-and-gg img{
-    width: 20px;
-    height: 20px;
-    margin: 0 24px;
-}
-.fb-and-gg img:hover{
-    cursor: pointer;
-}
-.fb-and-gg p{
-    color: black;
-    font-size: 18px;
+.loginForm h3 {
+    color: white;
     font-weight: bold;
+    padding: 24px;
+    margin: 0;
+    user-select: none;
 }
-.loginForm p{
+.loginForm form input::placeholder {
+    color: white;
+}
+.loginForm form input {
+    background-color: transparent;
+    backdrop-filter: blur(2px);
+    color: white;
+    display: block;
+    width: 80%;
+    margin: 4px auto;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 25px;
+    border: solid 1px white;
+    transition: all 0.3s ease;
+}
+.loginForm form input:focus-visible {
+    box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.9);
+    outline: none;
+}
+.loginForm form button {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: black;
+    width: 80%;
+    font-weight: bold;
+    border-radius:25px ;
+    padding: 10px 0;
+    border: 0;
+    margin-top: 15px;
+    transition: all 0.2s ease;
+}
+.loginForm form button:hover {
+    background-color: white;
+}
+.loginForm form button:focus {
+    box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.9);
+}
+.loginForm p {
+    color: white;
     margin: 16px 0;
     font-weight: 600;
 }

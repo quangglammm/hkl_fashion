@@ -1,6 +1,6 @@
 import "./Register.css";
 import React, { useState } from "react";
-import logo from "../Images/logo-pj.jpg";
+import logo from "../Images/logo-no-background.png";
 import { useNavigate } from "react-router-dom";
 import { NavLink as Link } from "react-router-dom";
 import axios from "axios";
@@ -35,7 +35,7 @@ function Register() {
       )
       .then((res) => {
         console.log(res);
-        if (res.status === 200) {
+        if (res.status === 201) {
           navigate("/Login");
           alert("Đăng ký thành công");
         } else {
@@ -51,55 +51,57 @@ function Register() {
     <div className="">
       <Header />
       <div className="regismain">
-        <div className="logomain">
-          <img className="logo" src={logo} alt="logo"></img>
-          <p>HKL Fashion</p>
-        </div>
-        <div className="regisForm-format">
-          <h3>Đăng ký</h3>
-          <form autoComplete="on">
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <input
-              type="text"
-              name="fullname"
-              placeholder="Họ và tên"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
+        <div className="regismain-content">
+          <div className="regismain-body">
+            <div className="logomain">
+              <img className="logo" src={logo} alt="logo"></img>
+            </div>
 
-            <input
-              type="password"
-              name="password"
-              placeholder="Mật khẩu"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
-              title="Mật khẩu tối thiểu 6 kí tự"
-              required
-            />
-            <input
-              type="password"
-              name="confirmpassword"
-              placeholder="Nhập lại mật khẩu"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-            />
-            <button onClick={registerHandle} type="submit" name="submit">
-              Đăng ký
-            </button>
-          </form>
-          <Link to="/Login">
-            <p>Bạn đã có tài khoản? Đăng nhập ngay </p>
-          </Link>
+            <div className="regisForm">
+              <h3>Đăng ký</h3>
+              <form autoComplete="on" action="POST" onSubmit={registerHandle} >
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <input
+                  type="text"
+                  name="fullname"
+                  placeholder="Họ và tên"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Mật khẩu"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
+                  title="Mật khẩu tối thiểu 6 kí tự"
+                  required
+                />
+                <input
+                  type="password"
+                  name="confirmpassword"
+                  placeholder="Nhập lại mật khẩu"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  required
+                />
+                <button type="submit" name="submit" onClick={registerHandle} >
+                  Đăng ký
+                </button>
+              </form>
+              <p>Bạn đã có tài khoản? <Link to="/Login">Đăng nhập ngay</Link></p>
+            </div>
+          </div>
         </div>
       </div>
       <Footer />

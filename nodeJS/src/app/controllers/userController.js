@@ -10,7 +10,9 @@ class UserController {
     async Register(req, res, next) {
         try {
             const { email } = req.body;
+
             const { error } = userValidate(req.body);
+
             if (error) {
                 throw httpError(error.details[0].message);
             }
@@ -19,12 +21,6 @@ class UserController {
             if (isExistEmail) throw httpError.Conflict(`${email} đã được đăng ký!!`);
 
             const formData = {
-                // email: req.body.email,
-                // password: req.body.password,
-                // name: req.body.name,
-                // avatar: req.body.avatar,
-                // level: req.body.level,
-
                 email: req.body.email,
                 gender: req.body.gender,
                 password: req.body.password,
@@ -37,14 +33,16 @@ class UserController {
             const user = new User(formData);
             user.save()
                 .then(() => {
-                    res.json({
-                        status: 'successfully',
-                        // elements: user,
+                    res.status(201).json({
+                        message: "Đăng ký thành công",
                     });
                 })
-                .catch(() => res.send('Đăng ký tài khoản thất bại'));
+                .catch(() => {
+                    res.status(400).send('Đăng ký tài khoản thất bại');
+                });
         } catch (error) {
             next(error);
+            console.log(error);
         }
     }
 

@@ -1,59 +1,98 @@
-.regisForm-format {
-    width: 25%;
-    height: 65%;
-    display: block;
-    border: solid 2px black;
-    border-radius: 30px;
-
-}
-.regisForm-format h3 {
-    padding: 24px;
-    margin: 0;
-}
-.regisForm-format p{
-    margin-top: 15px;
-    color: darkblue;
-    font-weight: 600;
-}
-
-.regisForm-format form input {
-    display: block;
-    width: 80%;
-    margin: auto;
-    padding: 10px;
-    margin-bottom: 8px;
-    border-radius: 25px;
-    border: 0;
-}
-.regisForm-format form button {
-    background-color: #5A82E7;
-    color: white;
-    border-radius:25px ;
-    padding: 6px 0;
-    margin-top: 8px;
-}
-
 .regismain {
-    display: flex;
-    justify-content: space-evenly;
-    background-color: #ccc;
+    background: url("../Images/bg-noel-2.jpg") no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
     height: 100vh;
-    align-items: center;
-    margin-top: 70px;
+    
 }
-
-.logo {
-    width: 20vw;
-    height: 20vw;
+.regismain a {
+    color: white;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+.regismain-content {
+    /* background: #cccccc1c; */
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.regismain-body {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+    border: solid 1px white;
+    border-radius: 30px;
+}
+.regismain-content .logomain {
+    margin: 0 12px;
+}
+.regismain-content .logomain .logo {
+    width: 320px;
+    object-fit: contain;
     border: 1px solid transparent;
     border-radius: 10%;
 }
-
-.regismain button {
-    border: 0;
-    width: 150px;
+.regisForm {
+    width: 50%;
     height: auto;
-    justify-content: center;
+    display: block;
+}
+.regisForm h3 {
+    color: white;
+    font-weight: bold;
+    padding: 24px;
+    margin: 0;
+    user-select: none;
+}
+.regisForm form input::placeholder {
+    color: white;
+}
+.regisForm form input {
+    background-color: transparent;
+    backdrop-filter: blur(2px);
+    color: white;
+    display: block;
+    width: 80%;
+    margin: 4px auto;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 25px;
+    border: solid 1px white;
+    transition: all 0.3s ease;
+}
+.regisForm form input:focus-visible {
+    box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.9);
+    outline: none;
+}
+.regisForm form button {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: black;
+    width: 80%;
+    font-weight: bold;
+    border-radius:25px ;
+    padding: 10px 0;
+    border: 0;
+    margin-top: 15px;
+    transition: all 0.2s ease;
+}
+.regisForm form button:hover {
+    background-color: white;
+}
+.regisForm form button:focus {
+    box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.9);
+}
+.regisForm p {
+    color: white;
+    margin: 16px 0;
+    font-weight: 600;
 }
 @media only screen and (min-width: 46.25em) and (max-width: 64.2em) {
     .regismain {
@@ -66,15 +105,15 @@
     .logomain{
         display: none;
     }
-    .regisForm-format{
+    .regisForm{
         background-color: #fff;
         width: 60%;
         height: 100%;
     }
-    .regisForm-format form input{
+    .regisForm form input{
         border-bottom:1px solid #ccc ;
     }
-    .regisForm-format p:last-child{
+    .regisForm p:last-child{
         font-size: 18px;
         margin-bottom: 15px;
     }
@@ -91,18 +130,18 @@
     .logomain{
         display: none;
     }
-    .regisForm-format{
+    .regisForm{
         background-color: #fff;
         width: 70%;
         height: 100%;
     }
-    .regisForm-format h3{
+    .regisForm h3{
         font-size: 20px;
     }
-    .regisForm-format form input{
+    .regisForm form input{
         border-bottom:1px solid #ccc ;
     }
-    .regisForm-format p:last-child{
+    .regisForm p:last-child{
         font-size: 16px;
         margin-bottom: 15px;
     }

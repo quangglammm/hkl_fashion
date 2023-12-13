@@ -9,8 +9,6 @@ import { Provider } from "react-redux";
 import "bootstrap/dist/css/bootstrap.css";
 // import store redux
 import { store } from "./redux/store";
-import Redirect from "./Components/Redirect/Redirect";
-import VnPayRedirect from "./Components/Redirect/VnPayRedirect";
 // lazy
 const MainPage = lazy(() => import("./Components/MainPageFolder/MainPage"));
 const Products = lazy(() => import("./Components/ProductFolder/Products"));
@@ -275,15 +273,7 @@ const router = createBrowserRouter([
             <NewProduct />
           </Suspense>
         ),
-      },
-      {
-        path: "MOMO/Checkout/Redirect",
-        element: <Redirect />,
-      },
-      {
-        path: "VnPay/Checkout/Redirect",
-        element: <VnPayRedirect />,
-      },
+      }
     ],
   },
 ]);

@@ -2,16 +2,12 @@ import "./ShipAddress.css";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Alert from "react-bootstrap/Alert";
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Header from "../HeaderFolder/Header";
 import Footer from "../FooterFolder/Footer";
-import { momoPayment } from "../../actions/orders";
-import { vnpayPayment } from "../../actions/orders";
 import { getDiscount } from "../../actions/orders";
 import OrderDataService from "../../services/orders";
-import { useNavigate } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
+import { Button, Modal} from "react-bootstrap";
 import { clearCart } from "../../redux/cartSlide";
 import { useDispatch } from "react-redux";
 
@@ -218,30 +214,6 @@ function ShipAddress() {
                 });
                 if (method == "cod") {
                     handleShow();
-                }
-                if (method == "momo") {
-                    try {
-                        const res = await momoPayment(total, order_id);
-                        if (!res) {
-                            return;
-                        }
-                        window.location.assign(res?.payUrl);
-                    } catch (e) {
-                        console.log(e);
-                    }
-                }
-                if (method == "vnpay") {
-                    //vnpay
-                    try {
-                        const res = await vnpayPayment(total, order_id);
-                        if (!res) {
-                            return;
-                        }
-                        console.log(res);
-                        window.location.assign(res?.paymentUrl);
-                    } catch (e) {
-                        console.log(e);
-                    }
                 }
                 if (method == "atm") {
                     handleShow1();

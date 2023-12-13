@@ -1,18 +1,12 @@
-import "./Login.css";
-import { useNavigate } from "react-router-dom";
-import logo from "../Images/logo-pj.jpg";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { useState } from "react";
-import fb from "../Images/fb.png";
-import gg from "../Images/gg.png";
 import axios from "axios";
+import { useState } from "react";
+import { Button, Modal} from "react-bootstrap";
+import { useNavigate, Link } from "react-router-dom";
+import { connect, useDispatch } from "react-redux";
 import Header from "../HeaderFolder/Header";
 import Footer from "../FooterFolder/Footer";
-import { useDispatch } from "react-redux";
-import { login } from "../../redux/credentials";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
+import logo from "../Images/logo-pj.jpg";
+import "./Login.css";
 
 function Login(props) {
   const [useremail, setEmail] = useState("");

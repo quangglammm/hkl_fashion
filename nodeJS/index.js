@@ -1,7 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const httpError = require('http-errors');
 require('dotenv').config();
 const route = require('./src/routes');
 const db = require('./src/config/db');
@@ -42,13 +41,6 @@ app.use(express.static(buildPath, cacheOptions));
 db.connect();
 
 app.use((req, res, next) => {
-    // const error = new Error('Not found');
-    // error.status = 500;
-    // next(error);
-    // res.header('Access-Control-Allow-Origin', '*');
-    // res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    // console.log(req);
-    // next(httpError.NotFound('This route does not exists.'));
     next();
 });
 

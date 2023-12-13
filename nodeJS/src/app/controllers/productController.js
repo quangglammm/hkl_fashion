@@ -1,8 +1,6 @@
 const Product = require('../models/products/product');
 const ProductDetail = require('../models/products/product_detail');
 const CategoryDetail = require('../models/products/category_detail');
-const Outfit = require('../models/outfit/outfit');
-const OutfitDetail = require('../models/outfit/outfit_detail');
 const ProductComment = require('../models/products/product_comment');
 const { HandleAddImage } = require('../../helpers/multifunction');
 const client = require('../../helpers/connection_redis');
@@ -314,115 +312,6 @@ class ProductController {
                     });
             }
         });
-    }
-
-    // GET /product/outfit
-    // ShowOutfit(req, res, next) {
-    //     const page = req.query.page || 1;
-    //     Outfit.paginate({}, { page: page, limit: 12 })
-    //         .then((outfit) => res.json(outfit))
-    //         .catch(next);
-    // }
-    ShowOutfit(req, res, next) {
-        const page = req.query.page || 1;
-        const cacheKey = `outfit:${page}`;
-
-        // Check if the cached data exists
-        client.get(cacheKey, (err, cachedData) => {
-            if (err) {
-                console.error('Redis cache error:', err);
-                next();
-            }
-
-            // If cached data exists, return it
-            if (cachedData) {
-                console.log('Lấy dữ liệu từ Redis2');
-                const parsedData = JSON.parse(cachedData);
-                res.json(parsedData);
-            } else {
-                // If no cached data, query the database
-                Outfit.paginate({}, { page: page, limit: 12 })
-                    .then((outfit) => {
-                        // Store the fetched data in cache
-                        console.log('Thêm dữ liệu vào Redis2');
-                        client.setex(cacheKey, 1800, JSON.stringify(outfit));
-                        res.json(outfit);
-                    })
-                    .catch(next);
-            }
-        });
-    }
-
-    // GET /product/outfit/:id
-    // GetOutfit(req, res, next) {
-    //     Outfit.find({ _id: req.params.id })
-    //         .exec()
-    //         .then((outfit) => res.json(outfit))
-    //         .catch(next);
-    // }
-    GetOutfit(req, res, next) {
-        const outfitId = req.params.id;
-        const cacheKey = `outfit_${outfitId}`;
-
-        // Check if the cached data exists
-        client.get(cacheKey, (err, cachedData) => {
-            if (err) {
-                console.error('Redis cache error:', err);
-                next();
-            }
-
-            // If cached data exists, return it
-            if (cachedData) {
-                console.log('Lấy dữ liệu từ Redis3');
-                const parsedData = JSON.parse(cachedData);
-                res.json(parsedData);
-            } else {
-                // If no cached data, query the database
-                Outfit.find({ _id: outfitId })
-                    .exec()
-                    .then((outfit) => {
-                        // Store the fetched data in cache
-                        console.log('Thêm dữ liệu vào Redis3');
-                        client.setex(cacheKey, 1800, JSON.stringify(outfit));
-                        res.json(outfit);
-                    })
-                    .catch(next);
-            }
-        });
-
-    }
-
-    // GET /product/outfit/:id/outfit-detail
-    ShowOutfitDetail(req, res, next) {
-        OutfitDetail.find({ outfit_id: req.params.id })
-            .populate({ path: 'product_id', select: 'name price' })
-            .exec()
-            .then((outfitDetails) => {
-                const data = outfitDetails.map(HandleAddProductDetail);
-                Promise.all(data)
-                    .then((results) => {
-                        res.json(results);
-                    })
-                    .catch(next);
-            })
-            .catch(next);
-
-        function HandleAddProductDetail(outfitDetail) {
-            return ProductDetail.find({ product_id: outfitDetail.product_id._id })
-                .exec()
-                .then((productDetail) => {
-                    return {
-                        _id: outfitDetail._id,
-                        outfit_id: outfitDetail.outfit_id,
-                        product_id: {
-                            _id: outfitDetail.product_id._id,
-                            name: outfitDetail.product_id.name,
-                            price: outfitDetail.product_id.price,
-                        },
-                        productDetail,
-                    };
-                });
-        }
     }
 
     // GET /product/:id/comment

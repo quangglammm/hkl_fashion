@@ -9,9 +9,7 @@ import CatagoryDataService from "../../services/catagories";
 import { useState, useEffect } from "react";
 import React from 'react';
 
-const MessengerComponent = React.lazy(() =>
-    import("../MessengerComponent/MessengerComponent")
-);
+
 
 
 
@@ -51,7 +49,7 @@ function TypeProductDetail() {
                     <ContainerItem price={item.product.price} name={item.product.name} image={item.path} masp={item.product._id} />
                 )}
             </div>
-            <MessengerComponent/>
+
             <Footer/>
         </div>
     );

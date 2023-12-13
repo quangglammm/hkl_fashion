@@ -11,9 +11,6 @@ import Header from "../HeaderFolder/Header";
 import Footer from "../FooterFolder/Footer";
 import ProductDataService from "../../services/products";
 
-const MessengerComponent = React.lazy(() =>
-    import("../MessengerComponent/MessengerComponent")
-);
 
 function MainPage() {
     const [newProducts, setNewProducts] = useState([]);
@@ -141,7 +138,6 @@ function MainPage() {
                     </div>
                 </div>
             </div>
-            <MessengerComponent />
             <Footer />
         </div>
     );

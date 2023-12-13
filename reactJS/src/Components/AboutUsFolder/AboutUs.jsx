@@ -7,9 +7,7 @@ import about3 from "../Images/about/about3.png";
 import Header from "../HeaderFolder/Header";
 import Footer from "../FooterFolder/Footer";
 
-const MessengerComponent = React.lazy(() =>
-    import("../MessengerComponent/MessengerComponent")
-);
+
 
 function About() {
   return (
@@ -66,7 +64,6 @@ function About() {
           </div>
         </div>
       </div>
-      <MessengerComponent/>
       <Footer />
     </div>
   );

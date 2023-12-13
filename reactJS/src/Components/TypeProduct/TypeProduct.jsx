@@ -9,9 +9,7 @@ import ProductDataService from '../../services/products';
 import CatagoryDataService from '../../services/catagories';
 import React from 'react';
 
-const MessengerComponent = React.lazy(() =>
-    import("../MessengerComponent/MessengerComponent")
-);
+
 
 function TypeProduct() {
     const { typeID } = useParams();
@@ -61,7 +59,6 @@ function TypeProduct() {
                     )
                 }
             </div>
-            <MessengerComponent/>
             <Footer/>
         </div>
     );

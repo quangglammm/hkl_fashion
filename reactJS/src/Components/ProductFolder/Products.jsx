@@ -11,9 +11,7 @@ import ProductDataService from "../../services/products";
 import CatagoryDataService from "../../services/catagories";
 import Pagination from "react-bootstrap/Pagination";
 
-const MessengerComponent = React.lazy(() =>
-    import("../MessengerComponent/MessengerComponent")
-);
+
 
 function Products() {
     const [show, setShow] = useState(false);
@@ -213,7 +211,6 @@ function Products() {
             <div className="page">
                 <Pagination>{items}</Pagination>
             </div>
-            <MessengerComponent />
             <Footer />
         </div>
     );

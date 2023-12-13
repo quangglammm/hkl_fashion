@@ -53,7 +53,7 @@ function Register() {
       <div className="regismain">
         <div className="logomain">
           <img className="logo" src={logo} alt="logo"></img>
-          <p>DTClothShop</p>
+          <p>HKL Fashion</p>
         </div>
         <div className="regisForm-format">
           <h3>Đăng ký</h3>

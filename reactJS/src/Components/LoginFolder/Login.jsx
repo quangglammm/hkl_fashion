@@ -76,7 +76,7 @@ const handleShow = () => setShow(true);
       <div className="loginmain">
         <div className="logomain">
           <img className="logo" alt="" src={logo}></img>
-          <p>DTClothShop</p>
+          <p>HKL Fashion</p>
         </div>
 
         <div className="loginForm">
@@ -102,15 +102,6 @@ const handleShow = () => setShow(true);
               Đăng nhập
             </button>
           </form>
-          {/* <p>HOẶC</p> */}
-          {/* <div className="fb-and-gg">
-
-            <img
-              src={gg}
-              alt="fb"
-            />
-            <p>Đăng nhập với Google</p>
-          </div> */}
           <br></br>
           <Link to="/Register">
             <p>Bạn chưa có tài khoản? Đăng ký ngay</p>

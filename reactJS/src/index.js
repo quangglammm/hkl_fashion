@@ -22,15 +22,13 @@ const ShipAddress = lazy(() => import("./Components/ShipAddress/ShipAddress"));
 const ProductDetails = lazy(() =>
   import("./Components/ProductDetails/ProductDetails")
 );
-const OutfitDetail = lazy(() =>
-  import("./Components/OutfitDetail/OutfitDetail")
-);
-const Outfits = lazy(() => import("./Components/Outfits/Outfits"));
+
+
 const TypeProduct = lazy(() => import("./Components/TypeProduct/TypeProduct"));
 const TypeProductDetail = lazy(() =>
   import("./Components/TypeProductDetail/TypeProductDetail")
 );
-const Blogs = lazy(() => import("./Components/Blogs/Blogs"));
+
 const Search = lazy(() => import("./Components/Search/Search"));
 const Account = lazy(() => import("./Components/Account/Account"));
 const Home = lazy(() => import("./Components/Admin/Home/Home"));
@@ -56,11 +54,9 @@ const NewTypeProduct = lazy(() =>
   import("./Components/Admin/NewTypeProduct/NewTypeProduct")
 );
 const OrderDetail = lazy(() => import("./Components/OrderDetail/OrderDetail"));
-const BlogDetail = lazy(() => import("./Components/BlogDetail/BlogDetail"));
-const Payment = lazy(() => import("./Components/Payment/Payment"));
-const FavoriteProduct = lazy(() =>
-  import("./Components/FavoriteProduct/FavoriteProduct")
-);
+
+
+
 
 const router = createBrowserRouter([
   {
@@ -108,14 +104,7 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
-    //   {
-    //     path: "FavoriteProduct",
-    //     element: (
-    //       <Suspense fallback={<p>Loading...</p>}>
-    //         <FavoriteProduct />
-    //       </Suspense>
-    //     ),
-    //   },
+
       {
         path: "Login",
         element: (
@@ -140,38 +129,8 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
-      {
-        path: "Payment",
-        element: (
-          <Suspense fallback={<p>Loading...</p>}>
-            <Payment />
-          </Suspense>
-        ),
-      },
-    //   {
-    //     path: "Outfits",
-    //     element: (
-    //       <Suspense fallback={<p>Loading...</p>}>
-    //         <Outfits />
-    //       </Suspense>
-    //     ),
-    //   },
-    //   {
-    //     path: "Blogs",
-    //     element: (
-    //       <Suspense fallback={<p>Loading...</p>}>
-    //         <Blogs />
-    //       </Suspense>
-    //     ),
-    //   },
-    //   {
-    //     path: "Blogs/:blogID",
-    //     element: (
-    //       <Suspense fallback={<p>Loading...</p>}>
-    //         <BlogDetail />
-    //       </Suspense>
-    //     ),
-    //   },
+
+
       {
         path: "Account",
         element: (
@@ -204,14 +163,7 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
-    //   {
-    //     path: "Outfits/:outfitID",
-    //     element: (
-    //       <Suspense fallback={<p>Loading...</p>}>
-    //         <OutfitDetail />
-    //       </Suspense>
-    //     ),
-    //   },
+
       {
         path: "OrderDetail/:orderID",
         element: (

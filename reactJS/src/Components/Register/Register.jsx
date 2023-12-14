@@ -4,8 +4,6 @@ import logo from "../Images/logo-no-background.png";
 import { useNavigate } from "react-router-dom";
 import { NavLink as Link } from "react-router-dom";
 import axios from "axios";
-import Header from "../HeaderFolder/Header";
-import Footer from "../FooterFolder/Footer";
 function Register() {
   let navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -49,7 +47,6 @@ function Register() {
 
   return (
     <div className="">
-      <Header />
       <div className="regismain">
         <div className="regismain-content">
           <div className="regismain-body">
@@ -104,7 +101,6 @@ function Register() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

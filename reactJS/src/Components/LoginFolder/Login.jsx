@@ -3,8 +3,6 @@ import { useState } from "react";
 import { Button, Modal} from "react-bootstrap";
 import { useNavigate, Link } from "react-router-dom";
 import { connect } from "react-redux";
-import Header from "../HeaderFolder/Header";
-import Footer from "../FooterFolder/Footer";
 import logo from "../Images/logo-no-background.png";
 import "./Login.css";
 
@@ -65,8 +63,6 @@ const handleShow = () => setShow(true);
   };
   return (
     <div className="">
-      <Header />
-
       <div className="loginmain">
         <div className="loginmain-content">
           <div className="loginmain-body">
@@ -115,8 +111,6 @@ const handleShow = () => setShow(true);
           </Button>
         </Modal.Footer>
       </Modal>
-
-      <Footer />
     </div>
   );
 }

@@ -1,23 +1,18 @@
 import React, { useState, useEffect, useCallback } from "react";
 import {
   Form,
-  FormControl,
   Button,
-  Card,
-  ListGroup,
   Alert,
   Container,
   Col,
   Row,
 } from "react-bootstrap";
 import {
-  MDBBtn,
   MDBCard,
   MDBCardBody,
   MDBCardImage,
   MDBCol,
   MDBContainer,
-  MDBIcon,
   MDBRow,
   MDBTextArea,
   MDBTypography,
@@ -45,20 +40,7 @@ const CommentAndComentList = (props) => {
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState("");
   const [rating, setRating] = useState(0);
-  // const [submitted, setSubmitted] = useState(false);
   const [isCommentSubmitted, setIsCommentSubmitted] = useState(false);
-
-  //Thua kèo này t bày keo khác, hừm
-  // const retrieveComments = () => {
-  //   ProductDataService.getCommentsByProductId(props.productId)
-  //     .then((res) => {
-  //       console.log(res.data);
-  //       setComments(res.data);
-  //     })
-  //     .catch((e) => {
-  //       console.log(e);
-  //     });
-  // };
 
   const retrieveComments = () => {
     ProductDataService.getCommentsByProductId(props.productId)
@@ -78,18 +60,12 @@ const CommentAndComentList = (props) => {
     }
   }, [isCommentSubmitted, retrieveComments]);
 
-  // const handleCommentSubmit = (comment) => {
-  //   console.log(comment);
-  //   setIsCommentSubmitted(true); // Cập nhật comments với comment mới
-  // };
-
   const handleRatingChange = (value) => {
     setRating(value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // onCommentSubmit({ comment, rating });
     var data = {
       star: rating,
       message: comment,

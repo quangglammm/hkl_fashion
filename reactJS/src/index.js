@@ -1,14 +1,12 @@
 import React, { Suspense, lazy } from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./index.css";
-import ErrorPage from "./Components/Error/error-page";
+import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
-// import stores from "./stores";
-import "bootstrap/dist/css/bootstrap.css";
-// import store redux
 import { store } from "./redux/store";
+import ErrorPage from "./Components/Error/error-page";
+import App from "./App";
+import "bootstrap/dist/css/bootstrap.css";
+import "./index.css";
 // lazy
 const MainPage = lazy(() => import("./Components/MainPageFolder/MainPage"));
 const Products = lazy(() => import("./Components/ProductFolder/Products"));
@@ -17,44 +15,24 @@ const Shopping = lazy(() => import("./Components/Shopping/Shopping"));
 const Login = lazy(() => import("./Components/LoginFolder/Login"));
 const Register = lazy(() => import("./Components/Register/Register"));
 const ShipAddress = lazy(() => import("./Components/ShipAddress/ShipAddress"));
-const ProductDetails = lazy(() =>
-  import("./Components/ProductDetails/ProductDetails")
-);
-
-
+const ProductDetails = lazy(() => import("./Components/ProductDetails/ProductDetails"));
 const TypeProduct = lazy(() => import("./Components/TypeProduct/TypeProduct"));
-const TypeProductDetail = lazy(() =>
-  import("./Components/TypeProductDetail/TypeProductDetail")
-);
-
+const TypeProductDetail = lazy(() =>import("./Components/TypeProductDetail/TypeProductDetail"));
 const Search = lazy(() => import("./Components/Search/Search"));
 const Account = lazy(() => import("./Components/Account/Account"));
 const Home = lazy(() => import("./Components/Admin/Home/Home"));
 const UserList = lazy(() => import("./Components/Admin/UserList/UserList"));
 const User = lazy(() => import("./Components/Admin/User/User"));
 const NewUser = lazy(() => import("./Components/Admin/NewUser/NewUser"));
-const ProductList = lazy(() =>
-  import("./Components/Admin/ProductList/ProductList")
-);
+const ProductList = lazy(() => import("./Components/Admin/ProductList/ProductList"));
 const Product = lazy(() => import("./Components/Admin/Product/Product"));
 const Orders = lazy(() => import("./Components/Admin/Orders/Orders"));
 const OrderDetailAdmin = lazy(() => import("./Components/Admin/OrderDetailAdmin/OrderDetailAdmin"));
-const NewProduct = lazy(() =>
-  import("./Components/Admin/NewProduct/NewProduct")
-);
-const TypeProductList = lazy(() =>
-  import("./Components/Admin/TypeProductList/TypeProductList")
-);
-const TypeProductEdit = lazy(() =>
-  import("./Components/Admin/TypeProductEdit/TypeProductEdit")
-);
-const NewTypeProduct = lazy(() =>
-  import("./Components/Admin/NewTypeProduct/NewTypeProduct")
-);
+const NewProduct = lazy(() => import("./Components/Admin/NewProduct/NewProduct"));
+const TypeProductList = lazy(() => import("./Components/Admin/TypeProductList/TypeProductList"));
+const TypeProductEdit = lazy(() => import("./Components/Admin/TypeProductEdit/TypeProductEdit"));
+const NewTypeProduct = lazy(() => import("./Components/Admin/NewTypeProduct/NewTypeProduct"));
 const OrderDetail = lazy(() => import("./Components/OrderDetail/OrderDetail"));
-
-
-
 
 const router = createBrowserRouter([
   {
@@ -127,7 +105,6 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
-
 
       {
         path: "Account",
@@ -273,15 +250,15 @@ const router = createBrowserRouter([
             <NewProduct />
           </Suspense>
         ),
-      }
+      },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
-    <React.StrictMode>
-      <RouterProvider router={router} />
-    </React.StrictMode>
+      <RouterProvider  router={router}>
+        <App />
+      </RouterProvider>
   </Provider>
 );

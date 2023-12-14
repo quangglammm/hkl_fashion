@@ -7,8 +7,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import imgmobile from "../Images/banner/img-mobile.png";
-import Header from "../HeaderFolder/Header";
-import Footer from "../FooterFolder/Footer";
 import ProductDataService from "../../services/products";
 
 
@@ -50,7 +48,6 @@ function MainPage() {
     };
     return (
         <div className="mainPage">
-            <Header />
             <Slideshow />
             <div className="img-mobile">
                 <img src={imgmobile} alt="imgmobile" />
@@ -138,7 +135,6 @@ function MainPage() {
                     </div>
                 </div>
             </div>
-            <Footer />
         </div>
     );
 }

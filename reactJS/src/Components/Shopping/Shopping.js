@@ -4,8 +4,6 @@ import { NavLink } from "react-router-dom";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
-import Header from "../HeaderFolder/Header";
-import Footer from "../FooterFolder/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { DeleteOutline } from "@mui/icons-material";
 
@@ -64,7 +62,6 @@ function Shopping() {
 
   return (
     <div className="main">
-      <Header />
       <Breadcrumb>
         <Breadcrumb.Item href="/">Trang chủ</Breadcrumb.Item>
         <Breadcrumb.Item active>Giỏ hàng</Breadcrumb.Item>
@@ -243,7 +240,6 @@ function Shopping() {
           </Snackbar>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

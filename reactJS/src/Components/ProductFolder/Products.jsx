@@ -5,8 +5,6 @@ import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import ContainerItem from "../ContainerItem";
 import filtericon from "../Images/filter-icon.png";
-import Header from "../HeaderFolder/Header";
-import Footer from "../FooterFolder/Footer";
 import ProductDataService from "../../services/products";
 import CatagoryDataService from "../../services/catagories";
 import Pagination from "react-bootstrap/Pagination";
@@ -89,7 +87,6 @@ function Products() {
     }
     return (
         <div>
-            <Header />
             <Breadcrumb>
                 <Breadcrumb.Item href="/">Trang chủ</Breadcrumb.Item>
                 <Breadcrumb.Item active>Sản phẩm</Breadcrumb.Item>
@@ -211,7 +208,6 @@ function Products() {
             <div className="page">
                 <Pagination>{items}</Pagination>
             </div>
-            <Footer />
         </div>
     );
 }

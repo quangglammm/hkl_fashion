@@ -3,8 +3,6 @@ import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Alert from "react-bootstrap/Alert";
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import Header from "../HeaderFolder/Header";
-import Footer from "../FooterFolder/Footer";
 import { getDiscount } from "../../actions/orders";
 import OrderDataService from "../../services/orders";
 import { Button, Modal} from "react-bootstrap";
@@ -233,7 +231,6 @@ function ShipAddress() {
     //   }
     return (
         <div className="main-container-ship">
-            <Header />
             <Breadcrumb>
                 <Breadcrumb.Item href="/">Trang chủ</Breadcrumb.Item>
                 <Breadcrumb.Item href="/ShoppingCart">Giỏ hàng</Breadcrumb.Item>
@@ -551,7 +548,6 @@ function ShipAddress() {
                     </Button>
                 </Modal.Footer>
             </Modal>
-            <Footer />
         </div>
     );
 }

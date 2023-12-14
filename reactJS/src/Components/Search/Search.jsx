@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Search.css";
-import Header from "../HeaderFolder/Header";
-import Footer from "../FooterFolder/Footer";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import { useLocation } from "react-router-dom";
 import ProductDataService from "../../services/products";
@@ -19,7 +17,6 @@ export default function Search(props) {
 
   return (
     <div>
-      <Header />
       <Breadcrumb>
         <Breadcrumb.Item href="/">Trang chủ</Breadcrumb.Item>
         <Breadcrumb.Item href="/Products">Sản phẩm</Breadcrumb.Item>
@@ -35,7 +32,6 @@ export default function Search(props) {
           />
         ))}
       </div>
-      <Footer />
     </div>
   );
 }

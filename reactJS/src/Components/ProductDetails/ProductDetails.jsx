@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./ProductDetails.css";
 import { connect } from "react-redux";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
@@ -7,8 +7,6 @@ import size from "../Images/size.jpg";
 import Slider from "react-slick";
 import ContainerItem from "../ContainerItem";
 import CommentAndComentList from "../CommentForm/CommentForm";
-import Header from "../HeaderFolder/Header";
-import Footer from "../FooterFolder/Footer";
 import React, { useEffect, useState } from "react";
 import ProductDataService from "../../services/products";
 import MuiAlert from "@mui/material/Alert";
@@ -292,7 +290,6 @@ export function ProductDetails(props) {
           {alert.message}
         </Alert>
       </Snackbar>
-      <Header />
       <Breadcrumb>
         <Breadcrumb.Item href="/">Trang chủ</Breadcrumb.Item>
         <Breadcrumb.Item href="/Products">Sản phẩm</Breadcrumb.Item>
@@ -491,7 +488,6 @@ export function ProductDetails(props) {
       </div>
       <span>&nbsp;</span>
       <CommentAndComentList productId={productID} />
-      <Footer />
     </div>
   );
 }

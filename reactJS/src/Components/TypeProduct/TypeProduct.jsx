@@ -2,8 +2,6 @@ import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { useParams } from 'react-router-dom';
 import ContainerItem from '../ContainerItem';
 import "./TypeProduct.css";
-import Header from "../HeaderFolder/Header";
-import Footer from "../FooterFolder/Footer";
 import { useEffect, useState } from 'react';
 import ProductDataService from '../../services/products';
 import CatagoryDataService from '../../services/catagories';
@@ -46,7 +44,6 @@ function TypeProduct() {
 
     return (
         <div className="type-product-container">
-            <Header/>
             <Breadcrumb>
                 <Breadcrumb.Item href="/">Trang chủ</Breadcrumb.Item>
                 <Breadcrumb.Item href="/Products">Sản phẩm</Breadcrumb.Item>
@@ -59,7 +56,6 @@ function TypeProduct() {
                     )
                 }
             </div>
-            <Footer/>
         </div>
     );
 }

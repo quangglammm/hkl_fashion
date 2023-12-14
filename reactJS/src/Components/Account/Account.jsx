@@ -1,6 +1,4 @@
 import "./Account.css";
-import Header from "../HeaderFolder/Header";
-import Footer from "../FooterFolder/Footer";
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import moment from "moment";
@@ -90,7 +88,6 @@ function Account() {
 
   return (
     <div className="">
-      <Header />
       <Snackbar open={open} autoHideDuration={1500} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
           Cập nhật tài khoản thành công
@@ -225,7 +222,6 @@ function Account() {
           </table>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

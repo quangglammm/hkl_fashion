@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./OrderDetail.css";
-import Header from "../HeaderFolder/Header";
-import Footer from "../FooterFolder/Footer";
 import { Link, useParams, useLocation } from "react-router-dom";
 import OrderDataService from "../../services/orders";
 export default function OrderDetail() {
@@ -24,7 +22,6 @@ export default function OrderDetail() {
 
   return (
     <div>
-      <Header />
       <div className="orderDetails">
         <div className="orderInfor">
           <div className="orderInforItem">
@@ -152,7 +149,6 @@ export default function OrderDetail() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

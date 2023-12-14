@@ -78,19 +78,6 @@ export default function Sidebar() {
             </li>
           </ul>
         </div>
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitile">Blog</h3>
-          <ul className="sidebarList">
-            <li className="sidebarListItem">
-              <Article className="sidebarIcon" />
-              Bài viết
-            </li>
-            <li className="sidebarListItem">
-              <EditNote className="sidebarIcon" />
-              Thêm bài viết
-            </li>
-          </ul>
-        </div>
       </div>
     </div>
   );

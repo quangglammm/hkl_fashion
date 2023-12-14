@@ -59,13 +59,13 @@ POST http://localhost:3001/admin/user/store
 Content-Type: application/json
 
 {
-    "email": "tqki0ggy@gmail.com",
+    "email": "1@gmail.com",
     "password":"123456",
-    "name": "Lê Minh Đại",
+    "name": "Minh Hau",
     "gender":"Nam",
-    "address":"Long An",
-    "birthday": "2002-06-13",
-    "phone":"0387383583"
+    "address":"HCM",
+    "birthday": "2002-05-16",
+    "phone":"0987654321"
 }
 
 ### sửa user /admin/user/edit/:id

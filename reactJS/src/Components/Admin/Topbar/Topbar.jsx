@@ -3,14 +3,14 @@
 import React from 'react'
 import './Topbar.css';
 import { NotificationsNone, Language, Settings } from '@mui/icons-material';
-import logopj from '../Images/logo-pj.jpg'
+import logopj from '../../Images/logo-no-background.png';
 export default function Topbar() {
   return (
     <div className='topbar'>
         <div className="topbarWrapper">
             <div className="topLeft">
                 <span className="logo">
-                    DTClothShop
+                    HKL Fashion Manage
                 </span>
             </div>
             <div className="topRight">

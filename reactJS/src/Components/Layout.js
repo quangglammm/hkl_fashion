@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { Suspense} from 'react';
 import Header from './HeaderFolder/Header.jsx'
 import Footer from './FooterFolder/Footer.jsx'
-import { Outlet } from "react-router-dom";
 
-const Layout = () => {
+const Layout = ({ children }) => {
     return(<>
         <Header style={{ zIndex: 1 }} />
 	    
-        <Outlet />
+        <Suspense fallback={<p>Loading...</p>}>
+            {children}
+        </Suspense>
         
         <Footer/>
     </>)

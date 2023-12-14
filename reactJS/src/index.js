@@ -7,6 +7,8 @@ import ErrorPage from "./Components/Error/error-page";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.css";
 import "./index.css";
+import Layout from "./Components/Layout";
+import LayoutAdmin from "./Components/LayoutAdmin";
 // lazy
 const MainPage = lazy(() => import("./Components/MainPageFolder/MainPage"));
 const Products = lazy(() => import("./Components/ProductFolder/Products"));
@@ -15,23 +17,39 @@ const Shopping = lazy(() => import("./Components/Shopping/Shopping"));
 const Login = lazy(() => import("./Components/LoginFolder/Login"));
 const Register = lazy(() => import("./Components/Register/Register"));
 const ShipAddress = lazy(() => import("./Components/ShipAddress/ShipAddress"));
-const ProductDetails = lazy(() => import("./Components/ProductDetails/ProductDetails"));
+const ProductDetails = lazy(() =>
+  import("./Components/ProductDetails/ProductDetails")
+);
 const TypeProduct = lazy(() => import("./Components/TypeProduct/TypeProduct"));
-const TypeProductDetail = lazy(() =>import("./Components/TypeProductDetail/TypeProductDetail"));
+const TypeProductDetail = lazy(() =>
+  import("./Components/TypeProductDetail/TypeProductDetail")
+);
 const Search = lazy(() => import("./Components/Search/Search"));
 const Account = lazy(() => import("./Components/Account/Account"));
 const Home = lazy(() => import("./Components/Admin/Home/Home"));
 const UserList = lazy(() => import("./Components/Admin/UserList/UserList"));
 const User = lazy(() => import("./Components/Admin/User/User"));
 const NewUser = lazy(() => import("./Components/Admin/NewUser/NewUser"));
-const ProductList = lazy(() => import("./Components/Admin/ProductList/ProductList"));
+const ProductList = lazy(() =>
+  import("./Components/Admin/ProductList/ProductList")
+);
 const Product = lazy(() => import("./Components/Admin/Product/Product"));
 const Orders = lazy(() => import("./Components/Admin/Orders/Orders"));
-const OrderDetailAdmin = lazy(() => import("./Components/Admin/OrderDetailAdmin/OrderDetailAdmin"));
-const NewProduct = lazy(() => import("./Components/Admin/NewProduct/NewProduct"));
-const TypeProductList = lazy(() => import("./Components/Admin/TypeProductList/TypeProductList"));
-const TypeProductEdit = lazy(() => import("./Components/Admin/TypeProductEdit/TypeProductEdit"));
-const NewTypeProduct = lazy(() => import("./Components/Admin/NewTypeProduct/NewTypeProduct"));
+const OrderDetailAdmin = lazy(() =>
+  import("./Components/Admin/OrderDetailAdmin/OrderDetailAdmin")
+);
+const NewProduct = lazy(() =>
+  import("./Components/Admin/NewProduct/NewProduct")
+);
+const TypeProductList = lazy(() =>
+  import("./Components/Admin/TypeProductList/TypeProductList")
+);
+const TypeProductEdit = lazy(() =>
+  import("./Components/Admin/TypeProductEdit/TypeProductEdit")
+);
+const NewTypeProduct = lazy(() =>
+  import("./Components/Admin/NewTypeProduct/NewTypeProduct")
+);
 const OrderDetail = lazy(() => import("./Components/OrderDetail/OrderDetail"));
 
 const router = createBrowserRouter([
@@ -43,212 +61,215 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Layout>
             <MainPage />
-          </Suspense>
+          </Layout>
         ),
       },
       {
         path: "MainPage",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Layout>
             <MainPage />
-          </Suspense>
+          </Layout>
         ),
       },
       {
         path: "Products",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
-            <Products />,
-          </Suspense>
+          <Layout>
+            <Products />
+          </Layout>
         ),
       },
       {
         path: "AboutUs",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Layout>
             <AboutUs />
-          </Suspense>
+          </Layout>
         ),
       },
       {
         path: "ShoppingCart",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Layout>
             <Shopping />
-          </Suspense>
+          </Layout>
         ),
       },
 
       {
         path: "Login",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Layout>
             <Login />
-          </Suspense>
+          </Layout>
         ),
       },
       {
         path: "Register",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Layout>
             <Register />
-          </Suspense>
+          </Layout>
         ),
       },
       {
         path: "ShipAddress",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Layout>
             <ShipAddress />
-          </Suspense>
+          </Layout>
         ),
       },
 
       {
         path: "Account",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Layout>
             <Account />
-          </Suspense>
+          </Layout>
         ),
       },
       {
         path: "Products/:productID",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Layout>
             <ProductDetails />
-          </Suspense>
+          </Layout>
         ),
       },
       {
         path: "Products/Type/:typeID",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Layout>
             <TypeProduct />
-          </Suspense>
+          </Layout>
         ),
       },
       {
         path: "Products/TypeDetail/:typedetailID",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Layout>
             <TypeProductDetail />
-          </Suspense>
+          </Layout>
         ),
       },
 
       {
         path: "OrderDetail/:orderID",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Layout>
             <OrderDetail />
-          </Suspense>
+          </Layout>
         ),
       },
       {
         path: "Search",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Layout>
             <Search />
-          </Suspense>
+          </Layout>
         ),
       },
+      // ==========================================================================================
+      // =======================================ADMIN ROUTES=======================================
+      // ==========================================================================================
       {
-        path: "Admin",
+        path: "admin",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <LayoutAdmin>
             <Home />
-          </Suspense>
+          </LayoutAdmin>
         ),
       },
       {
-        path: "Admin/Users",
+        path: "admin/Users",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <LayoutAdmin>
             <UserList />
-          </Suspense>
+          </LayoutAdmin>
         ),
       },
       {
-        path: "Admin/User/:userId",
+        path: "admin/User/:userId",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <LayoutAdmin>
             <User />
-          </Suspense>
+          </LayoutAdmin>
         ),
       },
       {
-        path: "Admin/NewUser",
+        path: "admin/NewUser",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <LayoutAdmin>
             <NewUser />
-          </Suspense>
+          </LayoutAdmin>
         ),
       },
       {
-        path: "Admin/Orders",
+        path: "admin/Orders",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <LayoutAdmin>
             <Orders />
-          </Suspense>
+          </LayoutAdmin>
         ),
       },
       {
-        path: "Admin/Orders/:orderId",
+        path: "admin/Orders/:orderId",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <LayoutAdmin>
             <OrderDetailAdmin />
-          </Suspense>
+          </LayoutAdmin>
         ),
       },
       {
-        path: "Admin/TypeProducts",
+        path: "admin/TypeProducts",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <LayoutAdmin>
             <TypeProductList />
-          </Suspense>
+          </LayoutAdmin>
         ),
       },
       {
-        path: "Admin/TypeProduct/:typeProductId",
+        path: "admin/TypeProduct/:typeProductId",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <LayoutAdmin>
             <TypeProductEdit />
-          </Suspense>
+          </LayoutAdmin>
         ),
       },
       {
-        path: "Admin/NewTypeProduct",
+        path: "admin/NewTypeProduct",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <LayoutAdmin>
             <NewTypeProduct />
-          </Suspense>
+          </LayoutAdmin>
         ),
       },
       {
-        path: "Admin/Products/:typeProductId",
+        path: "admin/Products/:typeProductId",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <LayoutAdmin>
             <ProductList />
-          </Suspense>
+          </LayoutAdmin>
         ),
       },
       {
-        path: "Admin/Product/:productId",
+        path: "admin/Product/:productId",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <LayoutAdmin>
             <Product />
-          </Suspense>
+          </LayoutAdmin>
         ),
       },
       {
-        path: "Admin/NewProduct/:typeProductId",
+        path: "admin/NewProduct/:typeProductId",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <LayoutAdmin>
             <NewProduct />
-          </Suspense>
+          </LayoutAdmin>
         ),
       },
     ],
@@ -257,8 +278,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
-      <RouterProvider  router={router}>
-        <App />
-      </RouterProvider>
+    <RouterProvider router={router}>
+      <App />
+    </RouterProvider>
   </Provider>
 );

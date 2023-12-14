@@ -192,6 +192,7 @@ function Header(props) {
             <Button
               variant="outline-success"
               onClick={handleSearch}
+              sx={{color: 'white'}}
             >
               Search
             </Button>
@@ -227,7 +228,7 @@ function Header(props) {
         <Form className="search">
           <Form.Control
             type="search"
-            placeholder="Search"
+            placeholder="Tìm kiếm"
             className="me-2"
             aria-label="Search"
             onChange={(e) => setSearch(e.target.value)}
@@ -236,8 +237,9 @@ function Header(props) {
           <Button
             variant="outline-success"
             onClick={handleSearch}
+            style={{color: 'white', border: '1px solid white', width: '40%'}}
           >
-            Search
+            Tìm kiếm
           </Button>
         </Form>
         {/* <Nav.Link

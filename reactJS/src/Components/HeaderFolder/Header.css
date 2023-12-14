@@ -7,6 +7,7 @@
     left: 0;
     width: 100%;
     z-index: 99; 
+    height: 60px;
     color: white;
 }
 .navbar-light .navbar-nav .nav-link {

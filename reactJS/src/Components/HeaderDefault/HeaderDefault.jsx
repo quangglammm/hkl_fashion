@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import CatagoryDataService from "../../services/catagories";
-import "./HeaderChristmas.css";
+import "./HeaderDefault.css";
 import shoppingIcon from "../Images/shopping-icon.png";
-import Logo from "../Images/logo-no-background.png";
+import Logo from "../Images/backgroundblack.png";
 import { useNavigate } from "react-router-dom";
 import ListTypeProduct from "../ListTypeProduct/ListTypeProduct";
 import ListTypeProductMobile from "../ListTypeProductMobile/ListTypeProductMobile";
@@ -22,11 +22,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { getToTals } from "../../redux/cartSlide";
 import { logout } from "../../redux/credentials";
 
-function HeaderChristmas(props) {
+function HeaderDefault(props) {
     const user = JSON.parse(localStorage.getItem("user"));
 
     let navigate = useNavigate();
-
+    var loveList = "/FavoriteProduct";
+    if (window.localStorage.getItem("Email") == null) {
+        loveList = "/Login";
+    }
 
     function LoginclickHandler() {
         if (!user) {
@@ -80,8 +83,8 @@ function HeaderChristmas(props) {
     // setTimeout(Logout, 1800000)
 
     return (
-        <Navbar bg="light" expand="lg" fixed="top" id="christmas">
-            <Container fluid id="christmas">
+        <Navbar bg="light" expand="lg" fixed="top" id="default">
+            <Container fluid>
                 <div className="sidebar-icon">
                     <label htmlFor="nav-mobile-input">
                         <img src={sidebaricon} alt="sidebaricon" />
@@ -114,7 +117,7 @@ function HeaderChristmas(props) {
                     >
                         <img src={close} alt="close" />
                     </label>
-                    <ul className="nav-mobile-list" id="christmas">
+                    <ul className="nav-mobile-list">
                         <Nav.Link href="/">Trang chủ</Nav.Link>
                         <hr />
                         <div className="mobile-product">
@@ -137,13 +140,16 @@ function HeaderChristmas(props) {
                             ))}
                         </ul>
                         <hr />
-
+                        {/* <Nav.Link href="/Outfits">Bộ phối</Nav.Link> */}
                         <hr />
                         <Nav.Link href="/AboutUs">Giới thiệu</Nav.Link>
                         <hr />
-
+                        {/* <Nav.Link href="/Blogs">Bài viết</Nav.Link> */}
                         <hr />
-
+                        {/* <Nav.Link href={loveList}>
+                            {" "}
+                            Sản phẩm yêu thích{" "}
+                        </Nav.Link> */}
                     </ul>
                 </div>
                 <div className="nav-mobile-search">
@@ -161,7 +167,6 @@ function HeaderChristmas(props) {
                         <Button
                             variant="outline-success"
                             onClick={handleSearch}
-                            sx={{ color: "white" }}
                         >
                             Search
                         </Button>
@@ -190,31 +195,20 @@ function HeaderChristmas(props) {
                 <Form className="search">
                     <Form.Control
                         type="search"
-                        placeholder="Tìm kiếm"
+                        placeholder="Search"
                         className="me-2"
                         aria-label="Search"
                         onChange={(e) => setSearch(e.target.value)}
                         onKeyDown={handleKeyDown}
                     />
-                    <Button
-                        variant="outline-success"
-                        onClick={handleSearch}
-                        style={{
-                            color: "white",
-                            border: "1px solid white",
-                            width: "40%",
-                        }}
-                    >
-                        Tìm kiếm
+                    <Button variant="outline-success" onClick={handleSearch}>
+                        Search
                     </Button>
                 </Form>
-                {/* <Nav.Link
-          className="lovelists"
-          href={loveList}
-        >
-          {" "}
-          Sản phẩm yêu thích{" "}
-        </Nav.Link> */}
+                {/* <Nav.Link className="lovelists" href={loveList}>
+                    {" "}
+                    Sản phẩm yêu thích{" "}
+                </Nav.Link> */}
                 <div className="cartandlogin">
                     <Nav.Link href="/ShoppingCart">
                         <img src={shoppingIcon} alt="cart" />
@@ -252,4 +246,4 @@ function mapDispatchToProps(dispatch) {
     return {};
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderChristmas);
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderDefault);

@@ -27,7 +27,7 @@ function FooterChristmas() {
     };
 
     return (
-        <div className="footer">
+        <div className="footer" id="christmas">
             <div className="footer_infor">
                 <div className="footer__infor-introduce">
                     <div className="footer__infor-introduce-name name">Về chúng tôi </div>
@@ -53,7 +53,7 @@ function FooterChristmas() {
                     <div className="footer__infor-introduce-infor infor">
                         Trường Đại học Công nghệ Thông tin- ĐHQG TPHCM<br />
                         <b style={{ fontWeight: 500 }}>Số điện thoại:</b> 0987654321<br />
-                        <b style={{ fontWeight: 500 }}>Email:</b> HKLFashion@gmail.com
+                        <b style={{ fontWeight: 500 }}>Email:</b> hkl.fashion@gmail.com
                     </div>
                 </div>
 
@@ -94,7 +94,7 @@ function FooterChristmas() {
                         <Accordion.Body>
                             Trường Đại học Công nghệ Thông tin- ĐHQG TPHCM<br />
                             <b style={{ fontWeight: 500 }}>Số điện thoại: </b>0799684120<br />
-                            <b style={{ fontWeight: 500 }}>Email: </b>HKLFashion@gmail.com
+                            <b style={{ fontWeight: 500 }}>Email: </b>hkl.fashion@gmail.com
                         </Accordion.Body>
                     </Accordion.Item>
                     <hr />

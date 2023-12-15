@@ -1,26 +1,22 @@
-#christmas .navbar{
-    background: url("../Images/background.png") repeat-x;
-    background-size: cover;
+.navbar{
     padding: 0 !important;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 99;
-    height: 60px;
-    color: white;
+    z-index: 1;
 }
-#christmas .navbar-light .navbar-nav .nav-link {
-    color: white !important;
+.navbar-light .navbar-nav .nav-link {
+    color: black !important;
     font-weight: bold;
     margin: 15px 15px;
 }
-#christmas .navbar-light .navbar-nav .nav-link:hover {
+.navbar-light .navbar-nav .nav-link:hover {
     display: block;
     transition: 0.2s linear;
     border-bottom: 1px black;
 }
-#christmas .navbar-brand img{
+.navbar-brand img{
 
     height: 64px;
     border: 1px solid transparent;
@@ -28,7 +24,7 @@
     position: relative;
     left: 1.5rem;
 }
-#chritsmas .type-product{
+.type-product{
     position: absolute;
     list-style-type: none;
     display: none;
@@ -37,34 +33,34 @@
     background-color: white;
     min-width: 150px;
 }
-#chritsmas .type-product a{
+.type-product a{
     color: black;
     text-decoration: none;
 }
-#chritsmas .type-product a:hover{
+.type-product a:hover{
     color: black;
     text-decoration: none;
 }
-#chritsmas .nav-link{
+.nav-link{
     color: black;
     text-decoration: none;
 }
-#chritsmas .nav-link:hover{
+.nav-link:hover{
     color: black;
     text-decoration: none;
 }
-#chritsmas .type-product li{
+.type-product li{
     padding: 15px;
     text-align: left;
     position: relative;
 }
-#chritsmas .product-header:hover .type-product{
+.product-header:hover .type-product{
     display: block;
     box-shadow: 0 0 10px rgba(0,0, 0, 0.3);
     cursor: pointer;
     transition: 0.2s linear;
 }
-#chritsmas .type-product li .detail-product{
+.type-product li .detail-product{
     position: absolute;
     display: none;
     padding: 0;
@@ -73,40 +69,40 @@
     background-color: white;
     min-width: 150px;
 }
-#chritsmas .search{
+.search{
     display: flex;
 }
-#chritsmas .search input[type='search']{
+.search input[type='search']{
     height: auto;
 }
-#chritsmas .type-product .detail-product li{
+.type-product .detail-product li{
     list-style-type: none;
     min-width:100px;
 }
-#chritsmas .type-product .detail-product li:hover{
+.type-product .detail-product li:hover{
     background-color: #ccc;
     color: black;
     text-decoration: none;
 }
-#chritsmas .each-type-product:hover{
+.each-type-product:hover{
     background-color: #ccc;
 }
-#chritsmas .each-type-product:hover .detail-product{
+.each-type-product:hover .detail-product{
     display: block;
     cursor: pointer;
     transition: 0.2s linear;
     box-shadow: 0 0 10px rgba(0,0, 0, 0.3);
 }
-#chritsmas .logIn-btn > .nav-link{
+.logIn-btn > .nav-link{
     margin: 15px;
     background-color: transparent;
 }
-#chritsmas .logIn-btn .list-infor-user li{
+.logIn-btn .list-infor-user li{
     list-style-type: none;
     text-align: left;
     margin-right: 40px;
 }
-#chritsmas .logIn-btn .list-infor-user{
+.logIn-btn .list-infor-user{
     position: absolute;
     top: 100%;
     right: 0;
@@ -116,26 +112,26 @@
     font-size: 16px;
     display: none;
 }
-#chritsmas .logIn-btn:hover .list-infor-user{
+.logIn-btn:hover .list-infor-user{
     display: block;
 }
-#chritsmas .logIn-btn .list-infor-user .nav-link{
+.logIn-btn .list-infor-user .nav-link{
     width: 100% !important;
 }
-#chritsmas .logIn-btn .list-infor-user .nav-link:hover{
+.logIn-btn .list-infor-user .nav-link:hover{
     background-color: #ccc;
 }
-#chritsmas .cartandlogin{
+.cartandlogin{
     display: flex;
 }
-#chritsmas .cartandlogin a[href="/ShoppingCart"]
+.cartandlogin a[href="/ShoppingCart"]
 {
 
     position: relative;
     cursor: pointer;
 
 }
-#chritsmas .cartandlogin a[href="/ShoppingCart"] span{
+.cartandlogin a[href="/ShoppingCart"] span{
     height: 15px;
     width: 15px;
     position: absolute;
@@ -149,20 +145,20 @@
     justify-content: center;
     font-size: 10px;
 }
-#chritsmas .cartandlogin button{
+.cartandlogin button{
     border: none;
     background: none;
 }
-#chritsmas .cartandlogin .nav-link[href="/ShoppingCart"]
+.cartandlogin .nav-link[href="/ShoppingCart"]
 {
     padding: 0;
     line-height: 70px;
 }
-#chritsmas .sidebar-icon
+.sidebar-icon
 {
     display: none;
 }
-#chritsmas .nav_overlay {
+.nav_overlay {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -172,7 +168,7 @@
     display: none;
     animation: fadeIn linear 0.2s;
 }
-#chritsmas .nav_overlay1 {
+.nav_overlay1 {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -182,7 +178,7 @@
     display: none;
     animation: fadeIn linear 0.2s;
 }
-#chritsmas .nav-mobile{
+.nav-mobile{
     position: fixed;
     top: 0;
     left: 0;
@@ -194,37 +190,37 @@
     opacity: 0;
     overflow-y: scroll;
 }
-#chritsmas ul.nav-mobile-list{
+ul.nav-mobile-list{
     margin-top: 20px;
     margin-left: 15px;
     padding: 0;
     text-align: left;
 }
-#chritsmas .nav-mobile-list .nav-link{
+.nav-mobile-list .nav-link{
     font-size: 1.2em;
 }
-#chritsmas .nav-mobile-close img{
+.nav-mobile-close img{
     position: absolute;
     top: 0.7rem;
     right: 0.7rem;
     width: 28px;
     height: 28px;
 }
-#chritsmas .nav-mobile-input{
+.nav-mobile-input{
     display: none;
 }
-#chritsmas .nav-mobile-input:checked ~ .nav_overlay{
+.nav-mobile-input:checked ~ .nav_overlay{
     display: block;
 }
-#chritsmas .nav-mobile-input:checked ~ .nav-mobile{
+.nav-mobile-input:checked ~ .nav-mobile{
     transform: translateX(0);
     transition: all 0.2s linear;
     opacity: 1;
 }
-#chritsmas .searchicon{
+.searchicon{
     display: none;
 }
-#chritsmas .nav-mobile-search{
+.nav-mobile-search{
     position: fixed;
     top: 0;
     left: 0;
@@ -233,42 +229,42 @@
     background-color: #fff;
     display: none;
 }
-#chritsmas .mobile-search{
+.mobile-search{
     margin-top: 20px;
 }
-#chritsmas .search-input{
+.search-input{
     display: none;
 }
-#chritsmas .search-input:checked ~ .nav-mobile-search{
+.search-input:checked ~ .nav-mobile-search{
     display: block;
 }
-#chritsmas .search-input:checked ~ .nav_overlay1{
+.search-input:checked ~ .nav_overlay1{
     display: block;
 }
-#chritsmas .mobile-search .form-control{
+.mobile-search .form-control{
     width: 70% !important;
     margin: 0 auto;
 }
-#chritsmas .mobile-search .btn{
+.mobile-search .btn{
     margin-top: 20px;
 }
-#chritsmas .mobile-product{
+.mobile-product{
     display: flex;
     justify-content: space-between;
 }
-#chritsmas .mobile-product img{
+.mobile-product img{
     width: 20px;
     height: 20px;
     margin-right: 20px;
     margin-top: 5px;
 }
-#chritsmas .type-mobile-product{
+.type-mobile-product{
     display: none;
 }
-#chritsmas .product-list-mobile{
+.product-list-mobile{
     display: none;
 }
-#chritsmas .product-list-mobile:checked ~ .type-mobile-product
+.product-list-mobile:checked ~ .type-mobile-product
 {
     display: block;
 }
@@ -277,40 +273,40 @@
 
 @media only screen and (min-width: 46.25em) and (max-width: 64.2em) {
 
-    #chritsmas .navbar-nav{
+    .navbar-nav{
         display: none !important;
     }
-    #chritsmas .lovelists{
+    .lovelists{
         display: none !important;
     }
-    #chritsmas .search{
+    .search{
         display: none;
     }
-    #christmas .navbar-brand
+    .navbar-brand
     {
         width: 125px;
         margin: 0 !important;
     }
-    #chritsmas .navbar-brand img
+    .navbar-brand img
     {
         display: none;
     }
-    #chritsmas .sidebar-icon {
+    .sidebar-icon {
         display: flex;
     }
-    #chritsmas .sidebar-icon img{
+    .sidebar-icon img{
         width: 24px;
         height: 24px;
         margin: 0 10px;
     }
-    #chritsmas .logIn-btn > .nav-link{
+    .logIn-btn > .nav-link{
         margin: 0;
         background-color: transparent;
     }
-    #chritsmas .searchicon{
+    .searchicon{
         display: block;
     }
-    #chritsmas label img:hover{
+    label img:hover{
         cursor: pointer;
     }
 }
@@ -325,41 +321,41 @@
 
 @media only screen and (max-width: 46.1875em)
 {
-    #chritsmas .nav-mobile{
+    .nav-mobile{
         right: 0;
         width: 100%;
     }
-    #chritsmas .navbar-nav{
+    .navbar-nav{
         display: none !important;
     }
-    #chritsmas .lovelists{
+    .lovelists{
         display: none !important;
     }
-    #chritsmas .search{
+    .search{
         display: none;
     }
-    #chritsmas .navbar-brand
+    .navbar-brand
     {
         width: 125px;
         margin: 0 !important;
     }
-    #chritsmas .navbar-brand img
+    .navbar-brand img
     {
         display: none;
     }
-    #chritsmas .sidebar-icon {
+    .sidebar-icon {
         display: flex;
     }
-    #chritsmas .sidebar-icon img{
+    .sidebar-icon img{
         width: 24px;
         height: 24px;
         margin: 0 10px;
     }
-    #chritsmas .logIn-btn > .nav-link{
+    .logIn-btn > .nav-link{
         margin: 0;
         background-color: transparent;
     }
-    #chritsmas .searchicon{
+    .searchicon{
         display: block;
     }
 

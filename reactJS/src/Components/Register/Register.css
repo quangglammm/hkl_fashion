@@ -1,9 +1,8 @@
 .regismain {
-    background: url("../Images/bg-noel-2.jpg") no-repeat center center;
+    background: url("../Images/banner/slider5.jpg") no-repeat center center;
     background-attachment: fixed;
     background-size: cover;
     height: 100vh;
-    
 }
 .regismain a {
     color: white;

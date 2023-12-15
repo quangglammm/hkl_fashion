@@ -205,7 +205,7 @@ function HeaderChristmas(props) {
                             width: "40%",
                         }}
                     >
-                        Tìm kiếm
+                        Tìm
                     </Button>
                 </Form>
                 {/* <Nav.Link

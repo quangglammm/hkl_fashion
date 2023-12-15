@@ -1,10 +1,7 @@
 .navbar{
     padding: 0 !important;
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    z-index: 1;
+    height: 60px;
 }
 .navbar-light .navbar-nav .nav-link {
     color: black !important;
@@ -17,10 +14,8 @@
     border-bottom: 1px black;
 }
 .navbar-brand img{
-
-    height: 64px;
+    height: 60px;
     border: 1px solid transparent;
-
     position: relative;
     left: 1.5rem;
 }

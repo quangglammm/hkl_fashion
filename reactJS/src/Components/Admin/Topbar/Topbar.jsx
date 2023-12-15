@@ -3,7 +3,7 @@
 import React from 'react'
 import './Topbar.css';
 import { NotificationsNone, Language, Settings } from '@mui/icons-material';
-import logopj from '../../Images/logo-no-background.png';
+import logopj from '../../Images/logoChristmas.png';
 export default function Topbar() {
   return (
     <div className='topbar'>

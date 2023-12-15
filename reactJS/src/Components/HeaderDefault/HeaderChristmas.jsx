@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import CatagoryDataService from "../../services/catagories";
-import "./HeaderChristmas.css";
+import "./HeaderDefault.css";
 import shoppingIcon from "../Images/shopping-icon.png";
-import Logo from "../Images/logo-no-background.png";
+// import Logo from "../Images/logoDefault.png";
+import Logo from "../Images/logoChristmas.png";
 import { useNavigate } from "react-router-dom";
 import ListTypeProduct from "../ListTypeProduct/ListTypeProduct";
 import ListTypeProductMobile from "../ListTypeProductMobile/ListTypeProductMobile";
@@ -22,11 +23,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { getToTals } from "../../redux/cartSlide";
 import { logout } from "../../redux/credentials";
 
-function HeaderChristmas(props) {
+function HeaderDefault(props) {
     const user = JSON.parse(localStorage.getItem("user"));
 
     let navigate = useNavigate();
-
+    var loveList = "/FavoriteProduct";
+    if (window.localStorage.getItem("Email") == null) {
+        loveList = "/Login";
+    }
 
     function LoginclickHandler() {
         if (!user) {
@@ -80,8 +84,8 @@ function HeaderChristmas(props) {
     // setTimeout(Logout, 1800000)
 
     return (
-        <Navbar bg="light" expand="lg" fixed="top" id="christmas">
-            <Container fluid >
+        <Navbar bg="light" expand="lg" fixed="top" id="default">
+            <Container fluid>
                 <div className="sidebar-icon">
                     <label htmlFor="nav-mobile-input">
                         <img src={sidebaricon} alt="sidebaricon" />
@@ -137,13 +141,16 @@ function HeaderChristmas(props) {
                             ))}
                         </ul>
                         <hr />
-
+                        {/* <Nav.Link href="/Outfits">Bộ phối</Nav.Link> */}
                         <hr />
                         <Nav.Link href="/AboutUs">Giới thiệu</Nav.Link>
                         <hr />
-
+                        {/* <Nav.Link href="/Blogs">Bài viết</Nav.Link> */}
                         <hr />
-
+                        {/* <Nav.Link href={loveList}>
+                            {" "}
+                            Sản phẩm yêu thích{" "}
+                        </Nav.Link> */}
                     </ul>
                 </div>
                 <div className="nav-mobile-search">
@@ -153,7 +160,7 @@ function HeaderChristmas(props) {
                     <Form className="mobile-search">
                         <Form.Control
                             type="search"
-                            placeholder="Search"
+                            placeholder="Tìm kiếm"
                             className="me-2"
                             aria-label="Search"
                             onChange={(e) => setSearch(e.target.value)}
@@ -161,9 +168,8 @@ function HeaderChristmas(props) {
                         <Button
                             variant="outline-success"
                             onClick={handleSearch}
-                            sx={{ color: "white" }}
                         >
-                            Search
+                            Tìm
                         </Button>
                     </Form>
                 </div>
@@ -196,25 +202,14 @@ function HeaderChristmas(props) {
                         onChange={(e) => setSearch(e.target.value)}
                         onKeyDown={handleKeyDown}
                     />
-                    <Button
-                        variant="outline-success"
-                        onClick={handleSearch}
-                        style={{
-                            color: "white",
-                            border: "1px solid white",
-                            width: "40%",
-                        }}
-                    >
-                        Tìm kiếm
+                    <Button className="ml-2" variant="outline-success" onClick={handleSearch}>
+                        Tìm
                     </Button>
                 </Form>
-                {/* <Nav.Link
-          className="lovelists"
-          href={loveList}
-        >
-          {" "}
-          Sản phẩm yêu thích{" "}
-        </Nav.Link> */}
+                {/* <Nav.Link className="lovelists" href={loveList}>
+                    {" "}
+                    Sản phẩm yêu thích{" "}
+                </Nav.Link> */}
                 <div className="cartandlogin">
                     <Nav.Link href="/ShoppingCart">
                         <img src={shoppingIcon} alt="cart" />
@@ -252,4 +247,4 @@ function mapDispatchToProps(dispatch) {
     return {};
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderChristmas);
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderDefault);

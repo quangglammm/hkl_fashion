@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import "./FooterDefault.css";
-import logo from "../Images/backgroundblack.png";
+import logo from "../Images/logoDefault.png";
 import fb from "../Images/icon/fb.png";
 import ins from "../Images/icon/ins.png";
 import yt from "../Images/icon/yt.png";
@@ -34,7 +34,7 @@ function FooterDefault() {
     };
 
     return (
-        <div className="footer">
+        <div className="footer" id="default">
             <div className="footer_infor">
                 <div className="footer__infor-introduce">
                     <div className="footer__infor-introduce-name name">

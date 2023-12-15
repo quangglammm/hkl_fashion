@@ -1,6 +1,6 @@
 import "./Register.css";
 import React, { useState } from "react";
-import logo from "../Images/logo-no-background.png";
+import logo from "../Images/logoDefault.png";
 import { useNavigate } from "react-router-dom";
 import { NavLink as Link } from "react-router-dom";
 import axios from "axios";

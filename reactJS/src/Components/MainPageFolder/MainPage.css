@@ -1,5 +1,8 @@
 .mainPage {
     padding-bottom: 24px;
+    /* background: url('../Images/banner/bannerChristmas.png') no-repeat center center;
+    background-size: contain;
+    background-attachment: fixed; */
 }
 /* Banner */
 .slider .slide img{
@@ -11,6 +14,7 @@
 .onSale {
     width: 80%;
     margin: auto;
+    background-color: white;
 }
 .title-name {
     font-size: 24px;
@@ -24,11 +28,7 @@
 .onSale_product .non-mobile .slick-slider .slick-list .slick-track .slick-slide{
     width: 270px !important;
 }
-/* .slick-slide{
-    width: 270px !important;
-} */
-.slick-prev:before, .slick-next:before
-{
+.slick-prev:before, .slick-next:before {
     color: black !important;
 }
 .img-mobile{

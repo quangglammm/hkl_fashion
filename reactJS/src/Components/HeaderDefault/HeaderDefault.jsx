@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import CatagoryDataService from "../../services/catagories";
 import "./HeaderDefault.css";
 import shoppingIcon from "../Images/shopping-icon.png";
-import Logo from "../Images/backgroundblack.png";
+import Logo from "../Images/logoDefault.png";
+// import Logo from "../Images/logoChristmas.png";
 import { useNavigate } from "react-router-dom";
 import ListTypeProduct from "../ListTypeProduct/ListTypeProduct";
 import ListTypeProductMobile from "../ListTypeProductMobile/ListTypeProductMobile";
@@ -159,7 +160,7 @@ function HeaderDefault(props) {
                     <Form className="mobile-search">
                         <Form.Control
                             type="search"
-                            placeholder="Search"
+                            placeholder="Tìm kiếm"
                             className="me-2"
                             aria-label="Search"
                             onChange={(e) => setSearch(e.target.value)}
@@ -168,7 +169,7 @@ function HeaderDefault(props) {
                             variant="outline-success"
                             onClick={handleSearch}
                         >
-                            Search
+                            Tìm
                         </Button>
                     </Form>
                 </div>
@@ -195,14 +196,14 @@ function HeaderDefault(props) {
                 <Form className="search">
                     <Form.Control
                         type="search"
-                        placeholder="Search"
+                        placeholder="Tìm kiếm"
                         className="me-2"
                         aria-label="Search"
                         onChange={(e) => setSearch(e.target.value)}
                         onKeyDown={handleKeyDown}
                     />
-                    <Button variant="outline-success" onClick={handleSearch}>
-                        Search
+                    <Button className="ml-2" variant="outline-success" onClick={handleSearch}>
+                        Tìm
                     </Button>
                 </Form>
                 {/* <Nav.Link className="lovelists" href={loveList}>

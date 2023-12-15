@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import "./FooterChristmas.css";
-import logo from "../Images/logo-no-background.png";
+import logo from "../Images/logoChristmas.png";
 import fb from "../Images/icon/fb.png";
 import ins from "../Images/icon/ins.png";
 import yt from "../Images/icon/yt.png";

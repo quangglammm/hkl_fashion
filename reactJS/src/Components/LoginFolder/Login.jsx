@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button, Modal} from "react-bootstrap";
 import { useNavigate, Link } from "react-router-dom";
 import { connect } from "react-redux";
-import logo from "../Images/logo-no-background.png";
+import logo from "../Images/logoDefault.png";
 import "./Login.css";
 
 function Login(props) {

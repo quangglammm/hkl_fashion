@@ -6,8 +6,8 @@ import banner5 from "../Images/banner/banner5.png";
 
 export const sliderData=[
   {image: banner1},
-  // {image: banner2},
-  // {image: banner3},
-  // {image: banner4},
-  // {image: banner5},
+  {image: banner2},
+  {image: banner3},
+  {image: banner4},
+  {image: banner5},
 ]

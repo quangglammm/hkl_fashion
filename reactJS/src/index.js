@@ -8,10 +8,11 @@ import App from "./App";
 import "bootstrap/dist/css/bootstrap.css";
 import "./index.css";
 import Layout from "./Components/Layout";
+// import Layout from "./Components/LayoutChristmas";
 import LayoutAdmin from "./Components/LayoutAdmin";
 
-import SliderDefault from "./Components/Slideshow/Slideshow";
-
+import Banner from "./Components/Banner/Banner.jsx";
+import BannerChristmas from "./Components/BannerChristmas/BannerChristmas.jsx";
 // lazy
 const MainPage = lazy(() => import("./Components/MainPageFolder/MainPage"));
 const Products = lazy(() => import("./Components/ProductFolder/Products"));
@@ -66,7 +67,8 @@ const router = createBrowserRouter([
                 path: "/",
                 element: (
                     <Layout>
-                        <SliderDefault />
+                        <Banner />
+                        {/* <BannerChristmas /> */}
                         <MainPage />
                     </Layout>
                 ),

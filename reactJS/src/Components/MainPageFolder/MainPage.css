@@ -1,5 +1,5 @@
 .mainPage {
-    /* padding-bottom: 24px; */
+    /* padding-top: 20px; */
 }
 /* Banner */
 .slider .slide img{
@@ -17,6 +17,7 @@
     padding: 8px;
     text-transform: uppercase;
     font-weight: bolder;
+    text-shadow: 1px 1px 3px  black;
 }
 .newProducts_product .non-mobile .slick-slider .slick-list .slick-track .slick-slide,
 .bestSeller_product .non-mobile .slick-slider .slick-list .slick-track .slick-slide,
@@ -68,6 +69,9 @@
     left: 0;
     z-index: -1;
     background: rgba(255, 255, 255, 0.6); /* Màu đen với độ trong suốt 50% */
+  }
+  .newProducts {
+    padding-top: 40px;
   }
 @media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
     .slick-next::before{

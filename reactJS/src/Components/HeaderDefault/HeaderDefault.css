@@ -71,6 +71,15 @@
 .search{
     display: flex;
 }
+.search button {
+    background-color: #39a853d2;
+    color: white;
+    transition: all 0.2s ease-in-out;
+}
+.search button:hover {
+    background-color: #28a745;
+    box-shadow: 0 0 6px 0 #28a745;
+}
 .search input[type='search']{
     height: auto;
 }

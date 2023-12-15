@@ -176,7 +176,7 @@ a:hover {
 }
 .all-product-store{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     row-gap: 70px;
     column-gap: 15px;
     padding: 0 40px;
@@ -186,9 +186,6 @@ a:hover {
 .product_containerItem .containerItem:hover .containerItem_name{
     color: #f07b00;
     text-decoration: none;
-}
-.containerItem .nameandprice{
-    width: 320px;
 }
 .product_containerItem .containerItem .ContainerItem_image{
     width: 100%;

@@ -5,10 +5,7 @@ import './Banner.css';
 export default class Banner extends Component {
   render() {
     const settings = {
-        className: "center",
-        centerMode: true,
         infinite: true,
-        centerPadding: "80px",
         slidesToShow: 1,
         autoplay: true,
         slidesToScroll: 1,

@@ -9,6 +9,9 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./index.css";
 import Layout from "./Components/Layout";
 import LayoutAdmin from "./Components/LayoutAdmin";
+
+import SliderDefault from "./Components/Slideshow/Slideshow";
+
 // lazy
 const MainPage = lazy(() => import("./Components/MainPageFolder/MainPage"));
 const Products = lazy(() => import("./Components/ProductFolder/Products"));
@@ -52,228 +55,231 @@ const NewTypeProduct = lazy(() =>
 );
 const OrderDetail = lazy(() => import("./Components/OrderDetail/OrderDetail"));
 
+
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
+    {
         path: "/",
-        element: (
-          <Layout>
-            <MainPage />
-          </Layout>
-        ),
-      },
-      {
-        path: "MainPage",
-        element: (
-          <Layout>
-            <MainPage />
-          </Layout>
-        ),
-      },
-      {
-        path: "Products",
-        element: (
-          <Layout>
-            <Products />
-          </Layout>
-        ),
-      },
-      {
-        path: "AboutUs",
-        element: (
-          <Layout>
-            <AboutUs />
-          </Layout>
-        ),
-      },
-      {
-        path: "ShoppingCart",
-        element: (
-          <Layout>
-            <Shopping />
-          </Layout>
-        ),
-      },
+        element: <App />,
+        errorElement: <ErrorPage />,
+        children: [
+            {
+                path: "/",
+                element: (
+                    <Layout>
+                        <SliderDefault />
+                        <MainPage />
+                    </Layout>
+                ),
+            },
+            {
+                path: "MainPage",
+                element: (
+                    <Layout>
+                        <MainPage />
+                    </Layout>
+                ),
+            },
 
-      {
-        path: "Login",
-        element: (
-          <Layout>
-            <Login />
-          </Layout>
-        ),
-      },
-      {
-        path: "Register",
-        element: (
-          <Layout>
-            <Register />
-          </Layout>
-        ),
-      },
-      {
-        path: "ShipAddress",
-        element: (
-          <Layout>
-            <ShipAddress />
-          </Layout>
-        ),
-      },
+            {
+                path: "Products",
+                element: (
+                    <Layout>
+                        <Products />
+                    </Layout>
+                ),
+            },
+            {
+                path: "AboutUs",
+                element: (
+                    <Layout>
+                        <AboutUs />
+                    </Layout>
+                ),
+            },
+            {
+                path: "ShoppingCart",
+                element: (
+                    <Layout>
+                        <Shopping />
+                    </Layout>
+                ),
+            },
 
-      {
-        path: "Account",
-        element: (
-          <Layout>
-            <Account />
-          </Layout>
-        ),
-      },
-      {
-        path: "Products/:productID",
-        element: (
-          <Layout>
-            <ProductDetails />
-          </Layout>
-        ),
-      },
-      {
-        path: "Products/Type/:typeID",
-        element: (
-          <Layout>
-            <TypeProduct />
-          </Layout>
-        ),
-      },
-      {
-        path: "Products/TypeDetail/:typedetailID",
-        element: (
-          <Layout>
-            <TypeProductDetail />
-          </Layout>
-        ),
-      },
+            {
+                path: "Login",
+                element: (
+                    <Layout>
+                        <Login />
+                    </Layout>
+                ),
+            },
+            {
+                path: "Register",
+                element: (
+                    <Layout>
+                        <Register />
+                    </Layout>
+                ),
+            },
+            {
+                path: "ShipAddress",
+                element: (
+                    <Layout>
+                        <ShipAddress />
+                    </Layout>
+                ),
+            },
 
-      {
-        path: "OrderDetail/:orderID",
-        element: (
-          <Layout>
-            <OrderDetail />
-          </Layout>
-        ),
-      },
-      {
-        path: "Search",
-        element: (
-          <Layout>
-            <Search />
-          </Layout>
-        ),
-      },
-      // ==========================================================================================
-      // =======================================ADMIN ROUTES=======================================
-      // ==========================================================================================
-      {
-        path: "admin",
-        element: (
-          <LayoutAdmin>
-            <Home />
-          </LayoutAdmin>
-        ),
-      },
-      {
-        path: "admin/Users",
-        element: (
-          <LayoutAdmin>
-            <UserList />
-          </LayoutAdmin>
-        ),
-      },
-      {
-        path: "admin/User/:userId",
-        element: (
-          <LayoutAdmin>
-            <User />
-          </LayoutAdmin>
-        ),
-      },
-      {
-        path: "admin/NewUser",
-        element: (
-          <LayoutAdmin>
-            <NewUser />
-          </LayoutAdmin>
-        ),
-      },
-      {
-        path: "admin/Orders",
-        element: (
-          <LayoutAdmin>
-            <Orders />
-          </LayoutAdmin>
-        ),
-      },
-      {
-        path: "admin/Orders/:orderId",
-        element: (
-          <LayoutAdmin>
-            <OrderDetailAdmin />
-          </LayoutAdmin>
-        ),
-      },
-      {
-        path: "admin/TypeProducts",
-        element: (
-          <LayoutAdmin>
-            <TypeProductList />
-          </LayoutAdmin>
-        ),
-      },
-      {
-        path: "admin/TypeProduct/:typeProductId",
-        element: (
-          <LayoutAdmin>
-            <TypeProductEdit />
-          </LayoutAdmin>
-        ),
-      },
-      {
-        path: "admin/NewTypeProduct",
-        element: (
-          <LayoutAdmin>
-            <NewTypeProduct />
-          </LayoutAdmin>
-        ),
-      },
-      {
-        path: "admin/Products/:typeProductId",
-        element: (
-          <LayoutAdmin>
-            <ProductList />
-          </LayoutAdmin>
-        ),
-      },
-      {
-        path: "admin/Product/:productId",
-        element: (
-          <LayoutAdmin>
-            <Product />
-          </LayoutAdmin>
-        ),
-      },
-      {
-        path: "admin/NewProduct/:typeProductId",
-        element: (
-          <LayoutAdmin>
-            <NewProduct />
-          </LayoutAdmin>
-        ),
-      },
-    ],
-  },
+            {
+                path: "Account",
+                element: (
+                    <Layout>
+                        <Account />
+                    </Layout>
+                ),
+            },
+            {
+                path: "Products/:productID",
+                element: (
+                    <Layout>
+                        <ProductDetails />
+                    </Layout>
+                ),
+            },
+            {
+                path: "Products/Type/:typeID",
+                element: (
+                    <Layout>
+                        <TypeProduct />
+                    </Layout>
+                ),
+            },
+            {
+                path: "Products/TypeDetail/:typedetailID",
+                element: (
+                    <Layout>
+                        <TypeProductDetail />
+                    </Layout>
+                ),
+            },
+
+            {
+                path: "OrderDetail/:orderID",
+                element: (
+                    <Layout>
+                        <OrderDetail />
+                    </Layout>
+                ),
+            },
+            {
+                path: "Search",
+                element: (
+                    <Layout>
+                        <Search />
+                    </Layout>
+                ),
+            },
+            // ==========================================================================================
+            // =======================================ADMIN ROUTES=======================================
+            // ==========================================================================================
+            {
+                path: "admin",
+                element: (
+                    <LayoutAdmin>
+                        <Home />
+                    </LayoutAdmin>
+                ),
+            },
+            {
+                path: "admin/Users",
+                element: (
+                    <LayoutAdmin>
+                        <UserList />
+                    </LayoutAdmin>
+                ),
+            },
+            {
+                path: "admin/User/:userId",
+                element: (
+                    <LayoutAdmin>
+                        <User />
+                    </LayoutAdmin>
+                ),
+            },
+            {
+                path: "admin/NewUser",
+                element: (
+                    <LayoutAdmin>
+                        <NewUser />
+                    </LayoutAdmin>
+                ),
+            },
+            {
+                path: "admin/Orders",
+                element: (
+                    <LayoutAdmin>
+                        <Orders />
+                    </LayoutAdmin>
+                ),
+            },
+            {
+                path: "admin/Orders/:orderId",
+                element: (
+                    <LayoutAdmin>
+                        <OrderDetailAdmin />
+                    </LayoutAdmin>
+                ),
+            },
+            {
+                path: "admin/TypeProducts",
+                element: (
+                    <LayoutAdmin>
+                        <TypeProductList />
+                    </LayoutAdmin>
+                ),
+            },
+            {
+                path: "admin/TypeProduct/:typeProductId",
+                element: (
+                    <LayoutAdmin>
+                        <TypeProductEdit />
+                    </LayoutAdmin>
+                ),
+            },
+            {
+                path: "admin/NewTypeProduct",
+                element: (
+                    <LayoutAdmin>
+                        <NewTypeProduct />
+                    </LayoutAdmin>
+                ),
+            },
+            {
+                path: "admin/Products/:typeProductId",
+                element: (
+                    <LayoutAdmin>
+                        <ProductList />
+                    </LayoutAdmin>
+                ),
+            },
+            {
+                path: "admin/Product/:productId",
+                element: (
+                    <LayoutAdmin>
+                        <Product />
+                    </LayoutAdmin>
+                ),
+            },
+            {
+                path: "admin/NewProduct/:typeProductId",
+                element: (
+                    <LayoutAdmin>
+                        <NewProduct />
+                    </LayoutAdmin>
+                ),
+            },
+        ],
+    },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

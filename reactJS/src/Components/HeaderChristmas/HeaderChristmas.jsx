@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CatagoryDataService from "../../services/catagories";
-import "./Header.css";
+import "./HeaderChristmas.css";
 import shoppingIcon from "../Images/shopping-icon.png";
 import Logo from "../Images/logo-no-background.png";
 import { useNavigate } from "react-router-dom";
@@ -22,7 +22,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getToTals } from "../../redux/cartSlide";
 import { logout } from "../../redux/credentials";
 
-function Header(props) {
+function HeaderChristmas(props) {
   const user = JSON.parse(localStorage.getItem("user"));
 
   let navigate = useNavigate();
@@ -298,4 +298,4 @@ function mapDispatchToProps(dispatch) {
   return {};
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderChristmas);

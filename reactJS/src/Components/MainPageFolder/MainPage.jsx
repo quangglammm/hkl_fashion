@@ -1,6 +1,6 @@
 import "./MainPage.css";
 import ContainerItem from "../ContainerItem";
-import Slideshow from "../Slideshow/Slideshow";
+// import Slideshow from "../Slideshow/Slideshow";
 import { useState, useEffect } from "react";
 import React from "react";
 import "slick-carousel/slick/slick.css";
@@ -48,7 +48,7 @@ function MainPage() {
     };
     return (
         <div className="mainPage">
-            <Slideshow />
+            {/* <Slideshow /> */}
             <div className="img-mobile">
                 <img src={imgmobile} alt="imgmobile" />
             </div>

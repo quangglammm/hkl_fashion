@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import "./Footer.css";
+import "./FooterChristmas.css";
 import logo from "../Images/logo-no-background.png";
 import fb from "../Images/icon/fb.png";
 import ins from "../Images/icon/ins.png";
@@ -10,7 +10,7 @@ import emailjs from '@emailjs/browser';
 import Accordion from 'react-bootstrap/Accordion';
 
 
-function Header() {
+function FooterChristmas() {
     const form = useRef();
     const sendEmail = (e) => {
         e.preventDefault();
@@ -31,7 +31,7 @@ function Header() {
             <div className="footer_infor">
                 <div className="footer__infor-introduce">
                     <div className="footer__infor-introduce-name name">Về chúng tôi </div>
-                    <div className="footer__infor-introduce-infor infor">HKLFashion&reg; 
+                    <div className="footer__infor-introduce-infor infor">HKLFashion&reg;
                         là trang mua sắm của thương hiệu HKLFashion&reg;,
                         chuyên các sản phẩm thời trang đẹp, thời thượng
                         giúp bạn tận hưởng cuộc sống thường nhật!</div>
@@ -122,4 +122,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default FooterChristmas;

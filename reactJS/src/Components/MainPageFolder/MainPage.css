@@ -1,8 +1,5 @@
 .mainPage {
-    padding-bottom: 24px;
-    /* background: url('../Images/banner/bannerChristmas.png') no-repeat center center;
-    background-size: contain;
-    background-attachment: fixed; */
+    /* padding-bottom: 24px; */
 }
 /* Banner */
 .slider .slide img{
@@ -12,14 +9,12 @@
 .newProducts,
 .bestSeller,
 .onSale {
-    width: 80%;
-    margin: auto;
-    background-color: white;
+    width: 100%;
+    margin: 0 auto;
+    padding: 80px 120px;
 }
 .title-name {
-    font-size: 24px;
-    padding: 24px 24px 0 24px;
-    margin-bottom: 0;
+    padding: 8px;
     text-transform: uppercase;
     font-weight: bolder;
 }
@@ -55,6 +50,25 @@
     display: none;
     flex-wrap: wrap;
 }
+.newProducts,
+.onSale {
+    background: url('../Images/banner/slider8.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 1;
+}
+.newProducts::before,
+.onSale::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.6); /* Màu đen với độ trong suốt 50% */
+  }
 @media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
     .slick-next::before{
         display: none;

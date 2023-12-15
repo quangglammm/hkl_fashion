@@ -31,7 +31,7 @@ export function ContainerItem(props) {
     <div className="containerItem">
       {/* // masp ở đây là cái éo gì mà đổi sang _id lại không chạyyyy */}
       <Link to={"/Products/" + props.masp} state={{ image: props.image }}>
-        <button>
+        
           <img
             src={props.image}
             alt="sanpham"
@@ -60,7 +60,6 @@ export function ContainerItem(props) {
               </span>
             </p>
           </div>
-        </button>
       </Link>
     </div>
   );

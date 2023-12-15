@@ -10,7 +10,7 @@
     transition: all 0.2s ease;
 }
 .regismain-content {
-    /* background: #cccccc1c; */
+    background: #cccccc70;
     height: 100%;
     display: flex;
     flex-wrap: wrap;

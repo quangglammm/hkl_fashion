@@ -45,18 +45,20 @@ function MainPage() {
         speed: 1000,
         slidesToShow: 4,
         slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        pauseOnHover: true
     };
     return (
         <div className="mainPage">
-            {/* <Slideshow /> */}
             <div className="img-mobile">
                 <img src={imgmobile} alt="imgmobile" />
             </div>
             <div className="newProducts">
                 <div className="newProducts_product product">
-                    <h3 className="newProducts_name title-name title-name-first">
+                    <h2 className="newProducts_name title-name title-name-first">
                         Sản phẩm mới
-                    </h3>
+                    </h2>
                     <div className="non-mobile">
                         <Slider {...settings}>
                             {newProducts.map((item) => (
@@ -83,7 +85,7 @@ function MainPage() {
             </div>
             <div className="bestSeller">
                 <div className="bestSeller_product product">
-                    <h3 className="bestSeller_name title-name">Bán chạy</h3>
+                    <h2 className="bestSeller_name title-name">Bán chạy</h2>
                     <div className="non-mobile">
                         <Slider {...settings}>
                             {topProducts.map((item, index) => (
@@ -110,7 +112,7 @@ function MainPage() {
             </div>
             <div className="onSale">
                 <div className="onSale_product product">
-                    <h3 className="onSale_name title-name">Giảm giá</h3>
+                    <h2 className="onSale_name title-name">Giảm giá</h2>
                     <div className="non-mobile">
                         <Slider {...settings}>
                             {discountProducts.map((item) => (

@@ -1,12 +1,20 @@
 /* Snowflakes.css */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-360deg); }
+  50% { transform: rotate(0deg); }
+
+  100% { transform: rotate(360deg); }
+}
 .snowflake {
     position: fixed;
-    top: -10px;
-    color: #dddcdc;
+    top: -50px;
+    color: rgb(223, 223, 223);
     user-select: none;
     z-index: 9999;
+    font-weight: 800;
     opacity: 0;
-    animation-name: snowfall, drift;
+    animation-name: snowfall, drift,spin;
     animation-timing-function: linear;
   }
   
@@ -20,7 +28,7 @@
     }
     100% {
       top: 100%;
-      opacity: 0.2;
+      opacity: 0.4;
     }
   }
   

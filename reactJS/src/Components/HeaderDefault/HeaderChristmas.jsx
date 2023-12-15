@@ -81,10 +81,12 @@ function HeaderDefault(props) {
 
         navigate("/Login");
     };
-    // setTimeout(Logout, 1800000)
+    // setTimeout(Logout, 1800000)background: rgb(2,0,36);
+
 
     return (
-        <Navbar bg="light" expand="lg" fixed="top" id="default">
+        <Navbar bg="light" expand="lg" fixed="top" id="christmast" style={{backgroundColor: "rgb(2,0,36)",
+            background: 'linear-gradient(51deg, rgba(2,0,36,1) 0%, rgba(83,254,138,1) 0%, rgba(255,77,0,1) 100%)'}}>
             <Container fluid>
                 <div className="sidebar-icon">
                     <label htmlFor="nav-mobile-input">

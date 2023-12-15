@@ -8,7 +8,10 @@ import tiktok from "../Images/icon/tiktok.png";
 import { NavLink as Link } from "react-router-dom";
 import emailjs from '@emailjs/browser';
 import Accordion from 'react-bootstrap/Accordion';
-
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 function FooterChristmas() {
     const form = useRef();
@@ -27,7 +30,7 @@ function FooterChristmas() {
     };
 
     return (
-        <div className="footer" id="christmas">
+ <div className="footer" id="christmas overlay" >
             <div className="christmas footer_infor">
                 <div className="footer__infor-introduce">
                     <div className="footer__infor-introduce-name name">Về chúng tôi </div>
@@ -43,8 +46,8 @@ function FooterChristmas() {
                         HKLFashion&reg; /SỰ KHỞI ĐẦU/<br />
                         Chính sách bảo hành<br />
                         Phương thức thanh toán<br />
-                        <a href="https://tinhte.vn/" target="_blank" rel="noreferrer">Tinhte.vn</a>
-                        <a href="https://kenh14.vn/" target="_blank" rel="noreferrer">Kenh14.vn</a>
+                        <a href="https://tinhte.vn/" style={{color:'white'}} target="_blank" rel="noreferrer">Tinhte.vn</a>
+                        <a href="https://kenh14.vn/" style={{color:'white'}} target="_blank" rel="noreferrer">Kenh14.vn</a>
                     </div>
                 </div>
 
@@ -70,10 +73,10 @@ function FooterChristmas() {
                         <input type="Submit" value="Đăng ký"></input>
                     </form>
                     <div className="social-icon">
-                        <a href="https://www.facebook.com/noithatfudo"> <img src={fb} alt="fb" /> </a>
-                        <a href="https://www.facebook.com/noithatfudo"><img src={ins} alt="fb" /></a>
-                        <a href="https://www.facebook.com/noithatfudo"><img src={yt} alt="fb" /></a>
-                        <a href="https://www.facebook.com/noithatfudo"><img src={tiktok} alt="fb" /></a>
+                        <a href="https://www.facebook.com/noithatfudo"> <FacebookRoundedIcon fontSize="large" style={{color:'white'}} /> </a>
+                        <a href="https://www.facebook.com/noithatfudo"><YouTubeIcon fontSize="large" style={{color:'white'}}/></a>
+                        <a href="https://www.facebook.com/noithatfudo"><InstagramIcon fontSize="large" style={{color:'white'}}/></a>
+                        <a href="https://www.facebook.com/noithatfudo"><LinkedInIcon fontSize="large" style={{color:'white'}}/></a>
                     </div>
                 </div>
             </div>
@@ -119,6 +122,8 @@ function FooterChristmas() {
                 <p>Copyright &copy; 2023 HKLFashion&reg;. Powered by HKL Fashion</p>
             </div>
         </div>
+        
+       
     );
 }
 

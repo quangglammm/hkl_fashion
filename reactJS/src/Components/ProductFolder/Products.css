@@ -188,7 +188,7 @@ a:hover {
     text-decoration: none;
 }
 .containerItem .nameandprice{
-    width: 50%;
+    width: 320px;
 }
 .product_containerItem .containerItem .ContainerItem_image{
     width: 100%;
@@ -199,7 +199,6 @@ a:hover {
     font-size: 18px;
     font-weight: 600;
     color: #000;
-    text-align: center;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -250,10 +249,8 @@ font-size: 18px;
 padding: 10px 15px;
 }
 .page{
-    /* margin-left: 40%;*/
     display: flex;
     justify-content: center;
-
 }
 .visually-hidden{
 display: none;
@@ -263,24 +260,16 @@ display: none;
         grid-template-columns: 1fr 1fr;
         row-gap: 50px;
     }
-    .page {
-        margin-left: 40% !important;
-    }
 }
-@media only screen and (max-width: 46.1875em)
-{
+@media only screen and (max-width: 46.1875em) {
     .all-product-store{
-        grid-template-columns: 1fr 1fr;
-        row-gap: 60px;
-        padding-bottom: 2rem;
+        grid-template-columns: 1fr;
+        padding: 0 0 2rem;
     }
     .offcanvas.offcanvas-start{
         right: 0;
         bottom: 0;
         top: 0;
         left: 0;
-    }
-    .page {
-        margin-left: 25% !important;
     }
 }

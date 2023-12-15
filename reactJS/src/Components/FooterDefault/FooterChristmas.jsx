@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import "./FooterChristmas.css";
+import "./FooterDefault.css";
 import logo from "../Images/logoChristmas.png";
 import fb from "../Images/icon/fb.png";
 import ins from "../Images/icon/ins.png";
@@ -28,7 +28,7 @@ function FooterChristmas() {
 
     return (
         <div className="footer" id="christmas">
-            <div className="footer_infor">
+            <div className="christmas footer_infor">
                 <div className="footer__infor-introduce">
                     <div className="footer__infor-introduce-name name">Về chúng tôi </div>
                     <div className="footer__infor-introduce-infor infor">HKLFashion&reg;

@@ -2,6 +2,11 @@
     display: flex;
     flex-direction: column;
 }
+.christmas.footer_infor {
+    background: url("../Images/banner/bannerChristmas.png") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
 .footer,
 .footer_copyright {
     border-top: solid 1px rgba(125, 125, 125, 0.5);

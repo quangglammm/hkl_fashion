@@ -10,7 +10,7 @@
     transition: all 0.2s ease;
 }
 .loginmain-content {
-    /* background: #cccccc1c; */
+    background: #cccccc1c;
     height: 100%;
     display: flex;
     flex-wrap: wrap;

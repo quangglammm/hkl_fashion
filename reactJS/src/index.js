@@ -7,8 +7,8 @@ import ErrorPage from "./Components/Error/error-page";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.css";
 import "./index.css";
-import Layout from "./Components/Layout";
-import LayoutChristmas from "./Components/LayoutChristmas";
+// import Layout from "./Components/Layout";
+import Layout from "./Components/LayoutChristmas";
 import LayoutAdmin from "./Components/LayoutAdmin";
 
 import Banner from "./Components/Banner/Banner.jsx";
@@ -66,11 +66,11 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: (
-                    <LayoutChristmas>
+                    <Layout>
                         {/* <Banner /> */}
                         <BannerChristmas />
                         <MainPage />
-                    </LayoutChristmas>
+                    </Layout>
                 ),
             },
             {

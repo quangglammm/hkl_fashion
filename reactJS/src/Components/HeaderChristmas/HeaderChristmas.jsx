@@ -81,7 +81,7 @@ function HeaderChristmas(props) {
 
     return (
         <Navbar bg="light" expand="lg" fixed="top" id="christmas">
-            <Container fluid id="christmas">
+            <Container fluid >
                 <div className="sidebar-icon">
                     <label htmlFor="nav-mobile-input">
                         <img src={sidebaricon} alt="sidebaricon" />
@@ -114,7 +114,7 @@ function HeaderChristmas(props) {
                     >
                         <img src={close} alt="close" />
                     </label>
-                    <ul className="nav-mobile-list" id="christmas">
+                    <ul className="nav-mobile-list">
                         <Nav.Link href="/">Trang chủ</Nav.Link>
                         <hr />
                         <div className="mobile-product">

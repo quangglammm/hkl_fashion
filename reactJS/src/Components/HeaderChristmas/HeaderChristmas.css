@@ -1,4 +1,4 @@
-#christmas .navbar{
+#christmas.navbar{
     background: url("../Images/background.png") repeat-x;
     background-size: cover;
     padding: 0 !important;
@@ -28,7 +28,7 @@
     position: relative;
     left: 1.5rem;
 }
-#chritsmas .type-product{
+#christmas .type-product{
     position: absolute;
     list-style-type: none;
     display: none;
@@ -37,34 +37,34 @@
     background-color: white;
     min-width: 150px;
 }
-#chritsmas .type-product a{
+#christmas .type-product a{
     color: black;
     text-decoration: none;
 }
-#chritsmas .type-product a:hover{
+#christmas .type-product a:hover{
     color: black;
     text-decoration: none;
 }
-#chritsmas .nav-link{
+#christmas .nav-link{
     color: black;
     text-decoration: none;
 }
-#chritsmas .nav-link:hover{
+#christmas .nav-link:hover{
     color: black;
     text-decoration: none;
 }
-#chritsmas .type-product li{
+#christmas .type-product li{
     padding: 15px;
     text-align: left;
     position: relative;
 }
-#chritsmas .product-header:hover .type-product{
+#christmas .product-header:hover .type-product{
     display: block;
     box-shadow: 0 0 10px rgba(0,0, 0, 0.3);
     cursor: pointer;
     transition: 0.2s linear;
 }
-#chritsmas .type-product li .detail-product{
+#christmas .type-product li .detail-product{
     position: absolute;
     display: none;
     padding: 0;
@@ -73,40 +73,40 @@
     background-color: white;
     min-width: 150px;
 }
-#chritsmas .search{
+#christmas .search{
     display: flex;
 }
-#chritsmas .search input[type='search']{
+#christmas .search input[type='search']{
     height: auto;
 }
-#chritsmas .type-product .detail-product li{
+#christmas .type-product .detail-product li{
     list-style-type: none;
     min-width:100px;
 }
-#chritsmas .type-product .detail-product li:hover{
+#christmas .type-product .detail-product li:hover{
     background-color: #ccc;
     color: black;
     text-decoration: none;
 }
-#chritsmas .each-type-product:hover{
+#christmas .each-type-product:hover{
     background-color: #ccc;
 }
-#chritsmas .each-type-product:hover .detail-product{
+#christmas .each-type-product:hover .detail-product{
     display: block;
     cursor: pointer;
     transition: 0.2s linear;
     box-shadow: 0 0 10px rgba(0,0, 0, 0.3);
 }
-#chritsmas .logIn-btn > .nav-link{
+#christmas .logIn-btn > .nav-link{
     margin: 15px;
     background-color: transparent;
 }
-#chritsmas .logIn-btn .list-infor-user li{
+#christmas .logIn-btn .list-infor-user li{
     list-style-type: none;
     text-align: left;
     margin-right: 40px;
 }
-#chritsmas .logIn-btn .list-infor-user{
+#christmas .logIn-btn .list-infor-user{
     position: absolute;
     top: 100%;
     right: 0;
@@ -116,26 +116,26 @@
     font-size: 16px;
     display: none;
 }
-#chritsmas .logIn-btn:hover .list-infor-user{
+#christmas .logIn-btn:hover .list-infor-user{
     display: block;
 }
-#chritsmas .logIn-btn .list-infor-user .nav-link{
+#christmas .logIn-btn .list-infor-user .nav-link{
     width: 100% !important;
 }
-#chritsmas .logIn-btn .list-infor-user .nav-link:hover{
+#christmas .logIn-btn .list-infor-user .nav-link:hover{
     background-color: #ccc;
 }
-#chritsmas .cartandlogin{
+#christmas .cartandlogin{
     display: flex;
 }
-#chritsmas .cartandlogin a[href="/ShoppingCart"]
+#christmas .cartandlogin a[href="/ShoppingCart"]
 {
 
     position: relative;
     cursor: pointer;
 
 }
-#chritsmas .cartandlogin a[href="/ShoppingCart"] span{
+#christmas .cartandlogin a[href="/ShoppingCart"] span{
     height: 15px;
     width: 15px;
     position: absolute;
@@ -149,20 +149,20 @@
     justify-content: center;
     font-size: 10px;
 }
-#chritsmas .cartandlogin button{
+#christmas .cartandlogin button{
     border: none;
     background: none;
 }
-#chritsmas .cartandlogin .nav-link[href="/ShoppingCart"]
+#christmas .cartandlogin .nav-link[href="/ShoppingCart"]
 {
     padding: 0;
     line-height: 70px;
 }
-#chritsmas .sidebar-icon
+#christmas .sidebar-icon
 {
     display: none;
 }
-#chritsmas .nav_overlay {
+#christmas .nav_overlay {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -172,7 +172,7 @@
     display: none;
     animation: fadeIn linear 0.2s;
 }
-#chritsmas .nav_overlay1 {
+#christmas .nav_overlay1 {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -182,7 +182,7 @@
     display: none;
     animation: fadeIn linear 0.2s;
 }
-#chritsmas .nav-mobile{
+#christmas .nav-mobile{
     position: fixed;
     top: 0;
     left: 0;
@@ -194,37 +194,37 @@
     opacity: 0;
     overflow-y: scroll;
 }
-#chritsmas ul.nav-mobile-list{
+#christmas ul.nav-mobile-list{
     margin-top: 20px;
     margin-left: 15px;
     padding: 0;
     text-align: left;
 }
-#chritsmas .nav-mobile-list .nav-link{
+#christmas .nav-mobile-list .nav-link{
     font-size: 1.2em;
 }
-#chritsmas .nav-mobile-close img{
+#christmas .nav-mobile-close img{
     position: absolute;
     top: 0.7rem;
     right: 0.7rem;
     width: 28px;
     height: 28px;
 }
-#chritsmas .nav-mobile-input{
+#christmas .nav-mobile-input{
     display: none;
 }
-#chritsmas .nav-mobile-input:checked ~ .nav_overlay{
+#christmas .nav-mobile-input:checked ~ .nav_overlay{
     display: block;
 }
-#chritsmas .nav-mobile-input:checked ~ .nav-mobile{
+#christmas .nav-mobile-input:checked ~ .nav-mobile{
     transform: translateX(0);
     transition: all 0.2s linear;
     opacity: 1;
 }
-#chritsmas .searchicon{
+#christmas .searchicon{
     display: none;
 }
-#chritsmas .nav-mobile-search{
+#christmas .nav-mobile-search{
     position: fixed;
     top: 0;
     left: 0;
@@ -233,42 +233,42 @@
     background-color: #fff;
     display: none;
 }
-#chritsmas .mobile-search{
+#christmas .mobile-search{
     margin-top: 20px;
 }
-#chritsmas .search-input{
+#christmas .search-input{
     display: none;
 }
-#chritsmas .search-input:checked ~ .nav-mobile-search{
+#christmas .search-input:checked ~ .nav-mobile-search{
     display: block;
 }
-#chritsmas .search-input:checked ~ .nav_overlay1{
+#christmas .search-input:checked ~ .nav_overlay1{
     display: block;
 }
-#chritsmas .mobile-search .form-control{
+#christmas .mobile-search .form-control{
     width: 70% !important;
     margin: 0 auto;
 }
-#chritsmas .mobile-search .btn{
+#christmas .mobile-search .btn{
     margin-top: 20px;
 }
-#chritsmas .mobile-product{
+#christmas .mobile-product{
     display: flex;
     justify-content: space-between;
 }
-#chritsmas .mobile-product img{
+#christmas .mobile-product img{
     width: 20px;
     height: 20px;
     margin-right: 20px;
     margin-top: 5px;
 }
-#chritsmas .type-mobile-product{
+#christmas .type-mobile-product{
     display: none;
 }
-#chritsmas .product-list-mobile{
+#christmas .product-list-mobile{
     display: none;
 }
-#chritsmas .product-list-mobile:checked ~ .type-mobile-product
+#christmas .product-list-mobile:checked ~ .type-mobile-product
 {
     display: block;
 }
@@ -277,13 +277,13 @@
 
 @media only screen and (min-width: 46.25em) and (max-width: 64.2em) {
 
-    #chritsmas .navbar-nav{
+    #christmas .navbar-nav{
         display: none !important;
     }
-    #chritsmas .lovelists{
+    #christmas .lovelists{
         display: none !important;
     }
-    #chritsmas .search{
+    #christmas .search{
         display: none;
     }
     #christmas .navbar-brand
@@ -291,26 +291,26 @@
         width: 125px;
         margin: 0 !important;
     }
-    #chritsmas .navbar-brand img
+    #christmas .navbar-brand img
     {
         display: none;
     }
-    #chritsmas .sidebar-icon {
+    #christmas .sidebar-icon {
         display: flex;
     }
-    #chritsmas .sidebar-icon img{
+    #christmas .sidebar-icon img{
         width: 24px;
         height: 24px;
         margin: 0 10px;
     }
-    #chritsmas .logIn-btn > .nav-link{
+    #christmas .logIn-btn > .nav-link{
         margin: 0;
         background-color: transparent;
     }
-    #chritsmas .searchicon{
+    #christmas .searchicon{
         display: block;
     }
-    #chritsmas label img:hover{
+    #christmas label img:hover{
         cursor: pointer;
     }
 }
@@ -325,41 +325,41 @@
 
 @media only screen and (max-width: 46.1875em)
 {
-    #chritsmas .nav-mobile{
+    #christmas .nav-mobile{
         right: 0;
         width: 100%;
     }
-    #chritsmas .navbar-nav{
+    #christmas .navbar-nav{
         display: none !important;
     }
-    #chritsmas .lovelists{
+    #christmas .lovelists{
         display: none !important;
     }
-    #chritsmas .search{
+    #christmas .search{
         display: none;
     }
-    #chritsmas .navbar-brand
+    #christmas .navbar-brand
     {
         width: 125px;
         margin: 0 !important;
     }
-    #chritsmas .navbar-brand img
+    #christmas .navbar-brand img
     {
         display: none;
     }
-    #chritsmas .sidebar-icon {
+    #christmas .sidebar-icon {
         display: flex;
     }
-    #chritsmas .sidebar-icon img{
+    #christmas .sidebar-icon img{
         width: 24px;
         height: 24px;
         margin: 0 10px;
     }
-    #chritsmas .logIn-btn > .nav-link{
+    #christmas .logIn-btn > .nav-link{
         margin: 0;
         background-color: transparent;
     }
-    #chritsmas .searchicon{
+    #christmas .searchicon{
         display: block;
     }
 

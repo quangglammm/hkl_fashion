@@ -71,7 +71,6 @@ export default function MUICustomSwitch() {
 
   };
   return (
-    <div style={{display:'flex'}}> 
       <FormGroup>
       <FormControlLabel
         control={<MaterialUISwitch sx={{ m: 1 }} 
@@ -80,6 +79,5 @@ export default function MUICustomSwitch() {
         onChange={handleChange} />}
       />
     </FormGroup>
-    </div>
   );
 }

@@ -278,9 +278,13 @@ ul.nav-mobile-list{
 }
 
 
-
+@media only screen and (min-width: 992px){
+    .switchLayout{
+        margin-bottom: -9px;
+    }
+}
 @media only screen and (min-width: 46.25em) and (max-width: 64.2em) {
-
+    
     .navbar-nav{
         display: none !important;
     }

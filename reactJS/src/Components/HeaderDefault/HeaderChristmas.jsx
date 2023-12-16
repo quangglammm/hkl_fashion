@@ -207,7 +207,10 @@ function HeaderChristmas(props) {
                         Tìm
                     </Button>
                 </Form>
-                <MUICustomSwitch/>
+                <div className="switchLayout">
+                <MUICustomSwitch />
+                </div>
+
 
                 {/* <Nav.Link className="lovelists" href={loveList}>
                     {" "}

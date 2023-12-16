@@ -1,6 +1,9 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 import { cartReducer } from "./cartSlide";
+import { layoutReducer } from "./layoutSlide";
 import { credentialsReducer } from "./credentials";
+import { combineReducers } from "redux";
+
 import storage from "redux-persist/lib/storage";
 import {
   persistStore,
@@ -18,15 +21,19 @@ const persistConfig = {
   version: 1,
   storage,
 };
+const rootReducer = combineReducers({
+  cart: cartReducer,
+  credentials: credentialsReducer,
+  layoutState:layoutReducer,
 
-const persistedReducer = persistReducer(persistConfig, cartReducer);
+});
+
+
+const persistedReducer = persistReducer(persistConfig,rootReducer);
 
 export const store = configureStore({
   // reducer: cartReducer,
-  reducer: {
-    cart: persistedReducer,
-    credentials: credentialsReducer,
-  },
+  reducer:persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

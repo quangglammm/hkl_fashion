@@ -18,14 +18,15 @@ import sidebaricon from "../Images/sidebar-icon.png";
 import searchicon from "../Images/black-search-icon.png";
 import close from "../Images/close.webp";
 import arrowbottom from "../Images/arrow-bottom.png";
-
+import MUICustomSwitch from "../MUICustomSwitch/MUICustomSwitch";
 import { useSelector, useDispatch } from "react-redux";
 import { getToTals } from "../../redux/cartSlide";
 import { logout } from "../../redux/credentials";
 
 function HeaderDefault(props) {
     const user = JSON.parse(localStorage.getItem("user"));
-
+    const layout = useSelector((state) => state.layoutState.layout);
+console.log('HeaderDefault',layout)
     let navigate = useNavigate();
     var loveList = "/FavoriteProduct";
     if (window.localStorage.getItem("Email") == null) {
@@ -206,6 +207,8 @@ function HeaderDefault(props) {
                         Tìm
                     </Button>
                 </Form>
+                <MUICustomSwitch/>
+
                 {/* <Nav.Link className="lovelists" href={loveList}>
                     {" "}
                     Sản phẩm yêu thích{" "}

@@ -6,8 +6,14 @@
     position: relative;
     overflow: hidden;
 }
+
+#banner_slide .slick-slide {
+    margin: 0;
+
+}
 .slider img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+

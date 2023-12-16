@@ -50,7 +50,7 @@ function MainPage() {
         pauseOnHover: true
     };
     return (
-        <div className="mainPage">
+        <div className="mainPage" id='slider_mainpage'>
             <div className="img-mobile">
                 <img src={imgmobile} alt="imgmobile" />
             </div>

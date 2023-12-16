@@ -1,3 +1,7 @@
+#slider_mainpage .slick-slide {
+    margin: 0 8px;
+
+}
 .mainPage {
     /* padding-top: 20px; */
 }
@@ -17,7 +21,7 @@
     padding: 8px;
     text-transform: uppercase;
     font-weight: bolder;
-    text-shadow: 1px 1px 3px  black;
+    text-shadow: 2px 1px 2px rgb(255, 0, 0);
 }
 .newProducts_product .non-mobile .slick-slider .slick-list .slick-track .slick-slide,
 .bestSeller_product .non-mobile .slick-slider .slick-list .slick-track .slick-slide,

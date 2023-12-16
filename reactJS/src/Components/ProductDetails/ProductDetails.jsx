@@ -17,8 +17,6 @@ import { addToCart } from "../../redux/cartSlide";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 
-
-
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -170,17 +168,18 @@ export function ProductDetails(props) {
   };
 
   let settings = {
-    arrows: true,
+    className: "center",
+    centerMode: true,
+    // centerPadding: "60px",
+    dots: true,
     infinite: true,
-    autoplay: true,
-    speed: 1000,
+    speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToScroll: 1
   };
   let settingsmobile = {
     arrows: true,
     infinite: true,
-    speed: 1000,
     slidesToShow: 2,
     slidesToScroll: 1,
   };
@@ -300,8 +299,8 @@ export function ProductDetails(props) {
           <img src={path} alt="img" />
         </div>
         <div className="product-detail-right">
-          <h2>{product1.name}</h2>
-          <h2>{vnd.format(product1.price)} </h2>
+          <h3 className="text product-detail_name pb-4">{product1.name}</h3>
+          <h4 className="text product-detail_price">{vnd.format(product1.price)} </h4>
           <div className="color">
             {colorArr.map((color, index) => (
               <button
@@ -457,11 +456,11 @@ export function ProductDetails(props) {
       <hr />
       <div className="related-product">
         <h3>Có thể bạn sẽ thích</h3>
-        <div className="non-mobile-related" onClick={handleTop}>
+        <div className="non-mobile-related">
           <Slider {...settings}>
             {relatedProdutcs.map(function (item) {
               return (
-                <div className="">
+                <div className="related-product_containerItem">
                   <ContainerItem
                     price={item.product.price}
                     name={item.product.name}
@@ -473,7 +472,7 @@ export function ProductDetails(props) {
             })}
           </Slider>
         </div>
-        <div className="mobile-related" onClick={handleTop}>
+        <div className="mobile-related">
           <Slider {...settingsmobile}>
             {relatedProdutcs.map((item) => (
               <ContainerItem
@@ -491,14 +490,5 @@ export function ProductDetails(props) {
     </div>
   );
 }
-const mapStateToProps = (state) => {
-  return {
-    // _products: state._todoProduct,
-    // isLoggedin: state._todoProduct.isLoggedin,
-  };
-};
-function mapDispatchToProps(dispatch) {
-  return {};
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductDetails);
+export default ProductDetails;

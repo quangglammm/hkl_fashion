@@ -1,6 +1,9 @@
 a:hover {
     text-decoration: none;
 }
+.product-container {
+    margin-top: 60px;
+}
 .container__products {
     display: flex;
     width: 90%;
@@ -56,13 +59,6 @@ a:hover {
     margin: 8px;
     border: solid 1px #ccc;
     padding: 8px;
-
-}
-
-.breadcrumb{
-    margin-top: 70px;
-    padding: 15px 15px;
-    font-size: 18px;
 
 }
 .breadcrumb-item a,
@@ -181,9 +177,9 @@ a:hover {
     column-gap: 15px;
     padding: 0 40px;
 }
-.product_containerItem .containerItem:hover .containerItem_infor-price,
-.product_containerItem .containerItem:hover .containerItem_infor-price .containerItem_price,
-.product_containerItem .containerItem:hover .containerItem_name{
+.product_containerItem:hover .containerItem .containerItem_infor-price,
+.product_containerItem:hover .containerItem .containerItem_infor-price .containerItem_price,
+.product_containerItem:hover .containerItem .containerItem_name{
     color: #f07b00;
     text-decoration: none;
 }

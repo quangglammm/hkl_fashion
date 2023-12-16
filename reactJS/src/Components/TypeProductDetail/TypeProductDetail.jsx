@@ -7,10 +7,6 @@ import CatagoryDataService from "../../services/catagories";
 import { useState, useEffect } from "react";
 import React from 'react';
 
-
-
-
-
 function TypeProductDetail() {
 
     const { typedetailID } = useParams();
@@ -43,7 +39,14 @@ function TypeProductDetail() {
             </Breadcrumb>
             <div className="list-product-typedetail">
                 {products.map((item) =>
-                    <ContainerItem price={item.product.price} name={item.product.name} image={item.path} masp={item.product._id} />
+                    <div className="type-product-detail">
+                        <ContainerItem 
+                            price={item.product.price} 
+                            name={item.product.name} 
+                            image={item.path} 
+                            masp={item.product._id} 
+                        />
+                    </div>
                 )}
             </div>
         </div>

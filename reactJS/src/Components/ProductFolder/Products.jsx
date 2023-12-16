@@ -86,7 +86,7 @@ function Products() {
         );
     }
     return (
-        <div>
+        <div className="product-container">
             <Breadcrumb>
                 <Breadcrumb.Item href="/">Trang chủ</Breadcrumb.Item>
                 <Breadcrumb.Item active>Sản phẩm</Breadcrumb.Item>

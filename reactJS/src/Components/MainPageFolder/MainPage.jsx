@@ -51,9 +51,6 @@ function MainPage() {
     };
     return (
         <div className="mainPage" id='slider_mainpage'>
-            <div className="img-mobile">
-                <img src={imgmobile} alt="imgmobile" />
-            </div>
             <div className="newProducts">
                 <div className="newProducts_product product">
                     <h2 className="newProducts_name title-name title-name-first">

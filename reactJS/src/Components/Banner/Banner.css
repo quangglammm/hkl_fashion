@@ -16,4 +16,11 @@
     height: 100%;
     object-fit: cover;
 }
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em){
 
+}
+@media only screen and (max-width: 46.1875em) {
+    .slider {
+        height: auto;
+    }    
+}

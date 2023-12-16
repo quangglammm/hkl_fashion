@@ -50,11 +50,16 @@ function TypeProduct() {
                 <Breadcrumb.Item active>{catagory}</Breadcrumb.Item>
             </Breadcrumb>
             <div className="list-product-type">
-                {
-                    typePoduct.map((item) =>
-                        <ContainerItem price={item.product.price} name={item.product.name} image={item.path} masp={item.product._id} />
-                    )
-                }
+                {typePoduct.map((item) => (
+                    <div className="type-product_containerItem">
+                        <ContainerItem 
+                            price={item.product.price} 
+                            name={item.product.name} 
+                            image={item.path} 
+                            masp={item.product._id} 
+                        />
+                    </div>
+                ))}
             </div>
         </div>
     );

@@ -7,7 +7,9 @@
   color: black;
 }
 .cartForPC {
-  padding: 0 20px;
+  margin: 0 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px gray;
 }
 .empty-product {
   display: flex;
@@ -95,7 +97,11 @@ img {
   }
 
 .cart-heading {
+  padding-top: 20px;
     text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    vertical-align: middle;
     text-transform: uppercase;
 }
 

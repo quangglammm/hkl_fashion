@@ -61,12 +61,12 @@ function Shopping() {
   };
 
   return (
-    <div className="main">
+    <div className="main" >
       <Breadcrumb>
         <Breadcrumb.Item href="/">Trang chủ</Breadcrumb.Item>
         <Breadcrumb.Item active>Giỏ hàng</Breadcrumb.Item>
       </Breadcrumb>
-      <div className="main-container">
+      <div className="main-container" style={{marginTop:'50px'}}>
         {cart.cartTotalQuantity == 0 ? (
           <div className="empty-product">
             <h2 className="empty-product_title">Không có sản phẩm nào trong giỏ hàng</h2>

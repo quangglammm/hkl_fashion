@@ -37,9 +37,7 @@ const cartSlide = createSlice({
             );
             if (state.cartItems[itemIndex].quantity > 1) {
                 state.cartItems[itemIndex].quantity -= 1;
-                toast.info("Giảm số lượng sản phẩm thành công!", {
-                    position: "bottom-left",
-                });
+                
             }
         },
 
@@ -67,7 +65,6 @@ const cartSlide = createSlice({
                     );
                     state.cartItems = nextCartItems;
                 }
-
                 return state;
             });
         },

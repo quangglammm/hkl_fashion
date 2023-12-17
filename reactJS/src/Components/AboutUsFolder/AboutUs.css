@@ -1,4 +1,9 @@
-
+.aboutus-container {
+    margin-top: 60px;
+}
+.breadcrumb a {
+    color: black;
+}
 .about-content{
     padding: 80px 15px;
 }
@@ -117,8 +122,4 @@
     .contact .map iframe{
         height: 40vh;
     }
-}
-
-.breadcrumb {
-    margin-top: 75px;
 }

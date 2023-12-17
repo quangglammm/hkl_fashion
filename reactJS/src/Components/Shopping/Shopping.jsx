@@ -64,7 +64,11 @@ function Shopping() {
   };
 
   return (
+<<<<<<< HEAD:reactJS/src/Components/Shopping/Shopping.jsx
     <div className="main" >
+=======
+    <div className="main_shopping-container">
+>>>>>>> 079c121b94af5c079f82a7a96a491aad27474602:reactJS/src/Components/Shopping/Shopping.js
       <Breadcrumb>
         <Breadcrumb.Item href="/">Trang chủ</Breadcrumb.Item>
         <Breadcrumb.Item active>Giỏ hàng</Breadcrumb.Item>

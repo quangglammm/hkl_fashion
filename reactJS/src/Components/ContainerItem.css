@@ -51,6 +51,10 @@
     .containerItem_infor-price{
         font-size: 16px;
     }
+    .ContainerItem_image {
+        width: 90%;
+        height: 250px;
+    }
 }
 @media only screen and (max-width: 46.1875em){
     .containerItem_name{
@@ -69,5 +73,9 @@
     }
     .nameandprice{
         display: inline-block;
+    }
+    .ContainerItem_image {
+        width: 60%;
+        height: 80px;
     }
 }

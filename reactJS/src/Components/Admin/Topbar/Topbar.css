@@ -1,37 +1,37 @@
-
-.topbar{
+.topbar {
     width: 100%;
-    height: 50px;
-    background-color: white;
-    position: sticky;
+    height: 60px;
+    background-color: #2289ff;
+    position: fixed;
     top: 0;
     z-index: 999;
 }
-.topbarWrapper{
+.topbarWrapper {
     height: 100%;
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
 }
-.topLeft{
+.topLeft {
     align-items: center;
+    display: flex;
 }
-.topLeft .logo{
+.topLeft .logo {
     font-weight: bold;
     font-size: 30px;
-    color: darkblue;
+    color: #fff;
 }
-.topRight{
+.topRight {
     display: flex;
     align-items: center;
 }
-.topbarIconsContainer{
+.topbarIconsContainer {
     position: relative;
     cursor: pointer;
     margin-right: 10px;
-    color: #555;
+    color: #fff;
 }
-.topbarIconsContainer .topIconBag{
+.topbarIconsContainer .topIconBag {
     height: 15px;
     width: 15px;
     position: absolute;
@@ -45,9 +45,9 @@
     justify-content: center;
     font-size: 10px;
 }
-.topRight .topAvatar {
-    /* width: 40px; */
+.topLeft .topAvatar {
     height: 40px;
-    /* border-radius: 50%; */
+    margin-right: 15px;
     cursor: pointer;
+    filter: invert(100%);
 }

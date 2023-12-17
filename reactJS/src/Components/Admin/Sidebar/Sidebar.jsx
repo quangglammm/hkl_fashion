@@ -20,7 +20,7 @@ export default function Sidebar() {
     <div className="sidebar">
       <div className="sidebarWrapper">
         <div className="sidebarMenu">
-          <h3 className="sidebarTitile">Dashboard</h3>
+          <h3 className="sidebarTitile">Home</h3>
           <ul className="sidebarList">
             <Link to="/Admin" className="link-admin">
               <li className="sidebarListItem">

@@ -1,24 +1,23 @@
-
-.container-admin{
+.container-admin {
     display: flex;
-    margin-top: 15px;
+    margin-top: 60px;
 }
-.productList{
+.productList {
     flex: 4;
     padding: 20px;
 }
-.productListTitle{
+.productListTitle {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
 }
-.productListTitle h2{
+.productListTitle h2 {
     font-size: 22px;
     text-transform: uppercase;
     font-weight: 600;
 }
-.productListButton{
+.productListButton {
     padding: 5px 7px;
     background-color: darkblue;
     color: white;
@@ -28,25 +27,25 @@
     padding: 15px 20px;
     font-weight: bold;
 }
-.productListItem{
+.productListItem {
     display: flex;
     align-items: center;
 }
-.productListImg{
+.productListImg {
     width: 32px;
     height: 32px;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 10px;
 }
-.productListEdit{
+.productListEdit {
     border: none;
     border-radius: 10px;
     padding: 5px 10px;
     margin-right: 20px;
     color: burlywood;
 }
-.productListDelete{
+.productListDelete {
     color: red;
     cursor: pointer;
 }

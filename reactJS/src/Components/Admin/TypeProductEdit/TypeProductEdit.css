@@ -1,6 +1,7 @@
 .container-admin{
     display: flex;
-    margin-top: 15px;
+    margin-top: 60px;
+
 }
 .typeProductEdit{
     flex: 4;

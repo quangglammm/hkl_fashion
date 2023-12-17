@@ -44,10 +44,40 @@ function MainPage() {
         infinite: true,
         speed: 1000,
         slidesToShow: 4,
-        slidesToScroll: 1,
+        slidesToScroll: 4,
+        rows:1,
         autoplay: true,
-        autoplaySpeed: 2000,
-        pauseOnHover: true
+        autoplaySpeed: 3000,
+        pauseOnHover: true,
+        vertical: false,
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                rows:1
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2,
+                  // initialSlide: 2,
+                  rows:1
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                rows:1
+              }
+            }
+        ]
     };
     return (
         <div className="mainPage" id='slider_mainpage'>
@@ -58,8 +88,9 @@ function MainPage() {
                     </h2>
                     <div className="non-mobile">
                         <Slider {...settings}>
-                            {newProducts.map((item) => (
+                            {newProducts.map((item, idx) => (
                                 <ContainerItem
+                                    key={idx}
                                     price={item.product.price}
                                     name={item.product.name}
                                     image={item.path}
@@ -67,16 +98,6 @@ function MainPage() {
                                 />
                             ))}
                         </Slider>
-                    </div>
-                    <div className="mobile">
-                        {newProducts.map((item) => (
-                            <ContainerItem
-                                price={item.product.price}
-                                name={item.product.name}
-                                image={item.path}
-                                masp={item.product._id}
-                            />
-                        ))}
                     </div>
                 </div>
             </div>
@@ -95,16 +116,6 @@ function MainPage() {
                             ))}
                         </Slider>
                     </div>
-                    <div className="mobile">
-                        {topProducts.map((item, index) => (
-                            <ContainerItem
-                                price={item.product.price}
-                                name={item.product.name}
-                                image={item.path}
-                                masp={item.product._id}
-                            />
-                        ))}
-                    </div>
                 </div>
             </div>
             <div className="onSale">
@@ -121,16 +132,6 @@ function MainPage() {
                                 />
                             ))}
                         </Slider>
-                    </div>
-                    <div className="mobile">
-                        {discountProducts.map((item) => (
-                            <ContainerItem
-                                price={item.product.price}
-                                name={item.product.name}
-                                image={item.path}
-                                masp={item.product._id}
-                            />
-                        ))}
                     </div>
                 </div>
             </div>

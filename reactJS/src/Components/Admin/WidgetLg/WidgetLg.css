@@ -1,13 +1,14 @@
-.widgetLg{
+.widgetLg {
     flex: 2;
     box-shadow: 0 0 15px -10px rgba(0, 0, 0, 0.75);
     padding: 20px;
+    background-color: #fff;
 }
-.widgetLgTitle{
+.widgetLgTitle {
     font-size: 22px;
     font-weight: bold;
 }
-.widgetLgImg{
+.widgetLgImg {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -15,35 +16,34 @@
     margin-right: 10px;
 }
 .widgetLgDate,
-.widgetLgAmount{
+.widgetLgAmount {
     font-weight: 300;
 }
-.widgetLgButton{
+.widgetLgButton {
     padding: 5px 7px;
     border: none;
     border-radius: 10px;
 }
-.widgetLgButton.Approved{
+.widgetLgButton.Approved {
     background-color: #e5faf2;
     color: #3bb077;
 }
-.widgetLgButton.Declined{
+.widgetLgButton.Declined {
     background-color: #fff0f1;
     color: #d95087;
 }
-.widgetLgButton.Pending{
+.widgetLgButton.Pending {
     background-color: #ebf1fe;
     color: #2a7ade;
-
 }
-.widgetLgTable{
+.widgetLgTable {
     width: 100%;
     border-spacing: 20px;
 }
-.widgetLgTr{
+.widgetLgTr {
     height: 60px;
 }
-.widgetLgUser{
+.widgetLgUser {
     padding-left: 50px;
     text-align: left;
     font-weight: 600;

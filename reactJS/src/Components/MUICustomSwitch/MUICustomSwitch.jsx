@@ -76,6 +76,7 @@ export default function MUICustomSwitch() {
         control={<MaterialUISwitch size='small' sx={{ marginTop:'15px' }} 
         checked={layoutS} 
         defaultValue={layoutS}
+        
         onChange={handleChange} />}
       />
     </FormGroup>

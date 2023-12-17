@@ -8,14 +8,17 @@ margin: 0px;
  }
 
  .switchLayout{
-  z-index: 200;
-  position: fixed;
-  top: 0;
-  right: 8%;
-  margin-top: 7px;
+    position: fixed;
+    top:0;
+    z-index:200;
  }
- @media screen and (max-width:700px){
+ @media screen and (max-width:997px){
   .switchLayout{
-    right: 11%;
+    right: 35px;
+   }
+ }
+ @media screen and (min-width:998px){
+  .switchLayout{
+  right: 8%;
    }
  }

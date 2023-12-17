@@ -6,7 +6,7 @@ import MuiAlert from "@mui/material/Alert";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import { useDispatch, useSelector } from "react-redux";
 import { DeleteOutline } from "@mui/icons-material";
-
+import ShoppingCart from '../Images/shoppingCart.png'
 import {
   decreaseCart,
   increaseCart,
@@ -67,178 +67,191 @@ function Shopping() {
         <Breadcrumb.Item active>Giỏ hàng</Breadcrumb.Item>
       </Breadcrumb>
       <div className="main-container">
-        <div className="products">
-          <div className="cartForPC">
-            <div className="cart-heading grid grid-five-column">
-              <p>Sản phẩm</p>
-              <p className="cart-hide">Giá</p>
-              <p>Số lượng</p>
-              <p className="cart-hide">Tổng tiền</p>
-              <p>Xóa</p>
-            </div>
-            <hr />
-            <div className="cart-item">
-              {cart.cartItems?.map((item) => {
-                return (
-                  <div className="grid grid-five-column ">
-                    <div className="cart-image-name">
-                      <div>
-                        <img
-                          src={item.image}
-                          alt={item.name}
-                          style={{
-                            width: 125,
-                            height: 100,
-                          }}
-                        ></img>
-                      </div>
-                      <div>
-                        <p>{item.name}</p>
-                        <div className="color-div">
-                          <p>Màu:</p>
-                          <div
-                            className="color-style"
+        {cart.cartTotalQuantity == 0 ? (
+          <div className="empty-product">
+            <h2 className="empty-product_title">Không có sản phẩm nào trong giỏ hàng</h2>
+            <img src={ShoppingCart} alt="Shopping Cart" className="empty-product_image"/>
+            <NavLink to="/Products" className="empty-product_button">Tiếp tục mua sắm</NavLink>
+          </div>
+        ) : (
+          <div className="products">
+            <div className="cartForPC">
+              <div className="cart-heading grid grid-five-column">
+                <p>Sản phẩm</p>
+                <p className="cart-hide">Giá</p>
+                <p>Số lượng</p>
+                <p className="cart-hide">Tổng tiền</p>
+                <p>Xóa</p>
+              </div>
+              <hr />
+              <div className="cart-item">
+                {cart.cartItems?.map((item) => {
+                  return (
+                    <div className="grid grid-five-column ">
+                      <div className="cart-image-name">
+                        <div>
+                          <img
+                            src={item.image}
+                            alt={item.name}
                             style={{
-                              backgroundColor: item.color,
-                              color: item.color,
+                              width: 125,
+                              height: 100,
                             }}
-                          ></div>
-                          <span>,</span>
-                          <p>{item.size}</p>
+                          ></img>
+                        </div>
+                        <div>
+                          <p>{item.name}</p>
+                          <div className="color-div">
+                            <p>Màu:</p>
+                            <div
+                              className="color-style"
+                              style={{
+                                backgroundColor: item.color,
+                                color: item.color,
+                              }}
+                            ></div>
+                            <span>,</span>
+                            <p>{item.size}</p>
+                          </div>
                         </div>
                       </div>
+                      <div className="cart-hide">
+                        <p>
+                          {Number(item.price).toLocaleString("vi-VN")}{" "}
+                          <span>đ</span>
+                        </p>
+                      </div>
+                      <div className="cart-btn-quantity">
+                        <span
+                          className="btn-quantity"
+                          style={{ margin: "2px" }}
+                          onClick={() => handleDecreaseCart(item)}
+                        >
+                          -{" "}
+                        </span>
+                        <span>{item.quantity}</span>
+                        <span
+                          className="btn-quantity"
+                          style={{ margin: "2px" }}
+                          onClick={() => handleIncreaseCart(item)}
+                        >
+                          {" "}
+                          +{" "}
+                        </span>
+                      </div>
+                      <div className="cart-hide">
+                        {TotalPrice(item.quantity, item.price)} <span>đ</span>
+                      </div>
+                      <div>
+                        <DeleteOutline
+                          className="delete-btn"
+                          onClick={() => handleRemoveFromCart(item)}
+                        ></DeleteOutline>
+                      </div>
                     </div>
-                    <div className="cart-hide">
-                      <p>
-                        {Number(item.price).toLocaleString("vi-VN")}{" "}
-                        <span>đ</span>
-                      </p>
+                  );
+                })}
+              </div>
+              <hr />
+            </div>
+            <div className="cartForMobile">
+              {cart.cartItems?.map((item) => {
+                return (
+                  <div className="cartItem-Mobile">
+                    <div className="cartItemInfor">
+                      <img src={item.image} alt={item.name} />
+                      <div className="cartProduct-Mobile">
+                        <p>{item.name}</p>
+                        <p>
+                          <span>Màu: </span>
+                          <span
+                            className=""
+                            style={{
+                              background: item.color,
+                              padding: "2px 7px",
+                              borderRadius: "50%",
+                              marginRight: "10px",
+                            }}
+                          ></span>
+                          <span> | Size: </span>
+                          {item.size}
+                        </p>
+                        <p>
+                          <span>Giá: </span>
+                          {Number(item.price).toLocaleString("vi-VN")}{" "}
+                          <span>đ</span>
+                        </p>
+                      </div>
+                      <div></div>
+                      <div className="delete-button">
+                        <DeleteOutline
+                          className="delete-btn"
+                          onClick={() => handleRemoveFromCart(item)}
+                        ></DeleteOutline>
+                      </div>
                     </div>
-                    <div className="cart-btn-quantity">
-                      <span
-                        className="btn-quantity"
-                        style={{ margin: "2px" }}
-                        onClick={() => handleDecreaseCart(item)}
-                      >
-                        -{" "}
-                      </span>
-                      <span>{item.quantity}</span>
-                      <span
-                        className="btn-quantity"
-                        style={{ margin: "2px" }}
-                        onClick={() => handleIncreaseCart(item)}
-                      >
-                        {" "}
-                        +{" "}
-                      </span>
-                    </div>
-                    <div className="cart-hide">
-                      {TotalPrice(item.quantity, item.price)} <span>đ</span>
-                    </div>
-                    <div>
-                      <DeleteOutline
-                        className="delete-btn"
-                        onClick={() => handleRemoveFromCart(item)}
-                      ></DeleteOutline>
+                    <div className="cartItemTotal">
+                      <div className="cart-btn-quantity">
+                        <span
+                          className="btn-quantity"
+                          style={{ margin: "2px" }}
+                          onClick={() => handleDecreaseCart(item)}
+                        >
+                          -{" "}
+                        </span>
+                        <span>{item.quantity}</span>
+                        <span
+                          className="btn-quantity"
+                          style={{ margin: "2px" }}
+                          onClick={() => handleIncreaseCart(item)}
+                        >
+                          {" "}
+                          +{" "}
+                        </span>
+                      </div>
+                      <div className="cartItemPriceTotal">
+                        {TotalPrice(item.quantity, item.price)} <span>đ</span>
+                      </div>
                     </div>
                   </div>
                 );
               })}
             </div>
-            <hr />
-          </div>
-          <div className="cartForMobile">
-            {cart.cartItems?.map((item) => {
-              return (
-                <div className="cartItem-Mobile">
-                  <div className="cartItemInfor">
-                    <img src={item.image} alt={item.name} />
-                    <div className="cartProduct-Mobile">
-                      <p>{item.name}</p>
-                      <p>
-                        <span>Màu: </span>
-                        <span
-                          className=""
-                          style={{ background: item.color, padding: "2px 7px", borderRadius:"50%", marginRight:"10px" }}
-                        ></span>
-                        <span> | Size: </span>
-                        {item.size}
-                      </p>
-                      <p>
-                        <span>Giá: </span>
-                        {Number(item.price).toLocaleString("vi-VN")}{" "}
-                        <span>đ</span>
-                      </p>
-                    </div>
-                    <div></div>
-                    <div className="delete-button">
-                      <DeleteOutline
-                        className="delete-btn"
-                        onClick={() => handleRemoveFromCart(item)}
-                      ></DeleteOutline>
-                    </div>
-                  </div>
-                  <div className="cartItemTotal">
-                    <div className="cart-btn-quantity">
-                      <span
-                        className="btn-quantity"
-                        style={{ margin: "2px" }}
-                        onClick={() => handleDecreaseCart(item)}
-                      >
-                        -{" "}
-                      </span>
-                      <span>{item.quantity}</span>
-                      <span
-                        className="btn-quantity"
-                        style={{ margin: "2px" }}
-                        onClick={() => handleIncreaseCart(item)}
-                      >
-                        {" "}
-                        +{" "}
-                      </span>
-                    </div>
-                    <div className="cartItemPriceTotal">
-                      {TotalPrice(item.quantity, item.price)} <span>đ</span>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-          <div className="cart-two-button">
-            <button
-              className="btn-clear"
-              onClick={() => {
-                handleClearCart();
-              }}
-            >
-              Xóa giỏ hàng
-            </button>
-            <NavLink
-              to="/ShipAddress"
-              state={{ data: cart.cartTotalAmount, items: cart.cartItems }}
-            >
-              <button className="btn-pay">
-                {"Mua hàng"}
-                <br />
-                {"("}
-                {Number(cart.cartTotalAmount).toLocaleString("vi-VN")}{" "}
-                <span>đ</span>
-                {")"}
+            <div className="cart-two-button">
+              <button
+                className="btn-clear"
+                onClick={() => {
+                  handleClearCart();
+                }}
+              >
+                Xóa giỏ hàng
               </button>
-            </NavLink>
-          </div>
+              <NavLink
+                to="/ShipAddress"
+                state={{ data: cart.cartTotalAmount, items: cart.cartItems }}
+              >
+                <button className="btn-pay">
+                  {"Mua hàng"}
+                  <br />
+                  {"("}
+                  {Number(cart.cartTotalAmount).toLocaleString("vi-VN")}{" "}
+                  <span>đ</span>
+                  {")"}
+                </button>
+              </NavLink>
+            </div>
 
-          <Snackbar open={open} autoHideDuration={1500} onClose={handleClose}>
-            <Alert
-              onClose={handleClose}
-              severity="error"
-              sx={{ width: "100%" }}
-            >
-              Đã bỏ sản phẩm ra khỏi giỏ hàng!
-            </Alert>
-          </Snackbar>
-        </div>
+            <Snackbar open={open} autoHideDuration={1500} onClose={handleClose}>
+              <Alert
+                onClose={handleClose}
+                severity="error"
+                sx={{ width: "100%" }}
+              >
+                Đã bỏ sản phẩm ra khỏi giỏ hàng!
+              </Alert>
+            </Snackbar>
+          </div>
+        )}
       </div>
     </div>
   );

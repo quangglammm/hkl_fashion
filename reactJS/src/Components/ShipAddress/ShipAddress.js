@@ -1,15 +1,18 @@
 import "./ShipAddress.css";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Alert from "react-bootstrap/Alert";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { getDiscount } from "../../actions/orders";
 import OrderDataService from "../../services/orders";
 import { Button, Modal} from "react-bootstrap";
 import { clearCart } from "../../redux/cartSlide";
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 
 function ShipAddress() {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const location = useLocation();
     const data = location.state?.data;
     const items = location.state?.items;
@@ -18,6 +21,7 @@ function ShipAddress() {
     const [districts, setDistrict] = useState([]);
     const [districtid, setDistrictId] = useState("");
     const [wards, setWards] = useState([]);
+    const [wardId, setWardId] = useState("");
     const [selectedProvince, setselectedProvince] = useState("");
     const [selectedDistrict, setselectedDistrict] = useState("");
     const [selectedWard, setselectedWard] = useState("");
@@ -31,15 +35,23 @@ function ShipAddress() {
     const [mail, setMail] = useState("");
     const [discount, setDiscount] = useState("");
 
-    const dispatch = useDispatch();
-
     const [showFailAlert, setShowFailAlert] = useState(false);
     const [showSuccessAlert, setShowSuccessAlert] = useState(false);
-    const navigate = useNavigate();
-    var vnd = Intl.NumberFormat("vi-VN", {
-        style: "currency",
-        currency: "VND",
-    });
+
+    const refs = {
+        nameRef: useRef(),
+        emailRef: useRef(),
+        phoneRef: useRef(),
+        provinceRef: useRef(),
+        districtRef: useRef(),
+        wardRef: useRef()
+    };
+    const [nameError, setNameError] = useState(false);
+    const [emailError, setEmailError] = useState(false);
+    const [phoneError, setPhoneError] = useState(false);
+    const [provinceError, setProvinceError] = useState(false);
+    const [districtError, setDistrictError] = useState(false);
+    const [wardError, setWardError] = useState(false);
 
     useEffect(() => {
         let timeout;
@@ -77,15 +89,29 @@ function ShipAddress() {
 
     const handleProvince = (event) => {
         const getProvinceId = event.target.value;
+        if (getProvinceId === "-1") {
+            console.log("getProvinceId === -1: ", getProvinceId === "-1");
+            setProvinceError(true);
+            return;
+        }
+
         var index = event.nativeEvent.target.selectedIndex;
         setselectedProvince(event.nativeEvent.target[index].text);
         setProvinceId(getProvinceId);
+        setProvinceError(false);
+
+        setDistrictId("-1");
+        setWardId("-1");
+        setselectedDistrict("");
+        setselectedWard("");
+        setDistrict([]);
+        setWards([]);
+
         if (event.target.value < 52) {
             setshipcost(40000);
         } else {
             setshipcost(30000);
         }
-        console.log(shipcost);
     };
 
     useEffect(() => {
@@ -100,9 +126,20 @@ function ShipAddress() {
     }, [provinceid]);
 
     const handleDistrict = (event) => {
-        setDistrictId(event.target.value);
+        const getdistrictId = event.target.value;
+        if (getdistrictId === "-1") {
+            setDistrictError(true);
+            return;
+        }
+
         var index = event.nativeEvent.target.selectedIndex;
         setselectedDistrict(event.nativeEvent.target[index].text);
+        setDistrictId(getdistrictId);
+        setDistrictError(false);
+        
+        setWardId("-1");
+        setselectedWard("");
+        setWards([]);
     };
 
     useEffect(() => {
@@ -114,17 +151,22 @@ function ShipAddress() {
             setWards(await response["wards"]);
         };
         getWard();
-    }, [districtid]);
+    }, [provinceid, districtid]);
 
     const handleWard = (event) => {
+        const getwardId = event.target.value;
+        if (getwardId === "-1") {
+            setWardError(true);
+            return;
+        }
+
         var index = event.nativeEvent.target.selectedIndex;
         setselectedWard(event.nativeEvent.target[index].text);
+        setWardError(false);
     };
-    var address = `${selectedWard}, ${selectedDistrict}, ${selectedProvince}`;
-
+    var halfAddress = `${selectedWard}, ${selectedDistrict}, ${selectedProvince}`;
     // show model
     const [show, setShow] = useState(false);
-
     const handleClose = () => {
         setShow(false);
         navigate("/", { replace: true });
@@ -132,21 +174,17 @@ function ShipAddress() {
     const handleShow = () => setShow(true);
     // show modal 2
     const [show1, setShow1] = useState(false);
-
     const handleClose1 = () => {
         setShow1(false);
         navigate("/", { replace: true });
     };
-    const handleShow1 = () => {
-        setShow1(true);
-    };
+    const handleShow1 = () => setShow1(true);
+
     const [nameDiscount, setNameDiscount] = useState("");
     const [percentDiscount, setPercentDiscount] = useState(0);
     const checkDiscount = async (e) => {
         e.preventDefault();
         const resDiscount = await getDiscount();
-        console.log(resDiscount);
-        console.log(discount);
         var count = 0;
         var percent = 0;
         var namediscount = "";
@@ -170,17 +208,25 @@ function ShipAddress() {
         }
     };
 
-    const handleClearCart = () => {
-        dispatch(clearCart());
+    const checkAndFocus = (value, refKey, setError) => {
+        if (!value) {
+            setError(true);
+            refs[refKey].current?.focus();
+            return false;
+        }
+        setError(false);
+        return true;
     };
-
+    const errorStyle = {
+        boxShadow: '#ff0000b5 0px 0px 4px 1px'
+    };
     // hander click
     const handleCreate = async (e) => {
         e.preventDefault();
         let newOrder = {
             user_id: userId,
             name: name,
-            address: addressDetail + ", " + address,
+            address: addressDetail + ", " + halfAddress,
             status: "Đang xử lý",
             gmail: mail,
             note: note,
@@ -188,7 +234,25 @@ function ShipAddress() {
             pay_method: method,
             total: Number(data - data * percentDiscount + shipcost),
         };
-        let total = data - data * percentDiscount + shipcost;
+        console.log("halfAddress: ", halfAddress);
+        let isValid = true;
+        isValid = checkAndFocus(name, 'nameRef', setNameError) && isValid;
+        isValid = checkAndFocus(mail, 'emailRef', setEmailError) && isValid;
+        isValid = checkAndFocus(phone, 'phoneRef', setPhoneError) && isValid;
+        isValid = checkAndFocus(selectedProvince, 'provinceRef', setProvinceError) && isValid;
+        isValid = checkAndFocus(selectedDistrict, 'districtRef', setDistrictError) && isValid;
+        isValid = checkAndFocus(selectedWard, 'wardRef', setWardError) && isValid;
+        if (!isValid) {
+            toast.error("Vui lòng điền đầy đủ thông tin!", {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                pauseOnHover: true,
+                closeOnClick: true,
+                draggable: true
+            });
+            return;
+        }
         OrderDataService.createOrders(newOrder)
             .then(async (response) => {
                 const order_id = response.data;
@@ -210,10 +274,10 @@ function ShipAddress() {
                         .then()
                         .catch();
                 });
-                if (method == "cod") {
+                if (method === "cod") {
                     handleShow();
                 }
-                if (method == "atm") {
+                if (method === "atm") {
                     handleShow1();
                 }
             })
@@ -221,14 +285,9 @@ function ShipAddress() {
                 alert("Thêm không thành công");
                 console.log(e);
             });
+        dispatch(clearCart());
     };
-    //   items?.map((item) => {
-    //     console.log(item.name);
-    //   })
-    //   function payInfoToggle() {
-    //     var atm = document.getElementById("pay-atm-info");
-    //     atm.classList.toggle("atm-none");
-    //   }
+
     return (
         <div className="main-container-ship">
             <Breadcrumb>
@@ -242,33 +301,52 @@ function ShipAddress() {
                     <div className="form-address-container">
                         <form className="form-address">
                             <input
+                                ref={refs.nameRef}
+                                style={nameError ? errorStyle : null}
                                 type="text"
                                 placeholder="Họ và tên"
-                                onChange={(e) => setName(e.target.value)}
+                                onChange={(e) => {
+                                    setName(e.target.value);
+                                    setNameError(false)
+                                }}
                                 required
                             />
                             <div className="mail-phone">
                                 <input
+                                    ref={refs.emailRef}
+                                    style={emailError ? errorStyle : null}
                                     type="email"
                                     placeholder="Email"
-                                    onChange={(e) => setMail(e.target.value)}
+                                    onChange={(e) => {
+                                        setMail(e.target.value);
+                                        setEmailError(false)
+                                    }}
                                 />
                                 <input
+                                    ref={refs.phoneRef}
+                                    style={phoneError ? errorStyle : null}
                                     type="text"
                                     placeholder="Số điện thoại"
-                                    onChange={(e) => setPhone(e.target.value)}
+                                    onChange={(e) => {
+                                        setPhone(e.target.value);
+                                        setPhoneError(false)
+                                    }}
                                     pattern="[0]{1}[1-9]{1}[0-9]{8}"
                                     required
                                 />
                             </div>
                             <div className="detail-address">
                                 <select
+                                    ref={refs.provinceRef}
+                                    style={provinceError ? errorStyle : null}
                                     name=""
                                     id="province"
-                                    onChange={(e) => handleProvince(e)}
+                                    onChange={(e) => {
+                                        handleProvince(e);
+                                    }}
                                     required
                                 >
-                                    <option value="-1">Tỉnh/TP</option>
+                                    <option value="-1" selected disabled>Tỉnh/TP</option>
                                     {provinces.map((getpro, index) => (
                                         <option key={index} value={getpro.code}>
                                             {getpro.name}
@@ -276,12 +354,16 @@ function ShipAddress() {
                                     ))}
                                 </select>
                                 <select
+                                    ref={refs.districtRef}
+                                    style={districtError ? errorStyle : null}
                                     name=""
                                     id="district"
-                                    onChange={(e) => handleDistrict(e)}
+                                    onChange={(e) => {
+                                        handleDistrict(e);
+                                    }}
                                     required
                                 >
-                                    <option value="-1">Quận/Huyện</option>
+                                    <option value="-1" selected disabled>Quận/Huyện</option>
                                     {districts?.map((getdis, index) => (
                                         <option key={index} value={getdis.code}>
                                             {getdis.name}
@@ -289,12 +371,16 @@ function ShipAddress() {
                                     ))}
                                 </select>
                                 <select
+                                    ref={refs.wardRef}
+                                    style={wardError ? errorStyle : null}
                                     name=""
                                     id="ward"
-                                    onChange={(e) => handleWard(e)}
+                                    onChange={(e) => {
+                                        handleWard(e);
+                                    }}
                                     required
                                 >
-                                    <option value="-1">Phường/Xã</option>
+                                    <option value="-1" selected disabled>Phường/Xã</option>
                                     {wards?.map((getward, index) => (
                                         <option
                                             key={index}
@@ -352,6 +438,7 @@ function ShipAddress() {
                                 Đã áp dụng mã giảm giá {nameDiscount}!
                             </Alert>
                         )}
+
 
                         <hr />
 
@@ -418,6 +505,7 @@ function ShipAddress() {
                             <div class="the-payment-method">
                                 <label>
                                     <input
+                                        checked 
                                         type="radio"
                                         readonly=""
                                         name="payment-method"
@@ -511,7 +599,6 @@ function ShipAddress() {
                         className="btn-Submit"
                         onClick={(e) => {
                             handleCreate(e);
-                            handleClearCart();
                         }}
                     >
                         Tiếp tục

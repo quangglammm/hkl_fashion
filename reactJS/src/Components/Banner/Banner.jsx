@@ -13,8 +13,11 @@ export default function Banner() {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay:true,
     autoplaySpeed: 2000,
-    pauseOnHover: true
+    pauseOnHover: true,
+    speed: 700,
+    cssEase: "linear"
   };
 return (
   <div className="slider" id='banner_slide'>

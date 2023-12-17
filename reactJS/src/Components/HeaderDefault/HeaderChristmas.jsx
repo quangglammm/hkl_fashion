@@ -174,7 +174,7 @@ function HeaderChristmas(props) {
                             aria-label="Search"
                             onChange={(e) => setSearch(e.target.value)}
                         />
-                        <Button type="submit"
+                        <Button type="submit" 
                             variant="outline-success"
                         >
                             Tìm
@@ -211,7 +211,7 @@ function HeaderChristmas(props) {
                         onChange={(e) => setSearch(e.target.value)}
                         
                     />
-                    <Button className="ml-2" variant="outline-success" >
+                    <Button type="submit" className="ml-2" variant="outline-success" >
                         Tìm
                     </Button>
                 </Form>

@@ -3,7 +3,7 @@
     flex-direction: column;
     z-index: 3;
 }
-.christmas.footer_infor {
+.christmas.footer_infor, .christmas.footer-infor-mobile{
     background: url("../Images/banner/bannerChristmas.png") no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
@@ -11,7 +11,8 @@
     z-index: 2;
     color: #f8f9fa;
 }
-.christmas.footer_infor::before {
+
+.christmas.footer_infor::before,.christmas.footer-infor-mobile::before {
     content: '';
     position: absolute;
     top: 0;

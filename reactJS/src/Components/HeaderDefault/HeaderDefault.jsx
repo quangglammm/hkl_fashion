@@ -171,7 +171,7 @@ function HeaderDefault(props) {
                             aria-label="Search"
                             onChange={(e) => setSearch(e.target.value)}
                         />
-                        <Button
+                        <Button type="submit"
                             variant="outline-success"
                         >
                             Tìm
@@ -208,7 +208,7 @@ function HeaderDefault(props) {
                         aria-label="Search"
                         onChange={(e) => setSearch(e.target.value)}
                     />
-                    <Button className="ml-2" variant="outline-success" >
+                    <Button type="submit" className="ml-2" variant="outline-success" >
                         Tìm
                     </Button>
                 </Form>

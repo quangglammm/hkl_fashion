@@ -255,6 +255,7 @@ ul.nav-mobile-list{
 }
 .search-input:checked ~ .nav-mobile-search{
     display: block;
+    z-index: 3000;
 }
 .search-input:checked ~ .nav_overlay1{
     display: block;
@@ -288,9 +289,22 @@ ul.nav-mobile-list{
 }
 
 
-@media only screen and (min-width: 992px){
-   
+@media only screen and (min-width: 768px) and (max-width:1024px) {
+    .navbar-brand .Logo
+    {
+        padding: 4px;
+        margin-top: -10px;
+    }
+
+}@media only screen and (min-width:1024px) {
+    .navbar-brand .Logo
+    {
+        padding: 4px;
+        margin-top: 0px;
+    }
+
 }
+
 @media only screen and (min-width: 46.25em) and (max-width: 64.2em) {
     
     .navbar-nav{
@@ -311,11 +325,7 @@ ul.nav-mobile-list{
     {
         display: none;
     }
-    .navbar-brand .Logo
-    {
-        padding: 4px;
-        margin-top: -10px;
-    }
+    
     .sidebar-icon {
         display: flex;
     }

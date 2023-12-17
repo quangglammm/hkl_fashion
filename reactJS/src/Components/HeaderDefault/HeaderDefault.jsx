@@ -26,7 +26,6 @@ import { logout } from "../../redux/credentials";
 function HeaderDefault(props) {
     const user = JSON.parse(localStorage.getItem("user"));
     const layout = useSelector((state) => state.layoutState.layout);
-console.log('HeaderDefault',layout)
     let navigate = useNavigate();
     var loveList = "/FavoriteProduct";
     if (window.localStorage.getItem("Email") == null) {
@@ -61,25 +60,24 @@ console.log('HeaderDefault',layout)
                     document.querySelector('.navbar').style.zIndex = 100; // Reset về giá trị mặc định
                 }
             });
+            document.querySelector('.search-input').addEventListener('click', function() {
+                if(this.checked) {
+                    document.querySelector('.navbar').style.zIndex = 3000;
+                } else {
+                    document.querySelector('.navbar').style.zIndex = 100; // Reset về giá trị mặc định
+                }
+            });
     }, []);
 
     const [search, setSearch] = useState("");
 
-    const handleSearch = () => {
+    const handleSearch = (e) => {
+        e.preventDefault();
         navigate("/Search", {
             state: {
                 search,
             },
         });
-    };
-    const handleKeyDown = (e) => {
-        if (e.key === "Enter") {
-            navigate("/Search", {
-                state: {
-                    search,
-                },
-            });
-        }
     };
     const Logout = () => {
         window.localStorage.removeItem("JWT");
@@ -165,7 +163,7 @@ console.log('HeaderDefault',layout)
                     <label htmlFor="search-input" className="nav-mobile-close">
                         <img src={close} alt="close" />
                     </label>
-                    <Form className="mobile-search">
+                    <Form className="mobile-search" onSubmit={(e)=>handleSearch(e)}>
                         <Form.Control
                             type="search"
                             placeholder="Tìm kiếm"
@@ -175,7 +173,6 @@ console.log('HeaderDefault',layout)
                         />
                         <Button
                             variant="outline-success"
-                            onClick={handleSearch}
                         >
                             Tìm
                         </Button>
@@ -203,16 +200,15 @@ console.log('HeaderDefault',layout)
                     <Nav.Link href="/AboutUs">Giới thiệu</Nav.Link>
                     {/* <Nav.Link href="/Blogs">Bài viết</Nav.Link> */}
                 </Nav>
-                <Form className="search">
+                <Form className="search" onSubmit={(e)=>handleSearch(e)}>
                     <Form.Control
                         type="search"
                         placeholder="Tìm kiếm"
                         className="me-2"
                         aria-label="Search"
                         onChange={(e) => setSearch(e.target.value)}
-                        onKeyDown={handleKeyDown}
                     />
-                    <Button className="ml-2" variant="outline-success" onClick={handleSearch}>
+                    <Button className="ml-2" variant="outline-success" >
                         Tìm
                     </Button>
                 </Form>

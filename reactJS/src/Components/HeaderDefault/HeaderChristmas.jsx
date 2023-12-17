@@ -60,26 +60,26 @@ function HeaderChristmas(props) {
                     document.querySelector('.navbar').style.zIndex = 100; // Reset về giá trị mặc định
                 }
             });
+            document.querySelector('.search-input').addEventListener('click', function() {
+                if(this.checked) {
+                    document.querySelector('.navbar').style.zIndex = 3000;
+                } else {
+                    document.querySelector('.navbar').style.zIndex = 100; // Reset về giá trị mặc định
+                }
+            });
     }, []);
 
     const [search, setSearch] = useState("");
 
-    const handleSearch = () => {
+    const handleSearch = (e) => {
+        e.preventDefault();
         navigate("/Search", {
             state: {
                 search,
             },
         });
     };
-    const handleKeyDown = (e) => {
-        if (e.key === "Enter") {
-            navigate("/Search", {
-                state: {
-                    search,
-                },
-            });
-        }
-    };
+   
     const Logout = () => {
         window.localStorage.removeItem("JWT");
         window.localStorage.removeItem("Email");
@@ -166,7 +166,7 @@ function HeaderChristmas(props) {
                     <label htmlFor="search-input" className="nav-mobile-close">
                         <img src={close} alt="close" />
                     </label>
-                    <Form className="mobile-search">
+                    <Form className="mobile-search"  onSubmit={(e)=>handleSearch(e)}>
                         <Form.Control
                             type="search"
                             placeholder="Tìm kiếm"
@@ -174,9 +174,8 @@ function HeaderChristmas(props) {
                             aria-label="Search"
                             onChange={(e) => setSearch(e.target.value)}
                         />
-                        <Button
+                        <Button type="submit"
                             variant="outline-success"
-                            onClick={handleSearch}
                         >
                             Tìm
                         </Button>
@@ -203,16 +202,16 @@ function HeaderChristmas(props) {
                     <Nav.Link href="/AboutUs">Giới thiệu</Nav.Link>
                     {/* <Nav.Link href="/Blogs">Bài viết</Nav.Link> */}
                 </Nav>
-                <Form className="search">
+                <Form className="search" onSubmit={(e)=>handleSearch(e)}>
                     <Form.Control
                         type="search"
                         placeholder="Tìm kiếm"
                         className="me-2"
                         aria-label="Search"
                         onChange={(e) => setSearch(e.target.value)}
-                        onKeyDown={handleKeyDown}
+                        
                     />
-                    <Button className="ml-2" variant="outline-success" onClick={handleSearch}>
+                    <Button className="ml-2" variant="outline-success" >
                         Tìm
                     </Button>
                 </Form>

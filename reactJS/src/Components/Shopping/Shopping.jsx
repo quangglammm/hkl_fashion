@@ -69,7 +69,7 @@ function Shopping() {
         <Breadcrumb.Item href="/">Trang chủ</Breadcrumb.Item>
         <Breadcrumb.Item active>Giỏ hàng</Breadcrumb.Item>
       </Breadcrumb>
-      <div className="main-container" style={{margin:'50px auto 10px'}}>
+      <div className="main-container">
         {cart.cartTotalQuantity == 0 ? (
           <div className="empty-product">
             <h2 className="empty-product_title">Không có sản phẩm nào trong giỏ hàng</h2>

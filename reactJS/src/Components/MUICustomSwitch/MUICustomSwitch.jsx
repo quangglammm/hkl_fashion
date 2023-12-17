@@ -9,7 +9,7 @@ import icon from './icon.png'
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from 'react';
 import {changeLayout} from "../../redux/layoutSlide";
-
+import './mui.css'
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
   height: 34,
@@ -73,7 +73,7 @@ export default function MUICustomSwitch() {
   return (
       <FormGroup>
       <FormControlLabel
-        control={<MaterialUISwitch sx={{ m: 1 }} 
+        control={<MaterialUISwitch size='small' sx={{ marginTop:'15px' }} 
         checked={layoutS} 
         defaultValue={layoutS}
         onChange={handleChange} />}

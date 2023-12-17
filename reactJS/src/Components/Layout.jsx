@@ -4,7 +4,7 @@ import HeaderDefault from './HeaderDefault/HeaderDefault.jsx'
 import FooterDefault from './FooterDefault/FooterDefault.jsx'
 import FooterChristmas from './FooterDefault/FooterChristmas.jsx'
 import {  useSelector } from "react-redux";
-import Snowflakes from '../cssEffect/Snowflakes.js';
+import Snowflakes from '../cssEffect/Snowflakes.jsx';
 const Layout = ({ children }) => {
 const layout = useSelector((state) => state.layoutState.layout);
 

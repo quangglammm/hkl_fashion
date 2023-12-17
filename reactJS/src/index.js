@@ -2,59 +2,59 @@ import React, { Suspense, lazy } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
-import { store } from "./redux/store";
-import ErrorPage from "./Components/Error/error-page";
-import App from "./App";
+import { store } from "./redux/store.js";
+import ErrorPage from "./Components/Error/error-page.jsx";
+import App from "./App.jsx";
 import "bootstrap/dist/css/bootstrap.css";
 import "./index.css";
- import Layout from "./Components/Layout";
+ import Layout from "./Components/Layout.jsx";
 //import Layout from "./Components/LayoutChristmas";
-import LayoutAdmin from "./Components/LayoutAdmin";
+import LayoutAdmin from "./Components/LayoutAdmin.jsx";
 
 import Banner from "./Components/Banner/Banner.jsx";
 //import BannerChristmas from "./Components/BannerChristmas/BannerChristmas.jsx";
 // lazy
-const MainPage = lazy(() => import("./Components/MainPageFolder/MainPage"));
-const Products = lazy(() => import("./Components/ProductFolder/Products"));
-const AboutUs = lazy(() => import("./Components/AboutUsFolder/AboutUs"));
-const Shopping = lazy(() => import("./Components/Shopping/Shopping"));
-const Login = lazy(() => import("./Components/LoginFolder/Login"));
-const Register = lazy(() => import("./Components/Register/Register"));
-const ShipAddress = lazy(() => import("./Components/ShipAddress/ShipAddress"));
+const MainPage = lazy(() => import("./Components/MainPageFolder/MainPage.jsx"));
+const Products = lazy(() => import("./Components/ProductFolder/Products.jsx"));
+const AboutUs = lazy(() => import("./Components/AboutUsFolder/AboutUs.jsx"));
+const Shopping = lazy(() => import("./Components/Shopping/Shopping.jsx"));
+const Login = lazy(() => import("./Components/LoginFolder/Login.jsx"));
+const Register = lazy(() => import("./Components/Register/Register.jsx"));
+const ShipAddress = lazy(() => import("./Components/ShipAddress/ShipAddress.js"));
 const ProductDetails = lazy(() =>
-  import("./Components/ProductDetails/ProductDetails")
+  import("./Components/ProductDetails/ProductDetails.jsx")
 );
-const TypeProduct = lazy(() => import("./Components/TypeProduct/TypeProduct"));
+const TypeProduct = lazy(() => import("./Components/TypeProduct/TypeProduct.jsx"));
 const TypeProductDetail = lazy(() =>
-  import("./Components/TypeProductDetail/TypeProductDetail")
+  import("./Components/TypeProductDetail/TypeProductDetail.jsx")
 );
-const Search = lazy(() => import("./Components/Search/Search"));
-const Account = lazy(() => import("./Components/Account/Account"));
-const Home = lazy(() => import("./Components/Admin/Home/Home"));
-const UserList = lazy(() => import("./Components/Admin/UserList/UserList"));
-const User = lazy(() => import("./Components/Admin/User/User"));
-const NewUser = lazy(() => import("./Components/Admin/NewUser/NewUser"));
+const Search = lazy(() => import("./Components/Search/Search.jsx"));
+const Account = lazy(() => import("./Components/Account/Account.jsx"));
+const Home = lazy(() => import("./Components/Admin/Home/Home.jsx"));
+const UserList = lazy(() => import("./Components/Admin/UserList/UserList.jsx"));
+const User = lazy(() => import("./Components/Admin/User/User.jsx"));
+const NewUser = lazy(() => import("./Components/Admin/NewUser/NewUser.jsx"));
 const ProductList = lazy(() =>
-  import("./Components/Admin/ProductList/ProductList")
+  import("./Components/Admin/ProductList/ProductList.jsx")
 );
-const Product = lazy(() => import("./Components/Admin/Product/Product"));
-const Orders = lazy(() => import("./Components/Admin/Orders/Orders"));
+const Product = lazy(() => import("./Components/Admin/Product/Product.jsx"));
+const Orders = lazy(() => import("./Components/Admin/Orders/Orders.jsx"));
 const OrderDetailAdmin = lazy(() =>
-  import("./Components/Admin/OrderDetailAdmin/OrderDetailAdmin")
+  import("./Components/Admin/OrderDetailAdmin/OrderDetailAdmin.jsx")
 );
 const NewProduct = lazy(() =>
-  import("./Components/Admin/NewProduct/NewProduct")
+  import("./Components/Admin/NewProduct/NewProduct.jsx")
 );
 const TypeProductList = lazy(() =>
-  import("./Components/Admin/TypeProductList/TypeProductList")
+  import("./Components/Admin/TypeProductList/TypeProductList.jsx")
 );
 const TypeProductEdit = lazy(() =>
-  import("./Components/Admin/TypeProductEdit/TypeProductEdit")
+  import("./Components/Admin/TypeProductEdit/TypeProductEdit.jsx")
 );
 const NewTypeProduct = lazy(() =>
-  import("./Components/Admin/NewTypeProduct/NewTypeProduct")
+  import("./Components/Admin/NewTypeProduct/NewTypeProduct.jsx")
 );
-const OrderDetail = lazy(() => import("./Components/OrderDetail/OrderDetail"));
+const OrderDetail = lazy(() => import("./Components/OrderDetail/OrderDetail.jsx"));
 
 
 const router = createBrowserRouter([

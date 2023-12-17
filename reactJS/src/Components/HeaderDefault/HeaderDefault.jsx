@@ -55,9 +55,9 @@ function HeaderDefault(props) {
             });
             document.querySelector('.nav-mobile-input').addEventListener('click', function() {
                 if(this.checked) {
-                    document.querySelector('.navbar').style.zIndex = 3000;
+                    document.querySelector('.navbar').style.zIndex = 100;
                 } else {
-                    document.querySelector('.navbar').style.zIndex = 100; // Reset về giá trị mặc định
+                    document.querySelector('.navbar').style.zIndex = 3000; // Reset về giá trị mặc định
                 }
             });
             document.querySelector('.search-input').addEventListener('click', function() {

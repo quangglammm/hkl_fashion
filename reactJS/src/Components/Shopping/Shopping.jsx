@@ -6,7 +6,10 @@ import MuiAlert from "@mui/material/Alert";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import { useDispatch, useSelector } from "react-redux";
 import { DeleteOutline } from "@mui/icons-material";
-import ShoppingCart from '../Images/shoppingCart.png'
+import ShoppingCart from '../Images/shoppingCart.png';
+
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import {
   decreaseCart,
   increaseCart,
@@ -66,7 +69,7 @@ function Shopping() {
         <Breadcrumb.Item href="/">Trang chủ</Breadcrumb.Item>
         <Breadcrumb.Item active>Giỏ hàng</Breadcrumb.Item>
       </Breadcrumb>
-      <div className="main-container" style={{marginTop:'50px'}}>
+      <div className="main-container" style={{margin:'50px auto 10px'}}>
         {cart.cartTotalQuantity == 0 ? (
           <div className="empty-product">
             <h2 className="empty-product_title">Không có sản phẩm nào trong giỏ hàng</h2>
@@ -77,11 +80,11 @@ function Shopping() {
           <div className="products">
             <div className="cartForPC">
               <div className="cart-heading grid grid-five-column">
-                <p>Sản phẩm</p>
+                <p className="cart-hide">Sản phẩm</p>
                 <p className="cart-hide">Giá</p>
-                <p>Số lượng</p>
+                <p className="cart-hide">Số lượng</p>
                 <p className="cart-hide">Tổng tiền</p>
-                <p>Xóa</p>
+                <p className="cart-hide">Xóa</p>
               </div>
               <hr />
               <div className="cart-item">
@@ -90,7 +93,7 @@ function Shopping() {
                     <div className="grid grid-five-column ">
                       <div className="cart-image-name">
                         <div>
-                          <img
+                          <img className="img_cart"
                             src={item.image}
                             alt={item.name}
                             style={{
@@ -127,7 +130,7 @@ function Shopping() {
                           style={{ margin: "2px" }}
                           onClick={() => handleDecreaseCart(item)}
                         >
-                          -{" "}
+                          <RemoveCircleOutlineIcon style={{color:'red'}}/>
                         </span>
                         <span>{item.quantity}</span>
                         <span
@@ -135,8 +138,8 @@ function Shopping() {
                           style={{ margin: "2px" }}
                           onClick={() => handleIncreaseCart(item)}
                         >
-                          {" "}
-                          +{" "}
+                          
+                          <AddCircleOutlineIcon style={{color:'#39a853'}}/>
                         </span>
                       </div>
                       <div className="cart-hide">
@@ -167,10 +170,13 @@ function Shopping() {
                           <span
                             className=""
                             style={{
+                              display:'inline-block',
                               background: item.color,
                               padding: "2px 7px",
                               borderRadius: "50%",
                               marginRight: "10px",
+                              width:'15px',
+                              height:'15px'
                             }}
                           ></span>
                           <span> | Size: </span>
@@ -197,7 +203,7 @@ function Shopping() {
                           style={{ margin: "2px" }}
                           onClick={() => handleDecreaseCart(item)}
                         >
-                          -{" "}
+                          <RemoveCircleOutlineIcon style={{color:'red'}}/>
                         </span>
                         <span>{item.quantity}</span>
                         <span
@@ -206,7 +212,7 @@ function Shopping() {
                           onClick={() => handleIncreaseCart(item)}
                         >
                           {" "}
-                          +{" "}
+                          <AddCircleOutlineIcon style={{color:'#39a853'}}/>
                         </span>
                       </div>
                       <div className="cartItemPriceTotal">

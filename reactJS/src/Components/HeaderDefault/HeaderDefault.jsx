@@ -221,7 +221,7 @@ function HeaderDefault(props) {
                 <div className="cartandlogin">
                     <Nav.Link href="/ShoppingCart">
                         <img src={shoppingIcon} alt="cart" />
-                        <span>{cart.cartTotalQuantity}</span>
+                        <span >{cart.cartTotalQuantity}</span>
                     </Nav.Link>
                     <button onClick={LoginclickHandler} className="logIn-btn">
                         <Nav.Link>

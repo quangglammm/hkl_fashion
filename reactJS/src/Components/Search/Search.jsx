@@ -13,7 +13,7 @@ export default function Search(props) {
     ProductDataService.getProductsFromSearch(state.search)
       .then((res) => setProducts(res.data.docs))
       .catch((err) => console.log(err));
-  }, [products]);
+  }, []);
 
   return (
     <div className="search-page">

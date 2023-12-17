@@ -57,7 +57,7 @@ function Account() {
 
   useEffect(() => {
     BoughtOrders();
-  });
+  }, []);
   const BoughtOrders = () => {
     const result = localStorage.getItem("user");
     const user = JSON.parse(result);

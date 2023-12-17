@@ -1,8 +1,12 @@
+.search-page {
+    margin-top: 60px;
+}
 .search-list-products{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    row-gap: 60px;
-    margin-bottom: 72px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    row-gap: 70px;
+    column-gap: 15px;
+    padding: 0 40px 40px;
 }
 .search-list-products button {
     background: none;

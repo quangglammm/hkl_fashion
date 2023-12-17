@@ -16,7 +16,7 @@ export default function Search(props) {
   }, [products]);
 
   return (
-    <div>
+    <div className="search-page">
       <Breadcrumb>
         <Breadcrumb.Item href="/">Trang chủ</Breadcrumb.Item>
         <Breadcrumb.Item href="/Products">Sản phẩm</Breadcrumb.Item>

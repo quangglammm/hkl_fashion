@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import CatagoryDataService from "../../services/catagories";
 import "./HeaderDefault.css";
 import shoppingIcon from "../Images/shopping-icon.png";
+import LogoMb from "../Images/icon_red.png"
 // import Logo from "../Images/logoDefault.png";
 import Logo from "../Images/logoChristmas.png";
 import { useNavigate } from "react-router-dom";
@@ -51,6 +52,13 @@ function HeaderChristmas(props) {
             })
             .catch((e) => {
                 console.log(e);
+            });
+            document.querySelector('.nav-mobile-input').addEventListener('click', function() {
+                if(this.checked) {
+                    document.querySelector('.navbar').style.zIndex = 3000;
+                } else {
+                    document.querySelector('.navbar').style.zIndex = 100; // Reset về giá trị mặc định
+                }
             });
     }, []);
 
@@ -175,6 +183,7 @@ function HeaderChristmas(props) {
                     </Form>
                 </div>
                 <Navbar.Brand href="/">
+                    <img src={LogoMb} alt="Shop quần áo" className="Logo_mobile" />
                     <img src={Logo} alt="Shop quần áo" className="Logo" />
                 </Navbar.Brand>
                 <Nav className="" style={{ maxHeight: "100px" }}>
@@ -207,9 +216,7 @@ function HeaderChristmas(props) {
                         Tìm
                     </Button>
                 </Form>
-                <div className="switchLayout">
-                <MUICustomSwitch />
-                </div>
+                
 
 
                 {/* <Nav.Link className="lovelists" href={loveList}>

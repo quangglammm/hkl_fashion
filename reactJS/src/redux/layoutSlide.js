@@ -14,7 +14,7 @@ const layoutSlide = createSlice({
             if(!action.payload){
             toast.success("Đã đổi sang layout mặc định😉", {
                 position: "top-center",
-                autoClose: 2000,
+                autoClose: 200,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: false,
@@ -23,7 +23,7 @@ const layoutSlide = createSlice({
             else{
                 toast.success("Đã đổi sang layout Christmas🎄", {
                     position: "top-center",
-                    autoClose: 2000,
+                    autoClose: 200,
                     hideProgressBar: false,
                     pauseOnHover: false,
                     closeOnClick: true,

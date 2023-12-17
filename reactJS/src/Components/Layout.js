@@ -3,8 +3,8 @@ import HeaderChristmas from './HeaderDefault/HeaderChristmas.jsx'
 import HeaderDefault from './HeaderDefault/HeaderDefault.jsx'
 import FooterDefault from './FooterDefault/FooterDefault.jsx'
 import FooterChristmas from './FooterDefault/FooterChristmas.jsx'
-import { useDispatch, useSelector } from "react-redux";
-
+import {  useSelector } from "react-redux";
+import Snowflakes from '../cssEffect/Snowflakes.js';
 const Layout = ({ children }) => {
 const layout = useSelector((state) => state.layoutState.layout);
 
@@ -17,6 +17,7 @@ const layout = useSelector((state) => state.layoutState.layout);
     </Suspense>
 
     <FooterDefault/></>:<><HeaderChristmas/>
+    <Snowflakes/>
 
 <Suspense fallback={<p>Loading...</p>}>
     {children}

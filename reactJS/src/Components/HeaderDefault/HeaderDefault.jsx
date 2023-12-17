@@ -3,6 +3,7 @@ import CatagoryDataService from "../../services/catagories";
 import "./HeaderDefault.css";
 import shoppingIcon from "../Images/shopping-icon.png";
 import Logo from "../Images/logoDefault.png";
+import LogoMb from "../Images/icon.png"
 // import Logo from "../Images/logoChristmas.png";
 import { useNavigate } from "react-router-dom";
 import ListTypeProduct from "../ListTypeProduct/ListTypeProduct";
@@ -18,7 +19,6 @@ import sidebaricon from "../Images/sidebar-icon.png";
 import searchicon from "../Images/black-search-icon.png";
 import close from "../Images/close.webp";
 import arrowbottom from "../Images/arrow-bottom.png";
-import MUICustomSwitch from "../MUICustomSwitch/MUICustomSwitch";
 import { useSelector, useDispatch } from "react-redux";
 import { getToTals } from "../../redux/cartSlide";
 import { logout } from "../../redux/credentials";
@@ -32,7 +32,7 @@ console.log('HeaderDefault',layout)
     if (window.localStorage.getItem("Email") == null) {
         loveList = "/Login";
     }
-
+    
     function LoginclickHandler() {
         if (!user) {
             navigate("/Login");
@@ -53,6 +53,13 @@ console.log('HeaderDefault',layout)
             })
             .catch((e) => {
                 console.log(e);
+            });
+            document.querySelector('.nav-mobile-input').addEventListener('click', function() {
+                if(this.checked) {
+                    document.querySelector('.navbar').style.zIndex = 3000;
+                } else {
+                    document.querySelector('.navbar').style.zIndex = 100; // Reset về giá trị mặc định
+                }
             });
     }, []);
 
@@ -176,7 +183,9 @@ console.log('HeaderDefault',layout)
                 </div>
                 <Navbar.Brand href="/">
                     <img src={Logo} alt="Shop quần áo" className="Logo" />
+                    <img src={LogoMb} alt="Shop quần áo" className="Logo_mobile" />
                 </Navbar.Brand>
+                
                 <Nav className="" style={{ maxHeight: "100px" }}>
                     <Nav.Link href="/">Trang chủ</Nav.Link>
                     <div className="product-header">
@@ -207,9 +216,7 @@ console.log('HeaderDefault',layout)
                         Tìm
                     </Button>
                 </Form>
-                <div className="switchLayout">
-                <MUICustomSwitch />
-                </div>
+               
 
                 {/* <Nav.Link className="lovelists" href={loveList}>
                     {" "}

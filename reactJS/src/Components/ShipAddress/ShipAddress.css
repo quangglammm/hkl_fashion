@@ -1,14 +1,8 @@
-.breadcrumb{
-    margin-top: 70px;
-    padding: 15px 15px;
-    font-size: 18px;
-  }
-  .breadcrumb a{
+.breadcrumb a{
     color: black;
-  }
+}
 .main-container-ship{
-    font-size: 18px;
-    margin-top: 70px;
+    margin-top: 60px;
 }
 .container-ship{
     display: grid;
@@ -34,11 +28,23 @@
     width: 80%;
     margin: auto;
 }
-.form-address input{
-    padding: 10px;
+.form-address input,
+.form-address select,
+.form-address textarea {
+    display: block;
+    padding: 12px;
     font-size: 18px;
     margin: 10px 0;
     border-radius: 10px;
+    border: solid 1px gray;
+    transition: all 0.3s ease;
+    color: black;
+}
+.form-address input:focus-visible,
+.form-address select:focus-visible,
+.form-address textarea:focus-visible {
+    box-shadow: 0px 0px 5px 2px rgba(128, 128, 128, 0.5);
+    outline: none;
 }
 .form-address > input{
     width: 100%;
@@ -52,14 +58,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap:50px;
-}
-.detail-address select{
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 10px 0;
-    font-size: 18px;
-    border: 2px solid black;
 }
 .btn-Submit{
     font-size: 18px;
@@ -86,21 +84,32 @@ textarea{
     padding: 0 65px;
 }
 .container-ship-right .voucher input{
-    padding: 10px;
+    padding: 12px;
     font-size: 18px;
     margin: 10px 0;
     border-radius: 10px;
+    border: solid 1px gray;
+    transition: all 0.3s ease;
 }
+.container-ship-right .voucher input:focus-visible{
+    box-shadow: 0px 0px 5px 2px rgba(128, 128, 128, 0.5);
+    outline: none;
+}
+.btn-Submit,
 .container-ship-right .voucher button{
     font-size: 18px;
-    background-color: #6851A8;
-    padding: 15px;
+    background-color: #6851a8d2;
+    padding: 12px 20px;
     border-radius: 10px;
-    margin-left: 50px;
+    margin-left: 20px;
     color: white;
+    border: none;
+    transition: all 0.3s ease;
 }
+.btn-Submit:hover,
 .container-ship-right .voucher button:hover{
-    background-color: #9f8cd4;
+    background-color: #6851A8;
+    box-shadow: 0 0 4px 1px #6851a84f;
     cursor: pointer;
 }
 .container-ship-right .price{

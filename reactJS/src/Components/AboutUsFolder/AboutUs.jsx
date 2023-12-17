@@ -7,7 +7,7 @@ import about3 from "../Images/about/about3.png";
 
 function About() {
   return (
-      <div className="">
+      <div className="aboutus-container">
           <Breadcrumb>
               <Breadcrumb.Item href="/">Trang chủ</Breadcrumb.Item>
               <Breadcrumb.Item active>Giới thiệu</Breadcrumb.Item>

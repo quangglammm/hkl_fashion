@@ -61,7 +61,7 @@ function Shopping() {
   };
 
   return (
-    <div className="main">
+    <div className="main_shopping-container">
       <Breadcrumb>
         <Breadcrumb.Item href="/">Trang chủ</Breadcrumb.Item>
         <Breadcrumb.Item active>Giỏ hàng</Breadcrumb.Item>

@@ -144,7 +144,7 @@ export default function TypeProductList() {
           <div className="container-admin">
               <Sidebar />
               <div className="typeProductList">
-                  <h2>Quản lý người dùng</h2>
+                  <h2>Quản lý sản phẩm</h2>
                   <Box style={{ height: 800, width: "98%" }} className="product_list_box">
                       <DataGrid
                           rows={products}

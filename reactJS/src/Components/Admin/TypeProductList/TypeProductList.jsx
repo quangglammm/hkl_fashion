@@ -10,6 +10,8 @@ import { useNavigate } from "react-router-dom";
 import Tooltip from "@mui/material/Tooltip";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
+import Box from '@mui/material/Box'
+
 
 export default function TypeProductList() {
   const navigate = useNavigate();
@@ -36,7 +38,7 @@ export default function TypeProductList() {
       .catch((err) => console.log(err));
   };
   // modal after click delete
-  
+
   const [show, setShow] = useState(false);
   const [productId, setProductId] = useState(-1);
   const handleClose = () => setShow(false);
@@ -61,7 +63,7 @@ export default function TypeProductList() {
       headerName: "ID",
       width: 50,
       renderCell: (params) => {
-        return <p>{params.row.product._id}</p>;
+        return <div>{params.row.product._id}</div>;
       },
     },
     {
@@ -137,39 +139,45 @@ export default function TypeProductList() {
   ];
 
   return (
-    <div>
-      <Topbar />
-      <div className="container-admin">
-        <Sidebar />
-        <div className="typeProductList" style={{ height: 800, width: "100%" }}>
-          <DataGrid
-            rows={products}
-            getRowId={(row) => row.product._id}
-            disableRowSelectionOnClick
-            columns={columns}
-            checkboxSelection
-            initialState={{
-              pagination: {
-                paginationModel: { pageSize: 25, page: 0 },
-              },
-            }}
-          />
-          <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title>Thông báo</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>Bạn có muốn xóa không?</Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={(e)=>handleDelete(productId)}>
-                Xóa
-              </Button>
-              <Button variant="primary" onClick={handleClose}>
-                Đóng
-              </Button>
-            </Modal.Footer>
-          </Modal>
-        </div>
+      <div>
+          <Topbar />
+          <div className="container-admin">
+              <Sidebar />
+              <div className="typeProductList">
+                  <h2>Quản lý người dùng</h2>
+                  <Box style={{ height: 800, width: "98%" }} className="product_list_box">
+                      <DataGrid
+                          rows={products}
+                          getRowId={(row) => row.product._id}
+                          disableRowSelectionOnClick
+                          columns={columns}
+                          checkboxSelection
+                          initialState={{
+                              pagination: {
+                                  paginationModel: { pageSize: 25, page: 0 },
+                              },
+                          }}
+                      />
+                  </Box>
+                  <Modal show={show} onHide={handleClose}>
+                      <Modal.Header closeButton>
+                          <Modal.Title>Thông báo</Modal.Title>
+                      </Modal.Header>
+                      <Modal.Body>Bạn có muốn xóa không?</Modal.Body>
+                      <Modal.Footer>
+                          <Button
+                              variant="secondary"
+                              onClick={(e) => handleDelete(productId)}
+                          >
+                              Xóa
+                          </Button>
+                          <Button variant="primary" onClick={handleClose}>
+                              Đóng
+                          </Button>
+                      </Modal.Footer>
+                  </Modal>
+              </div>
+          </div>
       </div>
-    </div>
   );
 }

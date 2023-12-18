@@ -73,9 +73,7 @@ export default function UserList() {
             headerName: "Ngày sinh",
             width: 150,
             renderCell: (params) => {
-                return (
-                    <Moment format="DD/MM/YYYY">{params.row.birthday}</Moment>
-                );
+                return <div>{moment(params.row.birthday).format("L")}</div>;
             },
         },
         {

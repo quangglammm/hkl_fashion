@@ -100,9 +100,9 @@ export default function User() {
                                     <div className="userShowInfo">
                                         <CalendarToday className="userShowIcon" />
                                         <span className="userShowInfoTitle">
-                                            <Moment format="DD/MM/YYYY">
-                                                {userInfor.birthday}
-                                            </Moment>
+                                            {moment(userInfor.birthday).format(
+                                                "L"
+                                            )}
                                         </span>
                                     </div>
                                 )}

@@ -302,7 +302,7 @@ ul.nav-mobile-list{
 }
 
 
-@media only screen and (min-width: 737px) and (max-width:1024px) {
+@media only screen and (min-width: 737px) and (max-width:989px) {
     .navbar-brand .Logo
     {
         padding: 4px;

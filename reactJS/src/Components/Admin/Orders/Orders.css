@@ -5,6 +5,9 @@
 .orderList {
     flex: 4;
     background-color: #f2f8ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .orderList h2 {
     text-transform: uppercase;
@@ -14,7 +17,7 @@
 }
 .tableOrderList {
     margin-top: 30px;
-    margin-left: 5px;
+    /* margin-left: 5px; */
     background-color: #fff;
 }
 .tableOrderList .orderPrice {
@@ -62,4 +65,14 @@
     background: none !important;
     border: none !important;
     box-shadow: none !important;
+}
+
+.tableOrderList .MuiTablePagination-selectLabel,
+.tableOrderList .MuiTablePagination-displayedRows {
+    margin: 14px 0;
+}
+
+.tableOrderList .MuiDataGrid-columnHeaderTitle {
+    font-size: 16px;
+    font-weight: bold;
 }

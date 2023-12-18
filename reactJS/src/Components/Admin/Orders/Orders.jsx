@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { Visibility, DeleteOutline } from "@mui/icons-material";
+import Box from "@mui/material/Box";
 
 export default function Orders() {
     const [orders, setOrders] = useState([]);
@@ -40,7 +41,7 @@ export default function Orders() {
         {
             field: "id",
             headerName: "STT",
-            width: 50,
+            width: 70,
         },
         {
             field: "name",
@@ -55,7 +56,7 @@ export default function Orders() {
         {
             field: "total",
             headerName: "Tổng",
-            width: 110,
+            width: 100,
             renderCell: (params) => {
                 return (
                     <div className="orderPrice">
@@ -67,7 +68,7 @@ export default function Orders() {
         {
             field: "pay_method",
             headerName: "Thanh toán",
-            width: 120,
+            width: 110,
             renderCell: (params) => {
                 return (
                     <div className="orderPayMethod">
@@ -138,9 +139,9 @@ export default function Orders() {
                 <Sidebar />
                 <div className="orderList">
                     <h2>Quản lý đơn hàng</h2>
-                    <div
+                    <Box
                         className="tableOrderList"
-                        style={{ height: 800, width: "99%" }}
+                        sx={{ height: 800, width: "99%" }}
                     >
                         <DataGrid
                             rows={rowsWithIds}
@@ -153,9 +154,9 @@ export default function Orders() {
                                     paginationModel: { pageSize: 25, page: 0 },
                                 },
                             }}
-                            // style={{margin: 0}}
+
                         />
-                    </div>
+                    </Box>
                     <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>
                             <Modal.Title>Thông báo</Modal.Title>

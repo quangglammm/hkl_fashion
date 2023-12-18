@@ -5,7 +5,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import { DataGrid } from "@mui/x-data-grid";
 import { DeleteOutline, Edit } from "@mui/icons-material";
 import { Link } from "react-router-dom";
-import Moment from "react-moment";
+import moment from "moment";
 import UserDataService from "../../../services/users";
 import { useNavigate } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
@@ -69,7 +69,7 @@ export default function UserList() {
       headerName: "Ngày sinh",
       width: 150,
       renderCell: (params) => {
-        return <Moment format="DD/MM/YYYY">{params.row.birthday}</Moment>;
+        return <div>{moment(params.row.birthday).format('L')}</div>
       },
     },
     {

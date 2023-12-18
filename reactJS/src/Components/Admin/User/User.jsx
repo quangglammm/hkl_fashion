@@ -5,7 +5,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import avatar from "../Images/avatar.jpg";
 import { useNavigate, useParams } from "react-router-dom";
 import UserDataService from "../../../services/users";
-import Moment from "react-moment";
+import moment from "moment";
 
 import {
   CalendarToday,
@@ -94,7 +94,7 @@ export default function User() {
                   <div className="userShowInfo">
                     <CalendarToday className="userShowIcon" />
                     <span className="userShowInfoTitle">
-                      <Moment format="DD/MM/YYYY">{userInfor.birthday}</Moment>
+                      {moment(userInfor.birthday).format("L")}
                     </span>
                   </div>
                 )}

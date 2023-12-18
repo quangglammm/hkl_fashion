@@ -3,7 +3,7 @@ import "./Orders.css";
 import Topbar from "../Topbar/Topbar";
 import Sidebar from "../Sidebar/Sidebar";
 import OrderDataService from "../../../services/orders";
-import Moment from "react-moment";
+import moment from "moment";
 import { DataGrid } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
@@ -91,7 +91,7 @@ export default function Orders() {
             renderCell: (params) => {
                 return (
                     <div className="orderDate">
-                        <Moment format="DD/MM/YYYY">{params.createdAt}</Moment>
+                        {moment(params.createdAt).format("L")}
                     </div>
                 );
             },

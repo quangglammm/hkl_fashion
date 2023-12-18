@@ -1,3 +1,4 @@
+
 .loginmain {
     background: url("../Images/banner/slider5.jpg") no-repeat center center;
     background-attachment: fixed;
@@ -95,22 +96,19 @@
 }
 @media only screen and (min-width: 46.25em) and (max-width: 64.2em) {
     .loginmain {
-        background-color: #fff;
-        display: block;
         text-align: -webkit-center;
-        margin: 90px 0 20px 0;
+        margin-top: 60px;
         height: auto;
+    }
+    .loginmain-content {
+        padding: 40px 0;
     }
     .logomain{
         display: none;
     }
     .loginForm{
-        background-color: #fff;
-        width: 60%;
+        width: 90%;
         height: 100%;
-    }
-    .loginForm form input{
-        border-bottom:1px solid #ccc ;
     }
     .loginForm p:last-child{
         font-size: 18px;
@@ -120,25 +118,25 @@
 
 @media only screen and (max-width: 46.1875em){
     .loginmain {
-        background-color: #fff;
-        display: block;
         text-align: -webkit-center;
-        margin: 90px 0 20px 0;
+        margin-top: 60px;
         height: auto;
+    }
+    .loginmain-content {
+        padding: 40px 0;
+    }
+    .loginmain-body {
+        width: 90%;
     }
     .logomain{
         display: none;
     }
     .loginForm{
-        background-color: #fff;
-        width: 70%;
+        width: 95%;
         height: 100%;
     }
     .loginForm h3{
         font-size: 20px;
-    }
-    .loginForm form input{
-        border-bottom:1px solid #ccc ;
     }
     .loginForm p:last-child{
         font-size: 16px;

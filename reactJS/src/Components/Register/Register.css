@@ -95,22 +95,19 @@
 }
 @media only screen and (min-width: 46.25em) and (max-width: 64.2em) {
     .regismain {
-        background-color: #fff;
-        display: block;
         text-align: -webkit-center;
-        margin: 90px 0 20px 0;
+        margin-top: 60px;
         height: auto;
+    }
+    .regismain-content {
+        padding: 40px 0;
     }
     .logomain{
         display: none;
     }
     .regisForm{
-        background-color: #fff;
-        width: 60%;
+        width: 90%;
         height: 100%;
-    }
-    .regisForm form input{
-        border-bottom:1px solid #ccc ;
     }
     .regisForm p:last-child{
         font-size: 18px;
@@ -120,25 +117,25 @@
 
 @media only screen and (max-width: 46.1875em){
     .regismain {
-        background-color: #fff;
-        display: block;
         text-align: -webkit-center;
-        margin: 90px 0 20px 0;
+        margin-top: 60px;
         height: auto;
+    }
+    .regismain-content {
+        padding: 40px 0;
+    }
+    .regismain-body {
+        width: 90%;
     }
     .logomain{
         display: none;
     }
     .regisForm{
-        background-color: #fff;
-        width: 70%;
+        width: 95%;
         height: 100%;
     }
     .regisForm h3{
         font-size: 20px;
-    }
-    .regisForm form input{
-        border-bottom:1px solid #ccc ;
     }
     .regisForm p:last-child{
         font-size: 16px;

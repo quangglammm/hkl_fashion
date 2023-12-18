@@ -58,24 +58,25 @@
 }
 @media only screen and (max-width: 46.1875em){
     .containerItem_name{
-        font-size: 14px;
+        font-size: 12px;
         text-align: left;
     }
     .containerItem_infor-price{
-        font-size: 16px;
-        text-align: left;
+        font-size: 9px;
+        text-align: center;
     }
     .containerItem{
         margin: 20px 0;
     }
     .ContainerItem_image{
         width: auto;
+        margin: 0 auto;
     }
     .nameandprice{
         display: inline-block;
     }
     .ContainerItem_image {
-        width: 60%;
+        width: 80%;
         height: 80px;
     }
 }

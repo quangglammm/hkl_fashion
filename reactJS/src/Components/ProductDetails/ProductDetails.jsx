@@ -168,21 +168,46 @@ export function ProductDetails(props) {
   };
 
   let settings = {
-    className: "center",
-    centerMode: true,
-    // centerPadding: "60px",
-    dots: true,
+    arrows: false,
     infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1
-  };
-  let settingsmobile = {
-    arrows: true,
-    infinite: true,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-  };
+    speed: 1000,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    rows:1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    vertical: false,
+    responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            rows:1
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              // initialSlide: 2,
+              rows:1
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            rows:1
+          }
+        }
+    ]
+};
+
   var vnd = Intl.NumberFormat("vi-VN", {
     style: "currency",
     currency: "VND",
@@ -454,9 +479,9 @@ export function ProductDetails(props) {
       </div>
       <br></br>
       <hr />
-      <div className="related-product">
+      <div className="slide_detail newProducts_product product" >
         <h3>Có thể bạn sẽ thích</h3>
-        <div className="non-mobile-related">
+        <div className=" non-mobile">
           <Slider {...settings}>
             {relatedProdutcs.map(function (item) {
               return (
@@ -472,18 +497,7 @@ export function ProductDetails(props) {
             })}
           </Slider>
         </div>
-        <div className="mobile-related">
-          <Slider {...settingsmobile}>
-            {relatedProdutcs.map((item) => (
-              <ContainerItem
-                price={item.product.price}
-                name={item.product.name}
-                image={item.path}
-                masp={item.product._id}
-              />
-            ))}
-          </Slider>
-        </div>
+  
       </div>
       <span>&nbsp;</span>
       <CommentAndComentList productId={productID} />

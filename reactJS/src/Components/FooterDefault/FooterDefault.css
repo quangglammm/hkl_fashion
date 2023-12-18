@@ -121,7 +121,7 @@ z-index: 2;
 .social-icon img{
     width: 30px;
     height: 30px;
-    margin-right: 30px;
+    margin-right: 0 5px;
 
 }
 .footer-infor-mobile{
@@ -152,9 +152,7 @@ z-index: 2;
     .footer-infor-mobile{
         display: block;
     }
-    .footer{
-        margin-top: 20px;
-    }
+ 
     .accordion-header button {
         font-size: 18px !important;
     }

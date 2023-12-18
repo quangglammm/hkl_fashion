@@ -4,7 +4,7 @@ import './Snowflakes.css';
 
 const Snowflakes = () => {
   useEffect(() => {
-    const intervalId = setInterval(createSnowflake, 100);
+    const intervalId = setInterval(createSnowflake, 250);
     
     return () => clearInterval(intervalId);
   }, []);

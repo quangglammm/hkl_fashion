@@ -20,7 +20,7 @@ const AboutUs = lazy(() => import("./Components/AboutUsFolder/AboutUs.jsx"));
 const Shopping = lazy(() => import("./Components/Shopping/Shopping.jsx"));
 const Login = lazy(() => import("./Components/LoginFolder/Login.jsx"));
 const Register = lazy(() => import("./Components/Register/Register.jsx"));
-const ShipAddress = lazy(() => import("./Components/ShipAddress/ShipAddress.js"));
+const ShipAddress = lazy(() => import("./Components/ShipAddress/ShipAddress.jsx"));
 const ProductDetails = lazy(() =>
   import("./Components/ProductDetails/ProductDetails.jsx")
 );

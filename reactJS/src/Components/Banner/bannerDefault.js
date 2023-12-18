@@ -1,8 +1,8 @@
-import banner1 from "../Images/banner/bannerHKL.png";
-import banner2 from "../Images/banner/banner2.png";
-import banner3 from "../Images/banner/banner3.png";
-import banner4 from "../Images/banner/banner4.png";
-import banner5 from "../Images/banner/banner5.png";
+import banner1 from "../Images/banner/bannerHKL.jpg";
+import banner2 from "../Images/banner/banner2.jpg";
+import banner3 from "../Images/banner/banner3.jpg";
+import banner4 from "../Images/banner/banner4.jpg";
+import banner5 from "../Images/banner/banner5.jpg";
 
 export const bannerDefault=[
   {image: banner1},

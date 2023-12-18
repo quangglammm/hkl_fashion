@@ -5,7 +5,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import avatar from "../Images/avatar.jpg";
 import { useNavigate, useParams } from "react-router-dom";
 import UserDataService from "../../../services/users";
-import Moment from "react-moment";
+import moment from "moment";
 
 import {
     CalendarToday,

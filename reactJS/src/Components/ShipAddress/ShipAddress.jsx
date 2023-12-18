@@ -155,6 +155,7 @@ function ShipAddress() {
 
     const handleWard = (event) => {
         const getwardId = event.target.value;
+        console.log("getwardId: ", getwardId);
         if (getwardId === "-1") {
             setWardError(true);
             return;
@@ -345,8 +346,9 @@ function ShipAddress() {
                                         handleProvince(e);
                                     }}
                                     required
+                                    value={provinceid}
                                 >
-                                    <option value="-1" selected disabled>Tỉnh/TP</option>
+                                    <option value="-1" >Tỉnh/TP</option>
                                     {provinces.map((getpro, index) => (
                                         <option key={index} value={getpro.code}>
                                             {getpro.name}
@@ -362,8 +364,9 @@ function ShipAddress() {
                                         handleDistrict(e);
                                     }}
                                     required
+                                    value={districtid}
                                 >
-                                    <option value="-1" selected disabled>Quận/Huyện</option>
+                                    <option value="-1" >Quận/Huyện</option>
                                     {districts?.map((getdis, index) => (
                                         <option key={index} value={getdis.code}>
                                             {getdis.name}
@@ -379,8 +382,9 @@ function ShipAddress() {
                                         handleWard(e);
                                     }}
                                     required
+                                    // value={wardId}
                                 >
-                                    <option value="-1" selected disabled>Phường/Xã</option>
+                                    <option value="-1" >Phường/Xã</option>
                                     {wards?.map((getward, index) => (
                                         <option
                                             key={index}

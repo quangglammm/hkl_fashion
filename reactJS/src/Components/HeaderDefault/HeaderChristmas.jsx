@@ -238,10 +238,10 @@ function HeaderChristmas(props) {
                                     {" "}
                                     <li>Thông tin tài khoản</li>{" "}
                                 </Nav.Link>
-                                <button className="nav-link" onClick={Logout}>
+                                <Nav.Link  onClick={Logout}>
                                     {" "}
                                     <li>Đăng xuất</li>{" "}
-                                </button>
+                                </Nav.Link>
                             </ul>
                         )}
                     </button>

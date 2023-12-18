@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './WidgetLg.css'
 import avatar from '../Images/avatar.jpg';
 import OrderDataService from "../../../services/orders";
-import Moment from "react-moment";
+import moment from "moment";
 
 
 export default function WidgetLg() {
@@ -41,7 +41,9 @@ export default function WidgetLg() {
               <img src={avatar} alt="img" className="widgetLgImg" />
               <span className="widgetLgName">{order.name}</span>
             </td>
-            <td className="widgetLgDate"><Moment format="DD/MM/YYYY">{order.createdAt}</Moment></td>
+            <td className="widgetLgDate">
+              {moment(order.createdAt).format("L")}
+            </td>
             <td className="widgetLgAmount">{Number(order.total).toLocaleString("vi-VN")} đ</td>
             <td className="widgetLgStatus">
               <Button type={order.status}/>

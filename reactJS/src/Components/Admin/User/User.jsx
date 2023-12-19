@@ -17,7 +17,14 @@ import {
 } from "@mui/icons-material";
 export default function User() {
     const navigate = useNavigate();
-
+    const [name, setName] = useState("");
+    const [gender, setGender] = useState("");
+    const [birthday, setBirthday] = useState("");
+    const [phone, setPhone] = useState("");
+    const [email, setEmail] = useState("");
+    const [address, setAddress] = useState("");
+    const { userId } = useParams();
+    const [userInfor, setUserInfor] = useState([]);
     const user = JSON.parse(localStorage.getItem("user"));
     useEffect(() => {
         if (!user) {
@@ -25,26 +32,27 @@ export default function User() {
         } else if (!user.level) {
             navigate("/");
         }
-    }, []);
-    const { userId } = useParams();
-    const [userInfor, setUserInfor] = useState([]);
-
-    useEffect(() => {
         getInforUser();
     }, []);
+    
 
     const getInforUser = () => {
         UserDataService.getUserById(userId).then((res) => {
             setUserInfor(res.data[0]);
-        });
-    };
+            setGender(res.data[0].gender);
+            setBirthday(res.data[0].birthday)
+            setPhone(res.data[0].phone)
+            setEmail(res.data[0].email)
+            setName(res.data[0].name)
+            setAddress(res.data[0].address)
+        console.log(res.data[0].gender)
 
-    const [name, setName] = useState("");
-    const [gender, setGender] = useState("");
-    const [birthday, setBirthday] = useState("");
-    const [phone, setPhone] = useState("");
-    const [email, setEmail] = useState("");
-    const [address, setAddress] = useState("");
+        setBirthday(moment(res.data[0].birthday).format("YYYY-MM-DD"));
+        setGender(res.data[0].gender);
+        });
+
+    };
+   
 
     const updateUser = () => {
         const data = {
@@ -64,7 +72,7 @@ export default function User() {
                 console.log(err);
             });
     };
-
+    
     return (
         <div>
             <Topbar />
@@ -148,6 +156,7 @@ export default function User() {
                                         <input
                                             type="text"
                                             name=""
+                                            defaultValue={name}
                                             placeholder="Quốc Kỳ"
                                             className="userUpdateInput"
                                             required
@@ -163,6 +172,8 @@ export default function User() {
                                                 <input
                                                     type="radio"
                                                     name="gender"
+                                                    
+                                                    checked={gender==='Nam'?true:false}
                                                     value="Nam"
                                                     onChange={(e) =>
                                                         setGender(
@@ -176,6 +187,7 @@ export default function User() {
                                                 <input
                                                     type="radio"
                                                     name="gender"
+                                                   checked={gender==='Nữ'?true:false}
                                                     value="Nữ"
                                                     onChange={(e) =>
                                                         setGender(
@@ -189,6 +201,7 @@ export default function User() {
                                                 <input
                                                     type="radio"
                                                     name="gender"
+                                                    checked={gender==='Khác'?true:false}
                                                     value="Khác"
                                                     onChange={(e) =>
                                                         setGender(
@@ -204,7 +217,7 @@ export default function User() {
                                         <label>Ngày sinh</label>
                                         <input
                                             type="date"
-                                            placeholder="30/03/2002"
+                                            defaultValue={birthday}
                                             className="userUpdateInput"
                                             required
                                             onChange={(event) =>
@@ -213,10 +226,11 @@ export default function User() {
                                         />
                                     </div>
                                     <div className="userUpdateItem">
-                                        <label>Số Điện Thoại </label>
+                                        <label>Số Điện Thoại</label>
                                         <input
                                             type="text"
                                             name=""
+                                            defaultValue={phone}
                                             placeholder="0972389257"
                                             className="userUpdateInput"
                                             required
@@ -230,6 +244,7 @@ export default function User() {
                                         <input
                                             type="text"
                                             required
+                                            defaultValue={email}
                                             placeholder="quockynguyen02@gmail.com"
                                             className="userUpdateInput"
                                             onChange={(event) =>
@@ -244,6 +259,7 @@ export default function User() {
                                             name=""
                                             placeholder="TP HCM"
                                             required
+                                            defaultValue={address}
                                             className="userUpdateInput"
                                             onChange={(event) =>
                                                 setAddress(event.target.value)

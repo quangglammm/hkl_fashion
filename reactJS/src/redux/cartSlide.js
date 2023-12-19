@@ -92,9 +92,9 @@ const cartSlide = createSlice({
 
         clearCart: (state) => {
             state.cartItems = [];
-            toast.error("Đã xóa toàn bộ giỏ hàng!", {
-                position: "bottom-left",
-            });
+            // toast.error("Đã xóa toàn bộ giỏ hàng!", {
+            //     position: "bottom-left",
+            // });
         },
     },
 });

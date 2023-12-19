@@ -26,7 +26,7 @@ function ShipAddress() {
     const [selectedDistrict, setselectedDistrict] = useState("");
     const [selectedWard, setselectedWard] = useState("");
     const [shipcost, setshipcost] = useState(0);
-    const [method, setMethod] = useState("");
+    const [method, setMethod] = useState("cod");
     const [phone, setPhone] = useState("");
     const [userId, setUserId] = useState(0);
     const [addressDetail, setAddressDetail] = useState("");
@@ -517,6 +517,7 @@ function ShipAddress() {
                                         onChange={(e) =>
                                             setMethod(e.target.value)
                                         }
+                                        defaultChecked={true}
                                     />
                                     <img
                                         class="method-icon"

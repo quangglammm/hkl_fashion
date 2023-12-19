@@ -1,14 +1,11 @@
 import "./MainPage.css";
 import ContainerItem from "../ContainerItem";
-// import Slideshow from "../Slideshow/Slideshow";
 import { useState, useEffect } from "react";
 import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import imgmobile from "../Images/banner/img-mobile.png";
 import ProductDataService from "../../services/products";
-
 
 function MainPage() {
     const [newProducts, setNewProducts] = useState([]);

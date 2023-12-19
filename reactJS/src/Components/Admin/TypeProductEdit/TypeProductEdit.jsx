@@ -51,6 +51,13 @@ export default function TypeProductEdit() {
         getCata(res.data[0].product.category_detail_id);
         getCataName(res.data[0].product.category_id);
         setProduct(res.data[0].product);
+        setCategoryDetailId(res.data[0].product.category_detail_id);
+
+        setName(res.data[0].product.name);
+        setPrice(res.data[0].product.price);
+        // setMaterial(res.data[0].product.material);
+        setDesciption(res.data[0].product.description)
+        console.log(res.data[0].product);
       })
       .catch((err) => console.log(err));
   };
@@ -67,6 +74,7 @@ export default function TypeProductEdit() {
         const data = res.data;
         var category = data.find((c) => c._id === category_id);
         setCatName(category.name);
+        setCataId(category._id);
       })
       .catch((err) => console.log(err));
   };
@@ -84,6 +92,7 @@ export default function TypeProductEdit() {
     CatagoryDataService.getAllDetail(cataId)
       .then(function (res) {
         setCataDetailList(res.data);
+        console.log(res.data);
       })
       .catch((err) => console.log(err));
   };
@@ -197,12 +206,13 @@ export default function TypeProductEdit() {
                   <input
                     type="text"
                     placeholder="Áo thun"
+                    defaultValue={product.name}
                     onChange={(e) => setName(e.target.value)}
                   />
                 </div>
                 <div className="typeProductFormItem">
                   <label>Danh mục</label>
-                  <select onChange={(e) => handleCata(e)}>
+                  <select value={cataId} onChange={(e) => handleCata(e)}>
                     {cataList.map(function (item) {
                       return <option value={item._id}>{item.name}</option>;
                     })}
@@ -213,6 +223,7 @@ export default function TypeProductEdit() {
                   <input
                     type="text"
                     placeholder="Vải cotton" 
+                    defaultValue={product.marterial}
                     onChange={(e) => setMaterial(e.target.value)}
                   />
                 </div>
@@ -221,12 +232,13 @@ export default function TypeProductEdit() {
                   <input
                     type="text"
                     placeholder="100" 
+                    defaultValue={product.price}
                     onChange={(e) => setPrice(e.target.value)}
                   />
                 </div>
                 <div className="typeProductFormItem">
                   <label>Loại</label>
-                  <select onChange={(e) => handleCataDetail(e)}>
+                  <select value={categoryDetailId} onChange={(e) => handleCataDetail(e)}>
                     {cataDetailList.map(function (item) {
                       return <option value={item._id}>{item.name}</option>;
                     })}
@@ -245,6 +257,7 @@ export default function TypeProductEdit() {
                   <textarea
                     cols="10"
                     rows="5" 
+                    defaultValue={description}
                     onChange={(e) => setDesciption(e.target.value)}
                   ></textarea>
                 </div>

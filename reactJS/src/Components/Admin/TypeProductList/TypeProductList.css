@@ -50,7 +50,7 @@
     font-weight: bold;
 }
 
-.typeProductList .product_list_box .MuiTablePagination-selectLabel {
+.typeProductList .product_list_box .MuiTablePagination-selectLabel, .MuiTablePagination-displayedRows {
     margin: 14px 0;
 
 }

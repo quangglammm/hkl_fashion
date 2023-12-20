@@ -25,7 +25,7 @@ export default function NewTypeProduct() {
     const [cataId, setCataId] = useState(1);
     const [cataDetail, setCataDetail] = useState([]);
 
-    const [categoryDetailId, setCategoryDetailId] = useState(0);
+    const [categoryDetailId, setCategoryDetailId] = useState(1);
     const [name, setName] = useState("");
     const [price, setPrice] = useState(0);
     const [discount, setDiscount] = useState(0);

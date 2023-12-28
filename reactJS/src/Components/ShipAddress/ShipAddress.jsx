@@ -9,6 +9,8 @@ import { Button, Modal} from "react-bootstrap";
 import { clearCart } from "../../redux/cartSlide";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
+import { momoPayment } from "../../actions/orders";
+import { vnpayPayment } from "../../actions/orders";
 
 function ShipAddress() {
     const dispatch = useDispatch();
@@ -26,7 +28,7 @@ function ShipAddress() {
     const [selectedDistrict, setselectedDistrict] = useState("");
     const [selectedWard, setselectedWard] = useState("");
     const [shipcost, setshipcost] = useState(0);
-    const [method, setMethod] = useState("cod");
+    const [method, setMethod] = useState("");
     const [phone, setPhone] = useState("");
     const [userId, setUserId] = useState(0);
     const [addressDetail, setAddressDetail] = useState("");
@@ -136,7 +138,7 @@ function ShipAddress() {
         setselectedDistrict(event.nativeEvent.target[index].text);
         setDistrictId(getdistrictId);
         setDistrictError(false);
-
+        
         setWardId("-1");
         setselectedWard("");
         setWards([]);
@@ -235,7 +237,7 @@ function ShipAddress() {
             pay_method: method,
             total: Number(data - data * percentDiscount + shipcost),
         };
-        console.log("halfAddress: ", halfAddress);
+        let total = data - data * percentDiscount + shipcost;
         let isValid = true;
         isValid = checkAndFocus(name, 'nameRef', setNameError) && isValid;
         isValid = checkAndFocus(mail, 'emailRef', setEmailError) && isValid;
@@ -258,7 +260,6 @@ function ShipAddress() {
             .then(async (response) => {
                 const order_id = response.data;
                 items?.map((item) => {
-                    console.log(item);
                     let newOrderDetail = {
                         order_id: order_id,
                         product_id: item._id,
@@ -270,15 +271,37 @@ function ShipAddress() {
                         total: item.price * item.quantity,
                         qty: item.quantity,
                     };
-                    console.log(newOrderDetail);
                     OrderDataService.createOrderDetail(newOrderDetail)
                         .then()
                         .catch();
                 });
+                console.log('wwwwwww');
                 if (method === "cod") {
                     handleShow();
-                }
-                if (method === "atm") {
+                } else if (method == "momo") {
+                    try {
+                console.log('hhhhhhh');
+                        const res = await momoPayment(total, order_id);
+                        if (!res) {
+                            return;
+                        }
+                        window.location.assign(res?.payUrl);
+                    } catch (e) {
+                        console.log(e);
+                    }
+                } else if (method == "vnpay") {
+                    //vnpay
+                    try {
+                        const res = await vnpayPayment(total, order_id);
+                        if (!res) {
+                            return;
+                        }
+                        console.log(res);
+                        window.location.assign(res?.paymentUrl);
+                    } catch (e) {
+                        console.log(e);
+                    }
+                } else {
                     handleShow1();
                 }
             })
@@ -509,7 +532,7 @@ function ShipAddress() {
                             <div class="the-payment-method">
                                 <label>
                                     <input
-
+                                        checked 
                                         type="radio"
                                         readonly=""
                                         name="payment-method"
@@ -517,7 +540,6 @@ function ShipAddress() {
                                         onChange={(e) =>
                                             setMethod(e.target.value)
                                         }
-                                        defaultChecked={true}
                                     />
                                     <img
                                         class="method-icon"

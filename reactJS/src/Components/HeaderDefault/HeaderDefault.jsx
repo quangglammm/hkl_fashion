@@ -73,6 +73,7 @@ function HeaderDefault(props) {
 
     const handleSearch = (e) => {
         e.preventDefault();
+        setSearch("");
         navigate("/Search", {
             state: {
                 search,
@@ -84,6 +85,7 @@ function HeaderDefault(props) {
         window.localStorage.removeItem("Email");
         window.localStorage.removeItem("user");
         window.localStorage.removeItem("refreshToken");
+        window.localStorage.removeItem('Filter');
 
         navigate("/Login");
     };
@@ -169,6 +171,7 @@ function HeaderDefault(props) {
                             placeholder="Tìm kiếm"
                             className="me-2"
                             aria-label="Search"
+                            value={search}
                             onChange={(e) => setSearch(e.target.value)}
                         />
                         <Button type="submit"
@@ -206,6 +209,7 @@ function HeaderDefault(props) {
                         placeholder="Tìm kiếm"
                         className="me-2"
                         aria-label="Search"
+                        value={search}
                         onChange={(e) => setSearch(e.target.value)}
                     />
                     <Button type="submit" className="ml-2" variant="outline-success" >

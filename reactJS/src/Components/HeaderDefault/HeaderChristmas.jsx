@@ -74,6 +74,7 @@ function HeaderChristmas(props) {
 
     const handleSearch = (e) => {
         e.preventDefault();
+        setSearch("");
         navigate("/Search", {
             state: {
                 search,
@@ -86,7 +87,7 @@ function HeaderChristmas(props) {
         window.localStorage.removeItem("Email");
         window.localStorage.removeItem("user");
         window.localStorage.removeItem("refreshToken");
-
+        window.localStorage.removeItem('Filter');
         navigate("/Login");
     };
     // setTimeout(Logout, 1800000)background: rgb(2,0,36);
@@ -173,6 +174,7 @@ function HeaderChristmas(props) {
                             placeholder="Tìm kiếm"
                             className="me-2"
                             aria-label="Search"
+                            value={search}
                             onChange={(e) => setSearch(e.target.value)}
                         />
                         <Button type="submit" 
@@ -209,6 +211,7 @@ function HeaderChristmas(props) {
                         placeholder="Tìm kiếm"
                         className="me-2"
                         aria-label="Search"
+                        value={search}
                         onChange={(e) => setSearch(e.target.value)}
                         
                     />

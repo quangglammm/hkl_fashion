@@ -8,8 +8,7 @@ import filtericon from "../Images/filter-icon.png";
 import ProductDataService from "../../services/products";
 import CatagoryDataService from "../../services/catagories";
 import Pagination from "react-bootstrap/Pagination";
-
-
+import {Typography, Box} from "@mui/material";
 
 function Products() {
     const [show, setShow] = useState(false);
@@ -20,15 +19,18 @@ function Products() {
     const [products, setProducts] = useState([]);
     const [totalPage, setTotalPage] = useState(1);
     const [currentPage, setCurrentPage] = useState(1);
-    const [price, setPrice] = useState(0);
-    const [category, setCate] = useState([]);
+    const oldFilterCate = JSON.parse(localStorage.getItem('Filter'))?.category_detail ?? [];
+    const oldFilterPrice = JSON.parse(localStorage.getItem('Filter'))?.price ?? 0;
+    const [price, setPrice] = useState(oldFilterPrice);
+    const [category, setCate] = useState(oldFilterCate);
     const [categoryQuery, setCategoryQuery] = useState("");
     const [cataDetails, setCataDetails] = useState([]);
+    const [flag, setFlag] = useState(false);
 
     useEffect(() => {
         getProducts(price, categoryQuery, currentPage);
         getAllCataDetail();
-    }, [currentPage, categoryQuery, price]);
+    }, [currentPage, flag]);
 
     const getProducts = (price, categoryQuery, page) => {
         ProductDataService.getAllProducts(price, categoryQuery, page)
@@ -69,7 +71,13 @@ function Products() {
 
     const handleFilter = (event) => {
         queryCate(category);
-        console.log(categoryQuery);
+        let filter = {
+            category_detail: category,
+            price: price,
+        };
+        localStorage.setItem('Filter', JSON.stringify(filter));
+        setShow(false);
+        setFlag(!flag);
     };
 
     //page
@@ -112,16 +120,13 @@ function Products() {
                                     <p>Danh mục</p>
                                     {cataDetails.map(function (item) {
                                         return (
-                                            <div className="">
+                                            <div className="" key={item._id}>
                                                 <label>
                                                     <input
                                                         type="checkbox"
                                                         name="type_product"
-                                                        onChange={() =>
-                                                            handleCheckboxChange(
-                                                                item._id
-                                                            )
-                                                        }
+                                                        checked={category.includes(item._id)}
+                                                        onChange={() =>handleCheckboxChange(item._id)}
                                                     />
                                                     {item.name}
                                                 </label>
@@ -136,9 +141,8 @@ function Products() {
                                         name="price"
                                         id="1"
                                         value={1}
-                                        onChange={(e) =>
-                                            setPrice(e.target.value)
-                                        }
+                                        checked={price == 1}
+                                        onClick={(e) => setPrice(e.target.value != price ? e.target.value : 0)}
                                     />
                                     <label htmlFor="1"> Dưới 100.000 đ</label>
                                     <br></br>
@@ -147,9 +151,8 @@ function Products() {
                                         name="price"
                                         id="2"
                                         value={2}
-                                        onChange={(e) =>
-                                            setPrice(e.target.value)
-                                        }
+                                        checked={price == 2}
+                                        onClick={(e) => setPrice(e.target.value != price ? e.target.value : 0)}
                                     />
                                     <label htmlFor="2">
                                         {" "}
@@ -161,9 +164,8 @@ function Products() {
                                         name="price"
                                         id="3"
                                         value={3}
-                                        onChange={(e) =>
-                                            setPrice(e.target.value)
-                                        }
+                                        checked={price == 3}
+                                        onClick={(e) => setPrice(e.target.value != price ? e.target.value : 0)}
                                     />
                                     <label htmlFor="3">
                                         {" "}
@@ -175,9 +177,8 @@ function Products() {
                                         name="price"
                                         id="4"
                                         value={4}
-                                        onChange={(e) =>
-                                            setPrice(e.target.value)
-                                        }
+                                        checked={price == 4}
+                                        onClick={(e) => setPrice(e.target.value != price ? e.target.value : 0)}
                                     />
                                     <label htmlFor="4"> Trên 500.000 đ</label>
                                     <br></br>
@@ -194,21 +195,29 @@ function Products() {
                     </Offcanvas>
                 </>
             </div>
-            <div className="all-product-store">
-                {products.map((item) => (
-                    <div className="product_containerItem">
-                        <ContainerItem
-                            price={item.product.price}
-                            name={item.product.name}
-                            image={item.path}
-                            masp={item.product._id}
-                    />
-                    </div>
-                ))}
-            </div>
-
+            {
+                products.length !== 0 ?
+                <div className="all-product-store">
+                    {
+                        products.map((item) => (
+                            <div className="product_containerItem">
+                                <ContainerItem
+                                    price={item.product.price}
+                                    name={item.product.name}
+                                    image={item.path}
+                                    masp={item.product._id}
+                                />
+                            </div>
+                        ))   
+                    }
+                </div>
+                :
+                <Box display='flex' width='100%' height='50vh' alignItems='center' justifyContent='center'>
+                    <Typography fontSize={24}>Không tìm thấy sản phẩm nào!</Typography>
+                </Box>
+            }
             <div className="page">
-                <Pagination>{items}</Pagination>
+                {products.length !== 0 && <Pagination>{items}</Pagination>}
             </div>
         </div>
     );

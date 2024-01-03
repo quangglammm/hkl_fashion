@@ -36,7 +36,7 @@ export default function TypeProductEdit() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
   const [discount, setDiscount] = useState(0);
-  const [material, setMaterial] = useState("");
+  const [marterial, setMarterial] = useState("");
   const [description, setDesciption] = useState("");
 
   useEffect(() => {
@@ -55,7 +55,7 @@ export default function TypeProductEdit() {
 
         setName(res.data[0].product.name);
         setPrice(res.data[0].product.price);
-        // setMaterial(res.data[0].product.material);
+        setMarterial(res.data[0].product.marterial);
         setDesciption(res.data[0].product.description)
         console.log(res.data[0].product);
       })
@@ -127,7 +127,7 @@ export default function TypeProductEdit() {
       description: description,
       price: price,
       discount: discount,
-      marterial: material,
+      marterial: marterial,
     };
     ProductDataService.editProduct(typeProductId,data)
       .then((response) => {
@@ -222,16 +222,16 @@ export default function TypeProductEdit() {
                   <label>Chất liệu</label>
                   <input
                     type="text"
-                    placeholder="Vải cotton" 
+                    placeholder="Vải cotton"
                     defaultValue={product.marterial}
-                    onChange={(e) => setMaterial(e.target.value)}
+                    onChange={(e) => setMarterial(e.target.value)}
                   />
                 </div>
                 <div className="typeProductFormItem">
                   <label>Giá</label>
                   <input
                     type="text"
-                    placeholder="100" 
+                    placeholder="100"
                     defaultValue={product.price}
                     onChange={(e) => setPrice(e.target.value)}
                   />
@@ -256,7 +256,7 @@ export default function TypeProductEdit() {
                   <label>Mô tả</label>
                   <textarea
                     cols="10"
-                    rows="5" 
+                    rows="5"
                     defaultValue={description}
                     onChange={(e) => setDesciption(e.target.value)}
                   ></textarea>

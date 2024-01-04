@@ -69,7 +69,7 @@ export default function Product() {
                       backgroundColor: location.state.product.color,
                       borderRadius: "50%",
                       border: "1px solid black",
-                      padding: "0 0 0px 20px ",
+                      padding: "20px ",
                     }}
                   >
                   </span>

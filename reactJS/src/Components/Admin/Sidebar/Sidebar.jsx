@@ -65,7 +65,7 @@ export default function Sidebar() {
             </Link>
           </ul>
         </div>
-        <div className="sidebarMenu">
+        {/* <div className="sidebarMenu">
           <h3 className="sidebarTitile">Catagory</h3>
           <ul className="sidebarList">
             <li className="sidebarListItem">
@@ -77,7 +77,7 @@ export default function Sidebar() {
               Loại
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </div>
   );

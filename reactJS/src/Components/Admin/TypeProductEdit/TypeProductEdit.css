@@ -1,41 +1,40 @@
 .container-admin{
     display: flex;
     margin-top: 60px;
+    background-color: #f2f8ff;
 
 }
 .typeProductEdit{
     flex: 4;
-    padding: 20px;
 }
 .typeProductTitleContainer{
     text-align: center;
 }
 .typeProductTitleContainer h2{
-    font-size: 24px;
-    font-weight: 600;
     text-transform: uppercase;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 30px 0;
 }
-.typeProductAddButton{
-    width: 80px;
-    border: none;
-    padding: 5px;
-    background-color: teal;
-    color: white;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
+
 .typeProductTop{
     display: flex;
 }
 .typeProductTopLeft{
     flex: 1;
 }
+
+.typeProductTopLeft .chart {
+    margin: 0 20px;
+    border-radius: 10px;
+}
 .typeProductTopRight{
     flex: 1;
     padding: 20px;
-    margin: 20px;
+    margin: 0 20px;
     box-shadow: 0 0 15px -10px rgba(0, 0, 0, 0.75);
+    background-color: #fff;
+    border-radius: 10px;
 }
 .typeProductInfoImg{
     width: 40px;
@@ -75,15 +74,17 @@
     padding: 20px;
     margin: 20px;
     box-shadow: 0 0 15px -10px rgba(0, 0, 0, 0.75);
+    background-color: #fff;
+    border-radius: 10px;
 }
 .typeProductForm{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: column;
 }
 .typeProductFormLeft{
     display: flex;
-    /* flex-direction: column; */
     flex-wrap: wrap;
     justify-content: space-around;
     text-align: left;
@@ -139,10 +140,16 @@
     padding: 5px;
     margin: 20px;
     border-radius: 5px;
-    background-color: darkblue;
+    background-color: #19caed;
     color: white;
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
     padding: 10px 10px;
+}
+
+.typeProductButton:hover {
+    background-color: #10a8f4;
+    font-weight: bold;
+    box-shadow: 0 0 10px #19caed;
 }

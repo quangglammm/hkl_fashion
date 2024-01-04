@@ -57,7 +57,7 @@
 .detail-address{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap:50px;
+    gap: 4px;
 }
 .btn-Submit{
     font-size: 18px;
@@ -170,13 +170,35 @@ textarea{
     .container-ship{
         display: block;
     }
+    .form-address-container {
+        width: 90%;
+    }
+    .form-address-container .mail-phone,
+    .form-address-container .detail-address {
+        display: block;
+    }
+    .form-address-container .mail-phone input,
+    .form-address-container .detail-address select {
+        width: 100%;
+    }
     .container-ship-right{
         display: inline-block;
+    }
+    .container-ship-right .voucher {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .container-ship-right .voucher input {
+        margin: 0;
     }
     .listPrice{
         margin: 20px 0;
     }
     .choosePayment{
         margin-top: 50px;
+    }
+    .payment-methods .the-payment-method {
+        padding: 0;
     }
 }

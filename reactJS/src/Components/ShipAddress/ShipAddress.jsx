@@ -239,12 +239,17 @@ function ShipAddress() {
         };
         let total = data - data * percentDiscount + shipcost;
         let isValid = true;
-        isValid = checkAndFocus(name, 'nameRef', setNameError) && isValid;
-        isValid = checkAndFocus(mail, 'emailRef', setEmailError) && isValid;
-        isValid = checkAndFocus(phone, 'phoneRef', setPhoneError) && isValid;
-        isValid = checkAndFocus(selectedProvince, 'provinceRef', setProvinceError) && isValid;
-        isValid = checkAndFocus(selectedDistrict, 'districtRef', setDistrictError) && isValid;
-        isValid = checkAndFocus(selectedWard, 'wardRef', setWardError) && isValid;
+        isValid = checkAndFocus(name, "nameRef", setNameError) && isValid;
+        isValid = checkAndFocus(mail, "emailRef", setEmailError) && isValid;
+        isValid = checkAndFocus(phone, "phoneRef", setPhoneError) && isValid;
+        isValid =
+            checkAndFocus(selectedProvince, "provinceRef", setProvinceError) &&
+            isValid;
+        isValid =
+            checkAndFocus(selectedDistrict, "districtRef", setDistrictError) &&
+            isValid;
+        isValid =
+            checkAndFocus(selectedWard, "wardRef", setWardError) && isValid;
         if (!isValid) {
             toast.error("Vui lòng điền đầy đủ thông tin!", {
                 position: "top-center",
@@ -252,7 +257,7 @@ function ShipAddress() {
                 hideProgressBar: false,
                 pauseOnHover: true,
                 closeOnClick: true,
-                draggable: true
+                draggable: true,
             });
             return;
         }
@@ -308,6 +313,34 @@ function ShipAddress() {
                 console.log(e);
             });
         dispatch(clearCart());
+
+        // Trigger the email sending with order details
+
+        const Order = {
+            name: name,
+            address: addressDetail + ", " + halfAddress,
+            gmail: mail,
+            phone: phone,
+            pay_method: method,
+            total: Number(data - data * percentDiscount + shipcost),
+        };
+        try {
+            const response = await fetch("http://localhost:3001/send-email", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ Order }),
+            });
+
+            if (response.ok) {
+                console.log("Email sent successfully!");
+            } else {
+                console.error("Failed to send email.");
+            }
+        } catch (error) {
+            console.error("Error sending email:", error);
+        }
     };
 
     return (
@@ -626,7 +659,7 @@ function ShipAddress() {
                             handleCreate(e);
                         }}
                     >
-                        Thanh toán
+                        Mua ngay
                     </button>
                 </div>
             </div>

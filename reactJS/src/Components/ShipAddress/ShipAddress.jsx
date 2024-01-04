@@ -275,12 +275,10 @@ function ShipAddress() {
                         .then()
                         .catch();
                 });
-                console.log('wwwwwww');
                 if (method === "cod") {
                     handleShow();
                 } else if (method == "momo") {
                     try {
-                console.log('hhhhhhh');
                         const res = await momoPayment(total, order_id);
                         if (!res) {
                             return;

@@ -55,7 +55,8 @@ const NewTypeProduct = lazy(() =>
   import("./Components/Admin/NewTypeProduct/NewTypeProduct.jsx")
 );
 const OrderDetail = lazy(() => import("./Components/OrderDetail/OrderDetail.jsx"));
-
+import Redirect from "./Components/Redirect/Redirect";
+import VnPayRedirect from "./Components/Redirect/VnPayRedirect";
 
 const router = createBrowserRouter([
     {
@@ -279,6 +280,14 @@ const router = createBrowserRouter([
                         <NewProduct />
                     </LayoutAdmin>
                 ),
+            },
+            {
+                path: "MOMO/Checkout/Redirect",
+                element: <Redirect />,
+            },
+            {
+                path: "VnPay/Checkout/Redirect",
+                element: <VnPayRedirect />,
             },
         ],
     },

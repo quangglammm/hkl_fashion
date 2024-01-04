@@ -138,7 +138,7 @@ function ShipAddress() {
         setselectedDistrict(event.nativeEvent.target[index].text);
         setDistrictId(getdistrictId);
         setDistrictError(false);
-        
+
         setWardId("-1");
         setselectedWard("");
         setWards([]);
@@ -532,7 +532,7 @@ function ShipAddress() {
                             <div class="the-payment-method">
                                 <label>
                                     <input
-                                        checked 
+                                        checked
                                         type="radio"
                                         readonly=""
                                         name="payment-method"
@@ -628,7 +628,7 @@ function ShipAddress() {
                             handleCreate(e);
                         }}
                     >
-                        Tiếp tục
+                        Thanh toán
                     </button>
                 </div>
             </div>

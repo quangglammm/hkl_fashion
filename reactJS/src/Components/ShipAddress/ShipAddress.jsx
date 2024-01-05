@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { getDiscount } from "../../actions/orders";
 import OrderDataService from "../../services/orders";
-import { Button, Modal} from "react-bootstrap";
+import { Button, Modal } from "react-bootstrap";
 import { clearCart } from "../../redux/cartSlide";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
@@ -28,7 +28,7 @@ function ShipAddress() {
     const [selectedDistrict, setselectedDistrict] = useState("");
     const [selectedWard, setselectedWard] = useState("");
     const [shipcost, setshipcost] = useState(0);
-    const [method, setMethod] = useState("");
+    const [method, setMethod] = useState("cod");
     const [phone, setPhone] = useState("");
     const [userId, setUserId] = useState(0);
     const [addressDetail, setAddressDetail] = useState("");
@@ -46,7 +46,7 @@ function ShipAddress() {
         phoneRef: useRef(),
         provinceRef: useRef(),
         districtRef: useRef(),
-        wardRef: useRef()
+        wardRef: useRef(),
     };
     const [nameError, setNameError] = useState(false);
     const [emailError, setEmailError] = useState(false);
@@ -54,6 +54,10 @@ function ShipAddress() {
     const [provinceError, setProvinceError] = useState(false);
     const [districtError, setDistrictError] = useState(false);
     const [wardError, setWardError] = useState(false);
+
+    // useEffect(() => {
+    //     console.log("---pay_method", method);
+    // }, [method]);
 
     useEffect(() => {
         let timeout;
@@ -221,7 +225,7 @@ function ShipAddress() {
         return true;
     };
     const errorStyle = {
-        boxShadow: '#ff0000b5 0px 0px 4px 1px'
+        boxShadow: "#ff0000b5 0px 0px 4px 1px",
     };
     // hander click
     const handleCreate = async (e) => {
@@ -362,7 +366,7 @@ function ShipAddress() {
                                 placeholder="Họ và tên"
                                 onChange={(e) => {
                                     setName(e.target.value);
-                                    setNameError(false)
+                                    setNameError(false);
                                 }}
                                 required
                             />
@@ -374,7 +378,7 @@ function ShipAddress() {
                                     placeholder="Email"
                                     onChange={(e) => {
                                         setMail(e.target.value);
-                                        setEmailError(false)
+                                        setEmailError(false);
                                     }}
                                 />
                                 <input
@@ -384,7 +388,7 @@ function ShipAddress() {
                                     placeholder="Số điện thoại"
                                     onChange={(e) => {
                                         setPhone(e.target.value);
-                                        setPhoneError(false)
+                                        setPhoneError(false);
                                     }}
                                     pattern="[0]{1}[1-9]{1}[0-9]{8}"
                                     required
@@ -402,7 +406,7 @@ function ShipAddress() {
                                     required
                                     value={provinceid}
                                 >
-                                    <option value="-1" >Tỉnh/TP</option>
+                                    <option value="-1">Tỉnh/TP</option>
                                     {provinces.map((getpro, index) => (
                                         <option key={index} value={getpro.code}>
                                             {getpro.name}
@@ -420,7 +424,7 @@ function ShipAddress() {
                                     required
                                     value={districtid}
                                 >
-                                    <option value="-1" >Quận/Huyện</option>
+                                    <option value="-1">Quận/Huyện</option>
                                     {districts?.map((getdis, index) => (
                                         <option key={index} value={getdis.code}>
                                             {getdis.name}
@@ -438,7 +442,7 @@ function ShipAddress() {
                                     required
                                     // value={wardId}
                                 >
-                                    <option value="-1" >Phường/Xã</option>
+                                    <option value="-1">Phường/Xã</option>
                                     {wards?.map((getward, index) => (
                                         <option
                                             key={index}
@@ -496,7 +500,6 @@ function ShipAddress() {
                                 Đã áp dụng mã giảm giá {nameDiscount}!
                             </Alert>
                         )}
-
 
                         <hr />
 
@@ -563,14 +566,13 @@ function ShipAddress() {
                             <div class="the-payment-method">
                                 <label>
                                     <input
-                                        checked
+                                        defaultChecked
                                         type="radio"
-                                        readonly=""
                                         name="payment-method"
                                         value="cod"
-                                        onChange={(e) =>
-                                            setMethod(e.target.value)
-                                        }
+                                        onChange={(e) => {
+                                            setMethod(e.target.value);
+                                        }}
                                     />
                                     <img
                                         class="method-icon"
@@ -588,12 +590,11 @@ function ShipAddress() {
                                 <label>
                                     <input
                                         type="radio"
-                                        readonly=""
                                         name="payment-method"
                                         value="momo"
-                                        onChange={(e) =>
-                                            setMethod(e.target.value)
-                                        }
+                                        onChange={(e) => {
+                                            setMethod(e.target.value);
+                                        }}
                                     />
                                     <img
                                         class="method-icon"
@@ -609,12 +610,11 @@ function ShipAddress() {
                                 <label>
                                     <input
                                         type="radio"
-                                        readonly=""
                                         name="payment-method"
                                         value="vnpay"
-                                        onChange={(e) =>
-                                            setMethod(e.target.value)
-                                        }
+                                        onChange={(e) => {
+                                            setMethod(e.target.value);
+                                        }}
                                     />
                                     <img
                                         class="method-icon"
@@ -630,7 +630,6 @@ function ShipAddress() {
                                 <label>
                                     <input
                                         type="radio"
-                                        readonly=""
                                         name="payment-method"
                                         value="atm"
                                         onChange={(e) => {

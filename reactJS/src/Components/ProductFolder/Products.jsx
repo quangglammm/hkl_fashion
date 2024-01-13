@@ -8,7 +8,11 @@ import filtericon from "../Images/filter-icon.png";
 import ProductDataService from "../../services/products";
 import CatagoryDataService from "../../services/catagories";
 import Pagination from "react-bootstrap/Pagination";
-import {Typography, Box} from "@mui/material";
+import { Typography, Box } from "@mui/material";
+
+const MessengerComponent = React.lazy(() =>
+    import("../MessengerComponent/MessengerComponent")
+);
 
 function Products() {
     const [show, setShow] = useState(false);
@@ -19,8 +23,10 @@ function Products() {
     const [products, setProducts] = useState([]);
     const [totalPage, setTotalPage] = useState(1);
     const [currentPage, setCurrentPage] = useState(1);
-    const oldFilterCate = JSON.parse(localStorage.getItem('Filter'))?.category_detail ?? [];
-    const oldFilterPrice = JSON.parse(localStorage.getItem('Filter'))?.price ?? 0;
+    const oldFilterCate =
+        JSON.parse(localStorage.getItem("Filter"))?.category_detail ?? [];
+    const oldFilterPrice =
+        JSON.parse(localStorage.getItem("Filter"))?.price ?? 0;
     const [price, setPrice] = useState(oldFilterPrice);
     const [category, setCate] = useState(oldFilterCate);
     const [categoryQuery, setCategoryQuery] = useState("");
@@ -75,7 +81,7 @@ function Products() {
             category_detail: category,
             price: price,
         };
-        localStorage.setItem('Filter', JSON.stringify(filter));
+        localStorage.setItem("Filter", JSON.stringify(filter));
         setShow(false);
         setFlag(!flag);
     };
@@ -125,8 +131,14 @@ function Products() {
                                                     <input
                                                         type="checkbox"
                                                         name="type_product"
-                                                        checked={category.includes(item._id)}
-                                                        onChange={() =>handleCheckboxChange(item._id)}
+                                                        checked={category.includes(
+                                                            item._id
+                                                        )}
+                                                        onChange={() =>
+                                                            handleCheckboxChange(
+                                                                item._id
+                                                            )
+                                                        }
                                                     />
                                                     {item.name}
                                                 </label>
@@ -142,7 +154,13 @@ function Products() {
                                         id="1"
                                         value={1}
                                         checked={price == 1}
-                                        onClick={(e) => setPrice(e.target.value != price ? e.target.value : 0)}
+                                        onClick={(e) =>
+                                            setPrice(
+                                                e.target.value != price
+                                                    ? e.target.value
+                                                    : 0
+                                            )
+                                        }
                                     />
                                     <label htmlFor="1"> Dưới 100.000 đ</label>
                                     <br></br>
@@ -152,7 +170,13 @@ function Products() {
                                         id="2"
                                         value={2}
                                         checked={price == 2}
-                                        onClick={(e) => setPrice(e.target.value != price ? e.target.value : 0)}
+                                        onClick={(e) =>
+                                            setPrice(
+                                                e.target.value != price
+                                                    ? e.target.value
+                                                    : 0
+                                            )
+                                        }
                                     />
                                     <label htmlFor="2">
                                         {" "}
@@ -165,7 +189,13 @@ function Products() {
                                         id="3"
                                         value={3}
                                         checked={price == 3}
-                                        onClick={(e) => setPrice(e.target.value != price ? e.target.value : 0)}
+                                        onClick={(e) =>
+                                            setPrice(
+                                                e.target.value != price
+                                                    ? e.target.value
+                                                    : 0
+                                            )
+                                        }
                                     />
                                     <label htmlFor="3">
                                         {" "}
@@ -178,7 +208,13 @@ function Products() {
                                         id="4"
                                         value={4}
                                         checked={price == 4}
-                                        onClick={(e) => setPrice(e.target.value != price ? e.target.value : 0)}
+                                        onClick={(e) =>
+                                            setPrice(
+                                                e.target.value != price
+                                                    ? e.target.value
+                                                    : 0
+                                            )
+                                        }
                                     />
                                     <label htmlFor="4"> Trên 500.000 đ</label>
                                     <br></br>
@@ -195,30 +231,36 @@ function Products() {
                     </Offcanvas>
                 </>
             </div>
-            {
-                products.length !== 0 ?
+            {products.length !== 0 ? (
                 <div className="all-product-store">
-                    {
-                        products.map((item) => (
-                            <div className="product_containerItem">
-                                <ContainerItem
-                                    price={item.product.price}
-                                    name={item.product.name}
-                                    image={item.path}
-                                    masp={item.product._id}
-                                />
-                            </div>
-                        ))   
-                    }
+                    {products.map((item) => (
+                        <div className="product_containerItem">
+                            <ContainerItem
+                                price={item.product.price}
+                                name={item.product.name}
+                                image={item.path}
+                                masp={item.product._id}
+                            />
+                        </div>
+                    ))}
                 </div>
-                :
-                <Box display='flex' width='100%' height='50vh' alignItems='center' justifyContent='center'>
-                    <Typography fontSize={24}>Không tìm thấy sản phẩm nào!</Typography>
+            ) : (
+                <Box
+                    display="flex"
+                    width="100%"
+                    height="50vh"
+                    alignItems="center"
+                    justifyContent="center"
+                >
+                    <Typography fontSize={24}>
+                        Không tìm thấy sản phẩm nào!
+                    </Typography>
                 </Box>
-            }
+            )}
             <div className="page">
                 {products.length !== 0 && <Pagination>{items}</Pagination>}
             </div>
+            <MessengerComponent />
         </div>
     );
 }

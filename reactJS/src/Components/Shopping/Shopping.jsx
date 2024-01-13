@@ -18,6 +18,10 @@ import {
   clearCart,
 } from "../../redux/cartSlide";
 
+const MessengerComponent = React.lazy(() =>
+    import("../MessengerComponent/MessengerComponent")
+);
+
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -138,7 +142,7 @@ function Shopping() {
                           style={{ margin: "2px" }}
                           onClick={() => handleIncreaseCart(item)}
                         >
-                          
+
                           <AddCircleOutlineIcon style={{color:'#39a853'}}/>
                         </span>
                       </div>
@@ -258,7 +262,9 @@ function Shopping() {
             </Snackbar>
           </div>
         )}
-      </div>
+          </div>
+
+          <MessengerComponent/>
     </div>
   );
 }

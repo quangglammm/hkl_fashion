@@ -11,6 +11,9 @@ import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { momoPayment } from "../../actions/orders";
 import { vnpayPayment } from "../../actions/orders";
+const MessengerComponent = React.lazy(() =>
+    import("../MessengerComponent/MessengerComponent")
+);
 
 function ShipAddress() {
     const dispatch = useDispatch();
@@ -692,6 +695,8 @@ function ShipAddress() {
                     </Button>
                 </Modal.Footer>
             </Modal>
+
+            <MessengerComponent/>
         </div>
     );
 }

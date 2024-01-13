@@ -17,6 +17,10 @@ import { addToCart } from "../../redux/cartSlide";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 
+const MessengerComponent = React.lazy(() =>
+    import("../MessengerComponent/MessengerComponent")
+);
+
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -497,10 +501,11 @@ export function ProductDetails(props) {
             })}
           </Slider>
         </div>
-  
+
       </div>
       <span>&nbsp;</span>
-      <CommentAndComentList productId={productID} />
+          <CommentAndComentList productId={productID} />
+          <MessengerComponent/>
     </div>
   );
 }

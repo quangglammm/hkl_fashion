@@ -11,6 +11,7 @@ import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { momoPayment } from "../../actions/orders";
 import { vnpayPayment } from "../../actions/orders";
+import React from "react";
 const MessengerComponent = React.lazy(() =>
     import("../MessengerComponent/MessengerComponent")
 );

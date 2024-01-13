@@ -666,6 +666,9 @@ function ShipAddress() {
                     </button>
                 </div>
             </div>
+
+            <MessengerComponent />
+
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Thông báo</Modal.Title>
@@ -696,8 +699,6 @@ function ShipAddress() {
                     </Button>
                 </Modal.Footer>
             </Modal>
-
-            <MessengerComponent/>
         </div>
     );
 }

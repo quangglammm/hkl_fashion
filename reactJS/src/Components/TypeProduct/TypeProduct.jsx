@@ -6,6 +6,9 @@ import { useEffect, useState } from 'react';
 import ProductDataService from '../../services/products';
 import CatagoryDataService from '../../services/catagories';
 import React from 'react';
+const MessengerComponent = React.lazy(() =>
+    import("../MessengerComponent/MessengerComponent")
+);
 
 
 
@@ -52,15 +55,16 @@ function TypeProduct() {
             <div className="list-product-type">
                 {typePoduct.map((item) => (
                     <div className="type-product_containerItem">
-                        <ContainerItem 
-                            price={item.product.price} 
-                            name={item.product.name} 
-                            image={item.path} 
-                            masp={item.product._id} 
+                        <ContainerItem
+                            price={item.product.price}
+                            name={item.product.name}
+                            image={item.path}
+                            masp={item.product._id}
                         />
                     </div>
                 ))}
             </div>
+            <MessengerComponent/>
         </div>
     );
 }

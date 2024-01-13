@@ -16,6 +16,10 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+const MessengerComponent = React.lazy(() =>
+    import("../MessengerComponent/MessengerComponent")
+);
+
 function FooterChristmas() {
     const form = useRef();
     const [expanded, setExpanded] = React.useState(false);
@@ -191,6 +195,7 @@ function FooterChristmas() {
             <div className="footer_copyright">
                 <p>Copyright &copy; 2023 HKLFashion&reg;. Powered by HKL Fashion</p>
             </div>
+            <MessengerComponent/>
         </div>
 
 

@@ -7,6 +7,12 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import ProductDataService from "../../services/products";
 
+
+const MessengerComponent = React.lazy(() =>
+    import("../MessengerComponent/MessengerComponent")
+);
+
+
 function MainPage() {
     const [newProducts, setNewProducts] = useState([]);
     const [discountProducts, setDiscountProducts] = useState([]);
@@ -132,6 +138,7 @@ function MainPage() {
                     </div>
                 </div>
             </div>
+            <MessengerComponent/>
         </div>
     );
 }

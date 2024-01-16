@@ -16,10 +16,11 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartSlide";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
+import MessengerComponent from "../MessengerComponent/MessengerComponent";
+// const MessengerComponent = React.lazy(() =>
+//     import("../MessengerComponent/MessengerComponent")
+// );
 
-const MessengerComponent = React.lazy(() =>
-    import("../MessengerComponent/MessengerComponent")
-);
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;

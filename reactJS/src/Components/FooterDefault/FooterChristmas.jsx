@@ -195,7 +195,7 @@ function FooterChristmas() {
             <div className="footer_copyright">
                 <p>Copyright &copy; 2023 HKLFashion&reg;. Powered by HKL Fashion</p>
             </div>
-            <MessengerComponent/>
+            {/* <MessengerComponent/> */}
         </div>
 
 

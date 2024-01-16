@@ -239,7 +239,7 @@ function FooterDefault() {
                         </div>
                     </AccordionDetails>
                 </Accordion>
-                
+
 
             </div>
             <div className="footer_copyright">
@@ -247,7 +247,7 @@ function FooterDefault() {
                     Copyright &copy; 2023 HKLFashion&reg;. Powered by HKLFashion
                 </p>
             </div>
-            <MessengerComponent/>
+            {/* <MessengerComponent/> */}
         </div>
     );
 }

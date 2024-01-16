@@ -260,7 +260,7 @@ function Products() {
             <div className="page">
                 {products.length !== 0 && <Pagination>{items}</Pagination>}
             </div>
-            <MessengerComponent />
+            {/* <MessengerComponent /> */}
         </div>
     );
 }

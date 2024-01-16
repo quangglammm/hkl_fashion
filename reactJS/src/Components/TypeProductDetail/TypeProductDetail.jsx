@@ -52,7 +52,7 @@ function TypeProductDetail() {
                     </div>
                 )}
             </div>
-            <MessengerComponent/>
+            {/* <MessengerComponent/> */}
         </div>
     );
 }

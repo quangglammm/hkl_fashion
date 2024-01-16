@@ -65,7 +65,7 @@ function TypeProduct() {
                     </div>
                 ))}
             </div>
-            <MessengerComponent/>
+            {/* <MessengerComponent/> */}
         </div>
     );
 }

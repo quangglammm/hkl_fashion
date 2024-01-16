@@ -138,7 +138,7 @@ function MainPage() {
                     </div>
                 </div>
             </div>
-            {/* <MessengerComponent/> */}
+            <MessengerComponent/>
         </div>
     );
 }

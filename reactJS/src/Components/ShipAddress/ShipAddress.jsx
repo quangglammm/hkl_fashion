@@ -12,9 +12,10 @@ import { toast } from "react-toastify";
 import { momoPayment } from "../../actions/orders";
 import { vnpayPayment } from "../../actions/orders";
 import React from "react";
-const MessengerComponent = React.lazy(() =>
-    import("../MessengerComponent/MessengerComponent")
-);
+// const MessengerComponent = React.lazy(() =>
+//     import("../MessengerComponent/MessengerComponent")
+// );
+import MessengerComponent from "../MessengerComponent/MessengerComponent";
 
 function ShipAddress() {
     const dispatch = useDispatch();

@@ -4,7 +4,10 @@ import Breadcrumb from "react-bootstrap/Breadcrumb";
 import { useLocation } from "react-router-dom";
 import ProductDataService from "../../services/products";
 import ContainerItem from '../ContainerItem';
-import {Typography, Box} from "@mui/material";
+import { Typography, Box } from "@mui/material";
+const MessengerComponent = React.lazy(() =>
+    import("../MessengerComponent/MessengerComponent")
+);
 
 export default function Search(props) {
   const { state } = useLocation();
@@ -39,7 +42,8 @@ export default function Search(props) {
         <Box display='flex' width='100%' height='50vh' alignItems='center' justifyContent='center'>
             <Typography fontSize={24}>Không tìm thấy sản phẩm nào!</Typography>
         </Box>
-      }
+          }
+          <MessengerComponent/>
     </div>
   );
 }

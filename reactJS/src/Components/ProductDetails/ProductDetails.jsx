@@ -525,7 +525,7 @@ export function ProductDetails(props) {
                   </Slider>
               </div>
           </div>
-          {/* <MessengerComponent /> */}
+          <MessengerComponent />
 
           <span>&nbsp;</span>
           <CommentAndComentList productId={productID} />

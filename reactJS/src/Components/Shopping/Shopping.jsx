@@ -264,7 +264,7 @@ function Shopping() {
         )}
           </div>
 
-          {/* <MessengerComponent/> */}
+          <MessengerComponent/>
     </div>
   );
 }

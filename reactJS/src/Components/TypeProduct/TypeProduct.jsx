@@ -6,9 +6,10 @@ import { useEffect, useState } from 'react';
 import ProductDataService from '../../services/products';
 import CatagoryDataService from '../../services/catagories';
 import React from 'react';
-const MessengerComponent = React.lazy(() =>
-    import("../MessengerComponent/MessengerComponent")
-);
+import MessengerComponent from '../MessengerComponent/MessengerComponent';
+// const MessengerComponent = React.lazy(() =>
+//     import("../MessengerComponent/MessengerComponent")
+// );
 
 
 

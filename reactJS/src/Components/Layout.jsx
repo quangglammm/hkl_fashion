@@ -6,9 +6,10 @@ import FooterChristmas from "./FooterDefault/FooterChristmas.jsx";
 import { useSelector } from "react-redux";
 import Snowflakes from "../cssEffect/Snowflakes.jsx";
 import MUICustomSwitch from "../Components/MUICustomSwitch/MUICustomSwitch.jsx";
-const MessengerComponent = React.lazy(() =>
-    import("../MessengerComponent/MessengerComponent")
-);
+// const MessengerComponent = React.lazy(() =>
+//     import("../MessengerComponent/MessengerComponent")
+// );
+import MessengerComponent from "./MessengerComponent/MessengerComponent.jsx";
 const Layout = ({ children }) => {
   const layout = useSelector((state) => state.layoutState.layout);
 
